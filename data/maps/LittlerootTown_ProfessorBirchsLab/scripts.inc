@@ -463,12 +463,114 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
-	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
-	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
-	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
+	goto_if_set FLAG_ADVENTURE_STARTED, LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyGotStarters
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_LunteChooseTwo, MSGBOX_DEFAULT
+	setvar VAR_0x8008, 0
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCharmander
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCyndaquil
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTepig
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTurtwig
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTreecko
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSnivy
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSquirtle
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChooseMudkip
+	call LittlerootTown_ProfessorBirchsLab_EventScript_ChoosePiplup
+	goto_if_ne VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_NotEnoughPokemon
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_LunteAfterChoice, MSGBOX_DEFAULT
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_ADVENTURE_STARTED
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_ObtainedPokedex
+	waitfanfare
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_LunteGo, MSGBOX_DEFAULT
+	release
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyGotStarters::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AlreadyGotStarters, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NotEnoughPokemon::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_NotEnoughPokemon, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCharmander::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseCharmander, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_CHARMANDER, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCyndaquil::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseCyndaquil, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_CYNDAQUIL, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTepig::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTepig, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_TEPIG, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTurtwig::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTurtwig, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_TURTWIG, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTreecko::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTreecko, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_TREECKO, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSnivy::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseSnivy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_SNIVY, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSquirtle::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseSquirtle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_SQUIRTLE, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChooseMudkip::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseMudkip, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_MUDKIP, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChoosePiplup::
+	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChoosePiplup, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	givemon SPECIES_PIPLUP, 5, ITEM_NONE
+	addvar VAR_0x8008, 1
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Return::
+	return
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT
@@ -992,3 +1094,58 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_LunteChooseTwo:
+	.string "Ouh NJIERI!\p"
+	.string "Du doerfsch der 2 POKEMON\n"
+	.string "ussueche und denn fuer mich\l"
+	.string "de POKEDEX vollmache.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_LunteAfterChoice:
+	.string "Sehr gueti Wahl!\p"
+	.string "Jetzt nimm no de POKEDEX\n"
+	.string "und denn gib ihm!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ObtainedPokedex:
+	.string "{PLAYER} het de POKEDEX\n"
+	.string "erhalte!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_LunteGo:
+	.string "LUNTE: Und jetzt ab id Welt!\n"
+	.string "Zeig dene POKEMON, wer NJIERI isch!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_AlreadyGotStarters:
+	.string "LUNTE: Du hesch dini POKEMON\n"
+	.string "und de POKEDEX.\p"
+	.string "Jetzt gib ihm!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_NotEnoughPokemon:
+	.string "LUNTE: Bro, du muesch genau\n"
+	.string "2 POKEMON ussueche.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseCharmander:
+	.string "GLUMANDA waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseCyndaquil:
+	.string "FEURIGEL waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseTepig:
+	.string "FLOINK waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseTurtwig:
+	.string "CHELAST waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseTreecko:
+	.string "GECKARBOR waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseSnivy:
+	.string "SERPIFEU waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseSquirtle:
+	.string "SCHIGGY waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChooseMudkip:
+	.string "HYDROPI waehle?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ChoosePiplup:
+	.string "PLINFA waehle?$"
