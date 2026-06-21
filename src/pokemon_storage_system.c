@@ -8040,13 +8040,13 @@ static const u8 gPCText_Give[] = _("GIVE");
 
 static const u8 *const sMenuTexts[] =
 {
-    [MENU_CANCEL]     = COMPOUND_STRING("CANCEL"),
+    [MENU_CANCEL]     = COMPOUND_STRING("ABBRECHEN"),
     [MENU_STORE]      = COMPOUND_STRING("STORE"),
     [MENU_WITHDRAW]   = COMPOUND_STRING("WITHDRAW"),
     [MENU_MOVE]       = COMPOUND_STRING("MOVE"),
     [MENU_SHIFT]      = COMPOUND_STRING("SHIFT"),
     [MENU_PLACE]      = COMPOUND_STRING("PLACE"),
-    [MENU_SUMMARY]    = COMPOUND_STRING("SUMMARY"),
+    [MENU_SUMMARY]    = COMPOUND_STRING("BERICHT"),
     [MENU_RELEASE]    = COMPOUND_STRING("RELEASE"),
     [MENU_MARK]       = COMPOUND_STRING("MARK"),
     [MENU_JUMP]       = COMPOUND_STRING("JUMP"),
@@ -8056,7 +8056,7 @@ static const u8 *const sMenuTexts[] =
     [MENU_GIVE]       = gPCText_Give,
     [MENU_GIVE_2]     = gPCText_Give,
     [MENU_SWITCH]     = COMPOUND_STRING("SWITCH"),
-    [MENU_BAG]        = COMPOUND_STRING("BAG"),
+    [MENU_BAG]        = COMPOUND_STRING("BEUTEL"),
     [MENU_INFO]       = COMPOUND_STRING("INFO"),
     [MENU_SCENERY_1]  = COMPOUND_STRING("SCENERY 1"),
     [MENU_SCENERY_2]  = COMPOUND_STRING("SCENERY 2"),

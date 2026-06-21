@@ -55,7 +55,7 @@ const struct EasyChatWordInfo gEasyChatGroup_TrendySaying[] = {
     },
     [EC_INDEX(EC_WORD_CANCEL)] =
     {
-        .text = COMPOUND_STRING("CANCEL"),
+        .text = COMPOUND_STRING("ABBRECHEN"),
         .alphabeticalOrder = EC_INDEX(EC_WORD_HAPPENING),
         .enabled = TRUE,
     },

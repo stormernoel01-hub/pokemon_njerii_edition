@@ -9,7 +9,7 @@ gText_Birch_Pokemon::
 gText_Birch_MainSpeech::
 	.string "Hesch Lust uf e wahri\n"
 	.string "Challenge?\p"
-	.string "Ich laber dich au noed lang voll.\n"
+	.string "Ich laber dich au nöd lang voll.\n"
 	.string "Du weisch doch, wie's lauft.\p"
 	.string "Hol dini POKéMON bi mir ab\n"
 	.string "und denn gib ihm!\p"

@@ -85,7 +85,7 @@ const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     },
     [EC_INDEX(EC_WORD_POKEMON)] =
     {
-        .text = COMPOUND_STRING("POKéMON"),
+        .text = COMPOUND_STRING("POKEMON"),
         .alphabeticalOrder = EC_INDEX(EC_WORD_LINK),
         .enabled = TRUE,
     },
@@ -97,7 +97,7 @@ const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     },
     [EC_INDEX(EC_WORD_POKEDEX)] =
     {
-        .text = COMPOUND_STRING("POKéDEX"),
+        .text = COMPOUND_STRING("POKEDEX"),
         .alphabeticalOrder = EC_INDEX(EC_WORD_POKEDEX),
         .enabled = TRUE,
     },
@@ -127,7 +127,7 @@ const struct EasyChatWordInfo gEasyChatGroup_Trainer[] = {
     },
     [EC_INDEX(EC_WORD_BAG)] =
     {
-        .text = COMPOUND_STRING("BAG"),
+        .text = COMPOUND_STRING("BEUTEL"),
         .alphabeticalOrder = EC_INDEX(EC_WORD_SAPPHIRE),
         .enabled = TRUE,
     },

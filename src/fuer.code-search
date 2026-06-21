@@ -1,0 +1,9 @@
+# Query: fuer
+# ContextLines: 1
+
+1 result - 1 file
+
+data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc:
+  1100  	.string "Du dörfsch der 2 POKEMON\n"
+  1101: 	.string "ussueche und denn für mich\l"
+  1102  	.string "de POKEDEX vollmache.$"
