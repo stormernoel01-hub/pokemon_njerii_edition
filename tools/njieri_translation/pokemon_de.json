@@ -1,0 +1,41 @@
+{
+  "Bulbasaur": "BISASAM",
+  "Ivysaur": "BISAKNOSP",
+  "Venusaur": "BISAFLOR",
+
+  "Charmander": "GLUMANDA",
+  "Charmeleon": "GLUTEXO",
+  "Charizard": "GLURAK",
+
+  "Squirtle": "SCHIGGY",
+  "Wartortle": "SCHILLOK",
+  "Blastoise": "TURTOK",
+
+  "Cyndaquil": "FEURIGEL",
+  "Quilava": "IGELAVAR",
+  "Typhlosion": "TORNUPTO",
+
+  "Treecko": "GECKARBOR",
+  "Grovyle": "REPTAIN",
+  "Sceptile": "GEWALDRO",
+
+  "Mudkip": "HYDROPI",
+  "Marshtomp": "MOORABBEL",
+  "Swampert": "SUMPEX",
+
+  "Turtwig": "CHELAST",
+  "Grotle": "CHELCARAIN",
+  "Torterra": "CHELTERRAR",
+
+  "Piplup": "PLINFA",
+  "Prinplup": "PLIPRIN",
+  "Empoleon": "IMPOLEON",
+
+  "Snivy": "SERPIFEU",
+  "Servine": "EFOSERP",
+  "Serperior": "SERPIROYAL",
+
+  "Tepig": "FLOINK",
+  "Pignite": "FERKOKEL",
+  "Emboar": "FLAMBIREX"
+}
