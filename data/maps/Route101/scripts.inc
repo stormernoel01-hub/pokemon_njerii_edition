@@ -296,3 +296,26 @@ Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
+Route101_EventScript_Timothy::
+	trainerbattle_double TRAINER_YOUNGSTER_TIMOTHY, Route101_Text_TimothyIntro, Route101_Text_TimothyDefeat, Route101_Text_TimothyNotEnoughMons
+	msgbox Route101_Text_TimothyAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route101_Text_TimothyIntro:
+	.string "Wo wotsch du here?\n"
+	.string "Now, it's time for a battle!$"
+
+Route101_Text_TimothyDefeat:
+	.string "HAJSGDUHASJASD!!$"
+
+Route101_Text_TimothyNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "POKEMON für en Doppelkampf!$"
+
+Route101_Text_TimothyAfter:
+	.string "Timothy: Du... äh...\n"
+	.string "vergiss es.$"
+
+Route101_EventScript_Potion::
+	giveitem ITEM_POTION
+	end

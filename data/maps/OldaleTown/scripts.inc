@@ -392,6 +392,9 @@ OldaleTown_Text_BrendanLetsGoBack:
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_TownSign:
-	.string "OLDALE TOWN\n"
-	.string "“Where things start off scarce.”$"
+	.string "BASI\p"
+	.string "Die Stadt mit de Basi-Fasi.\n"
+	.string "Jedes Jahr suffed sich\l"
+	.string "verchleideti Lüüt vorem\l"
+	.string "POKEMON CENTER kabutt.$"
 
