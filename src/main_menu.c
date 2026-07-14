@@ -157,6 +157,10 @@
  * Task_NewGameBirchSpeech_WaitForPlayerShrink
  * Task_NewGameBirchSpeech_FadePlayerToWhite
  * Task_NewGameBirchSpeech_Cleanup
+ * static void CB2_NjieriStarterChoice(void)
+{
+    SetMainCallback2(CB2_NewGame);
+}
  *  - Advances to CB2_NewGame.
  *
  * Task_NewGameBirchSpeechSub_InitPokeball
@@ -238,6 +242,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *);
 static void Task_NewGameBirchSpeech_WaitForPlayerShrink(u8);
 static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8);
 static void Task_NewGameBirchSpeech_Cleanup(u8);
+static void CB2_NjieriStarterChoice(void);
 static void SpriteCB_Null(struct Sprite *);
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8);
 static void MainMenu_FormatSavegamePlayer(void);
@@ -1830,9 +1835,14 @@ static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)
         FreeAllWindowBuffers();
         FreeAndDestroyMonPicSprite(gTasks[taskId].tLotadSpriteId);
         ResetAllPicSprites();
-        SetMainCallback2(CB2_NewGame);
+        SetMainCallback2(CB2_NjieriStarterChoice);
         DestroyTask(taskId);
     }
+}
+
+static void CB2_NjieriStarterChoice(void)
+{
+    SetMainCallback2(CB2_NewGame);
 }
 
 static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void)
