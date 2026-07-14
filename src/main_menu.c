@@ -40,6 +40,7 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
+#include "starter_choose.h"
 
 /*
  * Main menu state machine
@@ -157,9 +158,10 @@
  * Task_NewGameBirchSpeech_WaitForPlayerShrink
  * Task_NewGameBirchSpeech_FadePlayerToWhite
  * Task_NewGameBirchSpeech_Cleanup
- * static void CB2_NjieriStarterChoice(void)
+static void CB2_NjieriStarterChoice(void)
 {
-    SetMainCallback2(CB2_NewGame);
+    gMain.savedCallback = CB2_NewGame;
+    SetMainCallback2(CB2_ChooseStarter);
 }
  *  - Advances to CB2_NewGame.
  *
@@ -1842,7 +1844,8 @@ static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)
 
 static void CB2_NjieriStarterChoice(void)
 {
-    SetMainCallback2(CB2_NewGame);
+    gMain.savedCallback = CB2_NewGame;
+    SetMainCallback2(CB2_ChooseStarter);
 }
 
 static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void)
