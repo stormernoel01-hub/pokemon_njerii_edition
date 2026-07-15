@@ -53,6 +53,8 @@ static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
 
 static u16 sStarterLabelWindowId;
+u16 gNjieriStarterOne;
+u16 gNjieriStarterTwo;
 
 const u16 gBirchBagGrass_Pal[] = INCGFX_U16("graphics/starter_choose/tiles.png", ".gbapal");
 static const u16 sPokeballSelection_Pal[] = INCGFX_U16("graphics/starter_choose/pokeball_selection.png", ".gbapal");
@@ -570,6 +572,7 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
         if (gTasks[taskId].tStarterCount == 0)
     {
     gTasks[taskId].tFirstStarter = gTasks[taskId].tStarterSelection;
+    gNjieriStarterOne = GetStarterPokemon(gTasks[taskId].tStarterSelection);
     gTasks[taskId].tStarterCount = 1;
 
     spriteId = gTasks[taskId].tPkmnSpriteId;
@@ -584,6 +587,7 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
     }
     else
     {
+    gNjieriStarterTwo = GetStarterPokemon(gTasks[taskId].tStarterSelection);
     gSpecialVar_Result = gTasks[taskId].tStarterSelection;
     ResetAllPicSprites();
     SetMainCallback2(gMain.savedCallback);

@@ -51,12 +51,14 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "starter_choose.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
 
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
+static void GiveNjieriChosenStarters(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
 static void ResetDexNav(void);
@@ -198,6 +200,7 @@ void NewGameInitData(void)
     InitLotadSizeRecord();
     gPartiesCount[B_TRAINER_PLAYER] = 0;
     ZeroPlayerPartyMons();
+    GiveNjieriChosenStarters();
     ResetPokemonStorageSystem();
     DeactivateAllRoamers();
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
@@ -248,6 +251,32 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+}
+
+static void GiveNjieriChosenStarters(void)
+{
+    u16 hp;
+
+    if (gNjieriStarterOne != SPECIES_NONE)
+    {
+        CreateMon(&gPlayerParty[0], gNjieriStarterOne, 5, Random32(), OTID_STRUCT_PLAYER_ID);
+        GiveMonInitialMoveset(&gPlayerParty[0]);
+        CalculateMonStats(&gPlayerParty[0]);
+        hp = GetMonData(&gPlayerParty[0], MON_DATA_MAX_HP);
+        SetMonData(&gPlayerParty[0], MON_DATA_HP, &hp);
+    }
+
+    if (gNjieriStarterTwo != SPECIES_NONE)
+    {
+        CreateMon(&gPlayerParty[1], gNjieriStarterTwo, 5, Random32(), OTID_STRUCT_PLAYER_ID);
+        GiveMonInitialMoveset(&gPlayerParty[1]);
+        CalculateMonStats(&gPlayerParty[1]);
+        hp = GetMonData(&gPlayerParty[1], MON_DATA_MAX_HP);
+        SetMonData(&gPlayerParty[1], MON_DATA_HP, &hp);
+    }
+
+    FlagSet(FLAG_SYS_POKEMON_GET);
+    FlagSet(FLAG_SYS_POKEDEX_GET);
 }
 
 static void ResetMiniGamesRecords(void)
