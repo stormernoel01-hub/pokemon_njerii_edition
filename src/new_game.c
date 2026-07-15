@@ -52,6 +52,7 @@
 #include "difficulty.h"
 #include "follower_npc.h"
 #include "starter_choose.h"
+#include "constants/pokedex.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
@@ -274,6 +275,14 @@ static void GiveNjieriChosenStarters(void)
         hp = GetMonData(&gPlayerParty[1], MON_DATA_MAX_HP);
         SetMonData(&gPlayerParty[1], MON_DATA_HP, &hp);
     }
+
+    EnableNationalPokedex();
+
+    HandleSetPokedexFlagFromMon(&gPlayerParty[0], FLAG_SET_SEEN);
+    HandleSetPokedexFlagFromMon(&gPlayerParty[0], FLAG_SET_CAUGHT);
+
+    HandleSetPokedexFlagFromMon(&gPlayerParty[1], FLAG_SET_SEEN);
+    HandleSetPokedexFlagFromMon(&gPlayerParty[1], FLAG_SET_CAUGHT);
 
     FlagSet(FLAG_SYS_POKEMON_GET);
     FlagSet(FLAG_SYS_POKEDEX_GET);
