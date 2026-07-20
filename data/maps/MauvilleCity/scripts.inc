@@ -3,6 +3,7 @@ MauvilleCity_MapScripts::
 	.byte 0
 
 MauvilleCity_OnTransition:
+	setvar VAR_TEMP_0, 0
 	setflag FLAG_VISITED_MAUVILLE_CITY
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
@@ -610,55 +611,159 @@ MauvilleCity_Text_WattsonYoungTakeCharge:
 	.string "the young step up and take charge!$"
 
 MauvilleCity_Text_NurseHurtMonBackToHealth:
-	.string "You know, it's cool to have POKéMON\n"
-	.string "battles and stuff…\p"
-	.string "But if your POKéMON gets hurt,\n"
-	.string "you have to nurse it back to health.$"
+	.string "Ich han amigs s Gfüühl,\n"
+	.string "dass de AJ völlig high\l"
+	.string "chunnt go schaffe.\p"
+	.string "Trotzdem besiegt er jede\n"
+	.string "Gegner wo ihn useforderet.\p"
+	.string "Min Plan isch, ihm mini\n"
+	.string "überzüüchteti Sorte z\l"
+	.string "verchaufe, wo dich mies\l"
+	.string "Couch-locked macht.\p"
+	.string "Denn fordere ich ihn zum\n"
+	.string "Kampf und besiege ihn,\l"
+	.string "bevor er überhaupt wach\l"
+	.string "isch!\p"
+	.string "Muhahaha, min Plan isch\n"
+	.string "perfekt.$"
 
 MauvilleCity_Text_AllSortsOfPeopleComeThrough:
-	.string "The roads of this town stretch north\n"
-	.string "and south, and east and west.\p"
-	.string "Because of that, we get all sorts of\n"
-	.string "people coming through.$"
+	.string "Ich han mis Velo verchauft,\n"
+	.string "zum im Casino Turbobuche\l"
+	.string "möglich z' mache.\p"
+	.string "Jetzt isch mis Lebe\n"
+	.string "verspielt und ich han kei\l"
+	.string "Geld für Pampers...$"
 
 MauvilleCity_Text_RydelVeryGenerous:
-	.string "Have you been to RYDEL'S CYCLES yet?\p"
-	.string "RYDEL, the owner, is a very generous\n"
-	.string "man.$"
+	.string "Ich chauf ersch es Velo,\n"
+	.string "wenn's Akku betriebe isch.\p"
+	.string "Ich wett ja kei\n"
+	.string "Wademuskelkater!$"
 
 MauvilleCity_Text_PokemonCanJumpYouOnBike:
-	.string "Even if you're riding a BIKE,\n"
-	.string "wild POKéMON could jump you.$"
+	.string "De Arenaleiter isch de AJ.\n"
+	.string "Ich chan ihn nöd besiege!\p"
+	.string "Ich bin langsam so\n"
+	.string "verzwiifled, dass ich glaub\l"
+	.string "bi ihm diheime muss öppis...\p"
+	.string "...ehm...\p"
+	.string "vorbereite...$"
 
 MauvilleCity_Text_CitySign:
-	.string "MAUVILLE CITY\n"
-	.string "“The bright and shiny city of fun!”$"
+	.string "DÜBI\n"
+	.string "“Die chlii Stadt nachem Hardwald”$"
 
 MauvilleCity_Text_GymSign:
-	.string "MAUVILLE CITY POKéMON GYM\n"
-	.string "LEADER: WATTSON\l"
-	.string "“The cheerfully electrifying man!”$"
+	.string "DÜBI POKéMON ARENA\n"
+	.string "LEITER: AJ\l"
+	.string "“Er baut die beste Honigblunts!”$"
 
 MauvilleCity_Text_BikeShopSign:
-	.string "“Ride in gravel and shake up your\n"
-	.string "soul!”\l"
-	.string "RYDEL'S CYCLES$"
+	.string "“Fahre ohni Akku, ohni Strom\n"
+	.string "ganz nach Sportler-Art”\l"
+	.string "VEJLO's Velo's$"
 
 MauvilleCity_Text_GameCornerSign:
-	.string "“The play spot for all!”\n"
-	.string "MAUVILLE GAME CORNER$"
+	.string "“Chum dis Lebe go verspiele!”\n"
+	.string "GRAND CASINO DÜBI$"
 
 MauvilleCity_Text_ExplainTV:
-	.string "Hi, do you check out TV at all?\p"
-	.string "They've added a bunch of cool new\n"
-	.string "shows recently.\p"
-	.string "TV is so cool. I've seen my friends on\n"
-	.string "TV just out of the blue.\p"
-	.string "And, sometimes, they even put you on TV\n"
-	.string "without telling you.\p"
-	.string "I wish I would be on TV sometime.\p"
-	.string "That's why I think you should check\n"
-	.string "out TVs whenever you can.$"
+	.string "Sali, ich bin de JULIAN.\p"
+	.string "Wenn'd irgendwelchi\n"
+	.string "Gartechrüüter bruchsch,\l"
+	.string "denn chum gern zu mir.\p"
+	.string "Mini Nummere isch\n"
+	.string "078 420 83 02.$"
 
 MauvilleCity_Text_BeenCheckingOutTV:
-	.string "Hi, have you been checking out TVs?$"
+	.string "Wie findsch de Wedding Cake?$"
+
+MauvilleCity_EventScript_Speggi::
+	lock
+	faceplayer
+	msgbox MauvilleCity_Text_SpeggiBlock, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_Text_SpeggiBlock:
+	.string "Es isch wiedermal\n"
+	.string "SPEGGI-TIME!\p"
+	.string "Mini Wampe und ich lönd\n"
+	.string "dich da nöd dure.\p"
+	.string "Hol mal de zweit Orde\n"
+	.string "vom AJ!$"
+
+MauvilleCity_EventScript_SpeggiTrigger1::
+	goto_if_set FLAG_BADGE02_GET, MauvilleCity_EventScript_SpeggiTriggerDone
+	setvar VAR_TEMP_0, 1
+	lockall
+	applymovement 11, MauvilleCity_Movement_SpeggiFaceRight
+	waitmovement 0
+	msgbox MauvilleCity_Text_SpeggiBlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerPushedDown
+	waitmovement 0
+	setvar VAR_TEMP_0, 0
+	releaseall
+	end
+
+MauvilleCity_EventScript_SpeggiTrigger2::
+	goto_if_set FLAG_BADGE02_GET, MauvilleCity_EventScript_SpeggiTriggerDone
+	setvar VAR_TEMP_0, 1
+	lockall
+	applymovement 11, MauvilleCity_Movement_SpeggiApproach1
+	waitmovement 0
+	msgbox MauvilleCity_Text_SpeggiBlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerPushedDown
+	waitmovement 0
+	applymovement 11, MauvilleCity_Movement_SpeggiBack1
+	waitmovement 0
+	setvar VAR_TEMP_0, 0
+	releaseall
+	end
+
+MauvilleCity_EventScript_SpeggiTrigger3::
+	goto_if_set FLAG_BADGE02_GET, MauvilleCity_EventScript_SpeggiTriggerDone
+	setvar VAR_TEMP_0, 1
+	lockall
+	applymovement 11, MauvilleCity_Movement_SpeggiApproach2
+	waitmovement 0
+	msgbox MauvilleCity_Text_SpeggiBlock, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerPushedDown
+	waitmovement 0
+	applymovement 11, MauvilleCity_Movement_SpeggiBack2
+	waitmovement 0
+	setvar VAR_TEMP_0, 0
+	releaseall
+	end
+
+MauvilleCity_EventScript_SpeggiTriggerDone::
+	end
+
+MauvilleCity_Movement_PlayerPushedDown:
+	walk_down
+	step_end
+
+MauvilleCity_Movement_SpeggiFaceRight:
+	walk_in_place_faster_right
+	step_end
+
+MauvilleCity_Movement_SpeggiApproach1:
+	walk_right
+	step_end
+
+MauvilleCity_Movement_SpeggiApproach2:
+	walk_right
+	walk_right
+	step_end
+
+MauvilleCity_Movement_SpeggiBack1:
+	walk_left
+	walk_in_place_faster_right
+	step_end
+
+MauvilleCity_Movement_SpeggiBack2:
+	walk_left
+	walk_left
+	walk_in_place_faster_right
+	step_end
