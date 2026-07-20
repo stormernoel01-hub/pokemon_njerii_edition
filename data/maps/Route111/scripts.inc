@@ -1,9 +1,6 @@
 Route111_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route111_OnWarp
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route111_OnFrame
-	.byte 0
+        map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
+        .byte 0
 
 Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
@@ -38,15 +35,8 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_OnTransition:
-	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
-	special SetMirageTowerVisibility
-	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
-	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx
-	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
-	call Route111_EventScript_CheckSetSandstorm
-	call GabbyAndTy_EventScript_UpdateLocation
-	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
-	end
+        setweather WEATHER_NONE
+        end
 
 Route111_EventScript_SetFallingPlayerGfx::
 	checkplayergender
@@ -425,17 +415,17 @@ Route111_EventScript_RockSmashTipFatMan::
 	end
 
 Route111_EventScript_Drew::
-	trainerbattle_single TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
+	trainerbattle_double TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat, Route111_Text_DrewNotEnoughMons
 	msgbox Route111_Text_DrewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Heidi::
-	trainerbattle_single TRAINER_HEIDI, Route111_Text_HeidiIntro, Route111_Text_HeidiDefeat
+	trainerbattle_double TRAINER_HEIDI, Route111_Text_HeidiIntro, Route111_Text_HeidiDefeat, Route111_Text_HeidiNotEnoughMons
 	msgbox Route111_Text_HeidiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Beau::
-	trainerbattle_single TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat
+	trainerbattle_double TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat, Route111_Text_BeauNotEnoughMons
 	msgbox Route111_Text_BeauPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -476,16 +466,13 @@ Route111_EventScript_Irene::
 	end
 
 Route111_EventScript_Daisuke::
-	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
+		trainerbattle_double TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat, Route111_Text_DaisukeNotEnoughMons
 	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Wilton::
-	trainerbattle_single TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_EventScript_RegisterWilton
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchWilton
-	msgbox Route111_Text_WiltonPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_double TRAINER_WILTON_1, Route111_Text_WiltonIntro, Route111_Text_WiltonDefeat, Route111_Text_WiltonNotEnoughMons
+	msgbox Route111_Text_WiltonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_RegisterWilton::
@@ -502,24 +489,8 @@ Route111_EventScript_RematchWilton::
 	end
 
 Route111_EventScript_Brooke::
-	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchBrooke
-	msgbox Route111_Text_BrookePostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route111_EventScript_RegisterBrooke::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route111_Text_BrookeRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BROOKE_1
-	release
-	end
-
-Route111_EventScript_RematchBrooke::
-	trainerbattle_rematch TRAINER_BROOKE_1, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
-	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_Text_BrookeNotEnoughMons
+	msgbox Route111_Text_BrookePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Hayden::
@@ -652,8 +623,8 @@ Route111_Text_RouteSign113:
 	.string "{LEFT_ARROW} ROUTE 113$"
 
 Route111_Text_OldLadysRestStopSign:
-	.string "OLD LADY'S REST STOP\n"
-	.string "“Come in and rest your tired bones.”$"
+	.string "ÖLI\n"
+	.string "“Täg sittem letschte Todesfall: 7”$"
 
 Route111_Text_TrainerTipsSpAtkSpDef:
 	.string "TRAINER TIPS\p"
