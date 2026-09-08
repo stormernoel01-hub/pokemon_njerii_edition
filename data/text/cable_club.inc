@@ -9,16 +9,16 @@ CableClub_Text_WhichService:
 	.string "to use?$"
 
 CableClub_Text_TradeUsingLinkCable::
-	.string "Trade POKéMON with another player\n"
-	.string "using a GBA Game Link cable.$"
+	.string "Tausche POKéMON mit einem\n"
+	.string "Mitspieler via GBA Game Link-Kabel.$"
 
 CableClub_Text_BattleUsingLinkCable::
-	.string "You may battle another TRAINER\n"
-	.string "using a GBA Game Link cable.$"
+	.string "Tritt gegen einen anderen TRAINER\n"
+	.string "via GBA Game Link-Kabel an.$"
 
 CableClub_Text_RecordCornerUsingLinkCable::
-	.string "You can use the RECORD CORNER with\n"
-	.string "others using a GBA Game Link cable.$"
+	.string "Mit dem GBA Game Link-Kabel kannst du\n"
+	.string "einen STATISTIKTAUSCH vornehmen.$"
 
 @ Unused
 CableClub_Text_CloseThisMenu:
@@ -37,22 +37,22 @@ CableClub_Text_CantTradeEnigmaBerry:
 	.string "BERRY can't be traded.$"
 
 gText_PleaseWaitForLink::
-	.string "Please wait.\n"
-	.string "… … B Button: Cancel$"
+	.string "Bitte warten.\n"
+	.string "Drücke den B-Knopf, um abzubrechen…$"
 
 gText_ConfirmLinkWhenPlayersReady::
-	.string "When all players are ready…\n"
-	.string "A Button: Confirm\l"
-	.string "B Button: Cancel$"
+	.string "Wenn die Spieler bereit sind…\n"
+	.string "A-Knopf: Bestätigen\l"
+	.string "B-Knopf: Abbruch$"
 
 gText_ConfirmStartLinkWithXPlayers::
-	.string "Start link with {STR_VAR_1} players.\n"
-	.string "A Button: Confirm\l"
-	.string "B Button: Cancel$"
+	.string "Verbindung für {STR_VAR_1} Spieler aufbauen.\n"
+	.string "A-Knopf: Bestätigen\l"
+	.string "B-Knopf: Abbruch$"
 
 gText_AwaitingLinkup::
-	.string "Awaiting linkup…\n"
-	.string "… … B Button: Cancel$"
+	.string "Verbindungsaufbau…\n"
+	.string "… … B-Knopf: Abbruch$"
 
 @ Unused
 CableClub_Text_OkayToSaveProgress::
@@ -186,20 +186,20 @@ CableClub_Text_PleaseWait:
 	.string "Please wait.$"
 
 CableClub_Text_YouMayTradeHere::
-	.string "You may trade your POKéMON here\n"
-	.string "with another TRAINER.$"
+	.string "Hier kannst du mit deinen Freunden\n"
+	.string "POKéMON tauschen.$"
 
 CableClub_Text_YouMayBattleHere::
-	.string "You may battle with your friends\n"
-	.string "here.$"
+	.string "Hier kannst du mit deinen Freunden\n"
+	.string "kämpfen.$"
 
 CableClub_Text_CanMakeBerryPowder::
-	.string "Two to five TRAINERS can make\n"
-	.string "BERRY POWDER together.$"
+	.string "Zwei bis fünf TRAINER können\n"
+	.string "zusammen BEERENPUDER herstellen.$"
 
 CableClub_Text_CanMixRecords::
-	.string "The records of two to four players\n"
-	.string "can be mixed together.$"
+	.string "Die Statistiken von zwei bis vier\n"
+	.string "Spielern können getauscht werden.$"
 
 @ Unused
 CableClub_Text_GuideToVariousServices:
@@ -207,7 +207,7 @@ CableClub_Text_GuideToVariousServices:
 	.string "various services.$"
 
 CableClub_Text_CancelSelectedItem::
-	.string "Cancels the selected MENU item.$"
+	.string "Widerruft das MENÜ.$"
 
 @ Unused
 CableClub_Text_WhichBattleMode:
