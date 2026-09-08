@@ -315,7 +315,7 @@ Route101_Text_TimothyNotEnoughMons:
 	.string "POKEMON für en Doppelkampf!$"
 
 Route101_Text_TimothyAfter:
-	.string "Timothy: Du... äh...\n"
+	.string "Du... äh...\n"
 	.string "vergiss es.$"
 
 Route101_EventScript_Potion::

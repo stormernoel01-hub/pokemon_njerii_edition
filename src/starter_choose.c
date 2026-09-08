@@ -224,11 +224,17 @@ static const struct OamData sOam_StarterCircle =
     .affineParam = 0,
 };
 
-static const u8 sCursorCoords[][2] =
+static const u8 sCursorCoords[STARTER_MON_COUNT][2] =
 {
-    {60, 32},
-    {120, 56},
-    {180, 32},
+    {32, 24},
+    {76, 24},
+    {120, 24},
+    {164, 24},
+    {208, 24},
+    {50, 64},
+    {92, 64},
+    {148, 64},
+    {190, 64},
 };
 
 static const union AnimCmd sAnim_Hand[] =
@@ -464,9 +470,9 @@ void CB2_ChooseStarter(void)
     taskId = CreateTask(Task_StarterChoose, 0);
     gTasks[taskId].tStarterSelection = 1;
 
-    // Create hand sprite disabled for Njieri Edition
-    // spriteId = CreateSprite(&sSpriteTemplate_Hand, 120, 56, 2);
-    // gSprites[spriteId].data[0] = taskId;
+    // Pointing hand cursor above the currently selected Poke Ball
+    spriteId = CreateSprite(&sSpriteTemplate_Hand, 120, 56, 2);
+    gSprites[spriteId].data[0] = taskId;
 
     // Create Poké Ball sprites
     for (i = 0; i < STARTER_MON_COUNT; i++)
@@ -477,6 +483,7 @@ void CB2_ChooseStarter(void)
     }
 
     sStarterLabelWindowId = WINDOW_NONE;
+    CreateStarterPokemonLabel(gTasks[taskId].tStarterSelection);
 }
 
 static void CB2_StarterChoose(void)
@@ -535,11 +542,13 @@ static void Task_HandleStarterChooseInput(u8 taskId)
     }
     else if (JOY_NEW(DPAD_LEFT) && selection > 0)
     {
+        PlaySE(SE_SELECT);
         gTasks[taskId].tStarterSelection--;
         gTasks[taskId].func = Task_MoveStarterChooseCursor;
     }
     else if (JOY_NEW(DPAD_RIGHT) && selection < STARTER_MON_COUNT - 1)
     {
+        PlaySE(SE_SELECT);
         gTasks[taskId].tStarterSelection++;
         gTasks[taskId].func = Task_MoveStarterChooseCursor;
     }

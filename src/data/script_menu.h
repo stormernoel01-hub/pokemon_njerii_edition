@@ -28,6 +28,7 @@ static const struct MenuAction MultichoiceList_NjieriDebug[] =
     {COMPOUND_STRING("Teleport")},
     {COMPOUND_STRING("Badges")},
     {COMPOUND_STRING("Heilen")},
+    {COMPOUND_STRING("64 Sonderbonbons")},
     {gText_Exit},
 };
 

@@ -758,6 +758,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	setvar VAR_OLDALE_TOWN_STATE, 1
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
 	setvar VAR_LITTLEROOT_TOWN_STATE, 3
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 6, 4, 3
+	waitstate
 	releaseall
 	end
 
