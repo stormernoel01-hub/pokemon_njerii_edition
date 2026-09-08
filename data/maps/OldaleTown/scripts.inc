@@ -5,6 +5,7 @@ OldaleTown_MapScripts::
 OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_OLDALE_TOWN
+		call_if_set FLAG_BADGE01_GET, OldaleTown_EventScript_MoveFatManAfterBadge
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
@@ -31,6 +32,24 @@ OldaleTown_EventScript_TownSign::
 
 OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_MoveFatManAfterBadge::
+	setobjectxyperm 4, 25, 7
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+OldaleTown_EventScript_FatManBlocker::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE01_GET, OldaleTown_EventScript_FatManAfterBadge
+	msgbox OldaleTown_Text_FatManNoBadge, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_FatManAfterBadge::
+	msgbox OldaleTown_Text_FatManAfterBadge, MSGBOX_DEFAULT
+	release
 	end
 
 OldaleTown_EventScript_MartEmployee::
@@ -344,22 +363,20 @@ OldaleTown_Text_SavingMyProgress:
 	.string "progress.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
-	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
-	.string "Can I get you to come with me?$"
+	.string "Folg mir mal 2 Schritt...$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a POKéMON MART.\n"
-	.string "Just look for our blue roof.\p"
-	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
-	.string "Here, I'd like you to have this as\n"
-	.string "a promotional item.$"
+	.string "Das isch en POKEMON Markt!\p"
+	.string "Euse da in BASI isch richtig\n"
+	.string "low, will mir fasch nüüt im\l"
+	.string "Sortiment hend.\p"
+	.string "Nödemal Bier...\p"
+	.string "Defür han ich das für dich.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
-	.string "in certain situations.$"
+	.string "De Trank heilt dini Viecher,\n"
+	.string "wenn du mal keis POKE-CENTER\l"
+	.string "ide Nöchi hesch.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
@@ -398,3 +415,27 @@ OldaleTown_Text_TownSign:
 	.string "verchleideti Lüüt vorem\l"
 	.string "POKEMON CENTER kabutt.$"
 
+OldaleTown_Text_FatManNoBadge:
+	.string "Ich bin so erschöpft.\n"
+	.string "De Weg vo DÜBI bis da here\l"
+	.string "isch echt lang.\p"
+	.string "Ich mach erstmal e Pause\n"
+	.string "und du luegsch zue,\l"
+	.string "dass du dir din erste\l"
+	.string "Orde verdiensch.\p"
+	.string "D' Arena vom SIMON K.\n"
+	.string "befindet sich im Norde\l"
+	.string "vo BASI und füehrt über\l"
+	.string "Route 2.$"
+
+OldaleTown_Text_FatManAfterBadge:
+	.string "Was glänzt denn da so?\p"
+	.string "Ah es isch din erste Orde!\n"
+	.string "Und ich han scho gmeint,\l"
+	.string "du hesch e Roley bim\l"
+	.string "Schatztauche gfunde.\p"
+	.string "Jedefalls dörfsch du jetzt\n"
+	.string "de Weg über Route 3\l"
+	.string "zum HARDWALD und denn\l"
+	.string "nach DÜBI neh.\p"
+	.string "Vill Erfolg!$"

@@ -18,6 +18,9 @@ void FakeRtc_Reset(void)
     gSaveBlock3Ptr->fakeRTC.month = gGen3Epoch.month;
     gSaveBlock3Ptr->fakeRTC.day = gGen3Epoch.day;
     gSaveBlock3Ptr->fakeRTC.dayOfWeek = gGen3Epoch.dayOfWeek;
+    gSaveBlock3Ptr->fakeRTC.hour = 13;
+    gSaveBlock3Ptr->fakeRTC.minute = 0;
+    gSaveBlock3Ptr->fakeRTC.second = 0;
 #endif
 }
 

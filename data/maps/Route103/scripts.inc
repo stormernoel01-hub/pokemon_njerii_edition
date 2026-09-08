@@ -200,7 +200,7 @@ Route103_EventScript_RouteSign::
 	end
 
 Route103_EventScript_Daisy::
-	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
+	trainerbattle_double TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated, Route103_Text_DaisyNotEnoughMons
 	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -241,16 +241,13 @@ Route102_EventScript_LivRematch::
 	end
 
 Route103_EventScript_Andrew::
-	trainerbattle_single TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
+	trainerbattle_double TRAINER_ANDREW, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated, Route103_Text_AndrewNotEnoughMons
 	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Miguel::
-	trainerbattle_single TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route102_EventScript_MiguelRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route103_EventScript_MiguelRematch
-	msgbox Route103_Text_MiguelPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_double TRAINER_MIGUEL_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route103_Text_MiguelNotEnoughMons
+	msgbox Route103_Text_MiguelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
@@ -267,12 +264,12 @@ Route103_EventScript_MiguelRematch::
 	end
 
 Route103_EventScript_Marcos::
-	trainerbattle_single TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
+	trainerbattle_double TRAINER_MARCOS, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated, Route103_Text_MarcosNotEnoughMons
 	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Rhett::
-	trainerbattle_single TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
+	trainerbattle_double TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated, Route103_Text_RhettNotEnoughMons
 	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -339,8 +336,8 @@ Route103_Text_BrendanTimeToHeadBack:
 	.string "We should head back to the LAB.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
-	.string "My POKéMON is staggeringly tired…\n"
-	.string "I should have brought a POTION…$"
+	.string "Brüeder.. woher chunnt mer\n"
+	.string "de Zerschneider über?$"
 
 Route103_Text_ShortcutToOldale:
 	.string "If you cross the sea from here,\n"
@@ -349,5 +346,5 @@ Route103_Text_ShortcutToOldale:
 
 Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
-	.string "{DOWN_ARROW} OLDALE TOWN$"
+	.string "{RIGHT_ARROW} DÜBI$"
 

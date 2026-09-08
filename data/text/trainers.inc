@@ -1,15 +1,21 @@
 Route102_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
-	.string "You can't say no to my challenge!$"
+	.string "Gefährlich,\n"
+	.string "was ist hier los?!$"
 
-Route102_Text_CalvinDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "I should have trained mine more…$"
+Route102_Text_CalvinDefeat:
+	.string "Scheisse man!$"
+
+Route102_Text_CalvinNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route102_Text_CalvinAfter:
+	.string "Wer fühlsch am meiste\n"
+	.string "vo 187?$"
 
 Route102_Text_CalvinPostBattle:
-	.string "Listen, you. If you're strong,\n"
-	.string "you should have told me before!$"
+	.string "Wer fühlsch am meiste\n"
+	.string "vo 187?$"
 
 Route102_Text_CalvinRegister:
 	.string "I've been working hard at this since\n"
@@ -35,151 +41,187 @@ Route102_Text_CalvinRematchPostBattle:
 	.string "I'll get stronger, too.$"
 
 Route102_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
-	.string "We're both beginners!$"
+	.string "Ich zeig der wo de Hammer\n"
+	.string "hängt, wie Obi Mitarbeiter!$"
 
-Route102_Text_AllenDefeated:
-	.string "I called you because I thought\n"
-	.string "I could beat you…$"
+Route102_Text_AllenDefeat:
+	.string "Fuck!$"
+
+Route102_Text_AllenNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route102_Text_AllenAfter:
+	.string "Ich han nüüt gseit,\n"
+	.string "gahn eifach wiiter.$"
 
 Route102_Text_AllenPostBattle:
-	.string "I haven't won once yet…\n"
-	.string "I wish I would win soon…$"
+	.string "Ich han nüüt gseit,\n"
+	.string "gahn eifach wiiter.$"
 
 Route102_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+	.string "Ich suech de Japan Chäfer,\n"
+	.string "aber jetzt trampsch du da\l"
+	.string "uf de Wiese ume...$"
 
-Route102_Text_RickDefeated:
-	.string "Ow! Down and out!$"
+Route102_Text_RickDefeat:
+	.string "Scheiss Viecher man...$"
+
+Route102_Text_RickNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route102_Text_RickAfter:
+	.string "Ich suech wieder de\n"
+	.string "Japan Chäfer.\p"
+	.string "Du bisch mer z' starch.$"
 
 Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+	.string "Ich suech wieder de\n"
+	.string "Japan Chäfer.\p"
+	.string "Du bisch mer z' starch.$"
 
 Route102_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
+	.string "Mal luege, ob mini Pokemon\n"
+	.string "gege so en NJIERI wie dich\l"
+	.string "chönd günne.$"
 
-Route102_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
+Route102_Text_TianaDefeat:
+	.string "Egal, wenigstens bin ich\n"
+	.string "hübscher als du.$"
 
-Route102_Text_TianaPostBattle:
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+Route102_Text_TianaNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route102_Text_TianaAfter:
+	.string "Irgendwenn nimm ich's mit\n"
+	.string "dir uuf, NJIERI.$"
 
 Route103_Text_DaisyIntro:
-	.string "Did you feel the tug of our\n"
-	.string "soul-soothing fragrance?$"
+	.string "Ich zeig der es Pokemon\n"
+	.string "wo du no nie gseh hesch.$"
 
 Route103_Text_DaisyDefeated:
-	.string "You weren't led astray by our aroma…$"
+	.string "Wow!$"
+
+Route103_Text_DaisyNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_DaisyPostBattle:
-	.string "Aromatherapy is a form of mental\n"
-	.string "healing that works with fragrances.$"
+	.string "Ich han Polle im Aug!$"
 
 Route103_Text_AmyIntro:
-	.string "AMY: I'm AMY.\n"
-	.string "And this is my little sister LIV.\l"
-	.string "We battle together!$"
+	.string "Eusi Oma het eus e Villa\n"
+	.string "gschenkt, will ihre die\l"
+	.string "z'chlii worde isch.\p"
+	.string "Also was wettsch du scho\n"
+	.string "geg eus mache hmm?$"
 
 Route103_Text_AmyDefeated:
-	.string "AMY: Uh-oh, we lost.$"
+	.string "WASSS?!$"
 
 Route103_Text_AmyPostBattle:
-	.string "AMY: You have to think about all\n"
-	.string "kinds of things when you're battling\l"
-	.string "against two TRAINERS.$"
+	.string "Ich glaub mir bruuched\n"
+	.string "e grösseri Villa.$"
 
 Route103_Text_AmyNotEnoughPokemon:
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
-	.string "You can't battle us like that.$"
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_LivIntro:
-	.string "LIV: We battle together as one\n"
-	.string "team.$"
+	.string "Eusi Oma het eus e Villa\n"
+	.string "gschenkt, will ihre die\l"
+	.string "z'chlii worde isch.\p"
+	.string "Also was wettsch du scho\n"
+	.string "geg eus mache hmm?$"
 
 Route103_Text_LivDefeated:
-	.string "LIV: Oh, we lost, big sister…$"
+	.string "WASSS?!$"
 
 Route103_Text_LivPostBattle:
-	.string "LIV: We work perfectly together,\n"
-	.string "me and my big sister…\p"
-	.string "But we still lost…$"
-
-Route103_Text_AmyLivRegister:
-	.string "LIV: Really, we're a lot better…\n"
-	.string "It's true! We'll show you next time!$"
+	.string "Ich glaub mir bruuched\n"
+	.string "e grösseri Villa.$"
 
 Route103_Text_LivNotEnoughPokemon:
-	.string "LIV: If you want to battle us,\n"
-	.string "you have to have two POKéMON!\l"
-	.string "It's not fair if you don't!$"
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+	Route103_Text_AmyLivRegister:
+	.string "Mir gänd dir sicher nöd\n"
+	.string "eusi Nummer.$"
 
 Route103_Text_AmyRematchIntro:
-	.string "AMY: I'm AMY.\n"
-	.string "And this is my little sister LIV.\l"
-	.string "We battle together!$"
+	.string "Eusi Oma het eus e Villa\n"
+	.string "gschenkt, will ihre die\l"
+	.string "z'chlii worde isch.\p"
+	.string "Also was wettsch du scho\n"
+	.string "geg eus mache hmm?$"
 
 Route103_Text_AmyRematchDefeated:
-	.string "AMY: Aww, boo!\n"
-	.string "We couldn't win again…$"
-
-Route103_Text_AmyRematchPostBattle:
-	.string "AMY: You have to think about all\n"
-	.string "kinds of things when you're battling\l"
-	.string "against two TRAINERS.$"
+	.string "WASSS?!$"
 
 Route103_Text_AmyRematchNotEnoughPokemon:
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
-	.string "You can't battle us like that.$"
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route103_Text_AmyRematchPostBattle:
+	.string "Ich glaub mir bruuched\n"
+	.string "e grösseri Villa.$"
 
 Route103_Text_LivRematchIntro:
-	.string "LIV: We battle together as one\n"
-	.string "team.$"
+	.string "Eusi Oma het eus e Villa\n"
+	.string "gschenkt, will ihre die\l"
+	.string "z'chlii worde isch.\p"
+	.string "Also was wettsch du scho\n"
+	.string "geg eus mache hmm?$"
 
 Route103_Text_LivRematchDefeated:
-	.string "LIV: Awww, we lost again…\n"
-	.string "Big sister…$"
-
-Route103_Text_LivRematchPostBattle:
-	.string "LIV: We work perfectly together,\n"
-	.string "me and my big sister…\p"
-	.string "But why did we lose again?$"
+	.string "WASSS?!$"
 
 Route103_Text_LivRematchNotEnoughPokemon:
-	.string "LIV: If you want to battle us, you\n"
-	.string "have to have two POKéMON!\l"
-	.string "It's not fair if you don't!$"
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+Route103_Text_LivRematchPostBattle:
+	.string "Ich glaub mir bruuched\n"
+	.string "e grösseri Villa.$"
 
 Route103_Text_AndrewIntro:
-	.string "Gah! My fishing line's all snarled up!\n"
-	.string "I'm getting frustrated and mean!\l"
-	.string "That's it! Battle me!$"
+	.string "Pass uf! Mis Karpador isch\n"
+	.string "10x besser als jedes andere\l"
+	.string "Karpador wo du bis jetzt\l"
+	.string "gseh hesch.$"
 
 Route103_Text_AndrewDefeated:
-	.string "Gah! Lost it!\n"
-	.string "I'm even more annoyed now!$"
+	.string "Neii!!!\p"
+	.string "Mis perfekte Karpador...$"
+
+Route103_Text_AndrewNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_AndrewPostBattle:
-	.string "Gah, I'm still boiling mad…\n"
-	.string "Grrrrr…$"
+	.string "Wart's ab, irgendwenn\n"
+	.string "besieg ich dich mitnem\l"
+	.string "perfekte Garados!$"
 
 Route103_Text_MiguelIntro:
-	.string "My POKéMON is delightfully adorable!\n"
-	.string "Don't be shy--I'll show you!$"
+	.string "Glaub mer es isch en\n"
+	.string "Fehler gsii, mich\l"
+	.string "ah z'spreche.$"
 
 Route103_Text_MiguelDefeated:
-	.string "Oh, my gosh!\n"
-	.string "My darling POKéMON!$"
+	.string "Tami!$"
+
+Route103_Text_MiguelNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_MiguelPostBattle:
-	.string "My delightful POKéMON looks darling\n"
-	.string "even when it's fainted!$"
+	.string "Bis jetzt han ich no\n"
+	.string "nie verlore...$"
 
 Route103_Text_MiguelRegister:
 	.string "I'll get you to come out and look in\n"
@@ -222,28 +264,39 @@ Route103_Text_IsabellePostBattle:
 	.string "Sorry for almost crashing into you.$"
 
 Route103_Text_RhettIntro:
-	.string "Whoa!\n"
-	.string "How'd you get into a space this small?$"
+	.string "Ich klatsch dich!$"
 
 Route103_Text_RhettDefeated:
-	.string "Whoa!\n"
-	.string "The kid can rock!$"
+	.string "Verdammt! Du hesch mich\n"
+	.string "wegklatscht...$"
+
+Route103_Text_RhettNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_RhettPostBattle:
-	.string "Do you like cramped quarters\n"
-	.string "like this?$"
+	.string "Warts ab. Negscht mal\n"
+	.string "klatsch ich dich!$"
 
 Route103_Text_MarcosIntro:
-	.string "Did my guitar's wailing draw you in?$"
+	.string "DÜBI isch mini Heimat\n"
+	.string "und ich verbüüte dir dett\l"
+	.string "here z'gah!$"
 
 Route103_Text_MarcosDefeated:
-	.string "My one-man show is ruined…$"
+	.string "Holy Shi-$"
+
+Route103_Text_MarcosNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route103_Text_MarcosPostBattle:
-	.string "I was playing my guitar where few\n"
-	.string "people were around, but a lot of fans\l"
-	.string "have gathered.\p"
-	.string "Heh, maybe I should turn pro.$"
+	.string "Ich erlaubs dir trotzdem\n"
+	.string "nöd zum wiiter gah...\p"
+	.string "Was? Es isch der egal\n"
+	.string "was ich seg?\p"
+	.string "Okay ich petz dich bide\n"
+	.string "Frau Bedenikovic!$"
 
 Route104_Text_GinaIntro:
 	.string "GINA: Okay, let's battle with our\n"
@@ -1054,16 +1107,19 @@ Route110_Text_BenjaminRematchPostBattle:
 	.string "Take it easy. There's plenty of time.$"
 
 Route110_Text_AbigailIntro:
-	.string "The triathlon is hard in the extreme.\p"
-	.string "You have to complete the three events\n"
-	.string "of swimming, cycling, and running.$"
+	.string "Ich bin vo Italie mitem\n"
+	.string "Velo da here cho und finde\l"
+	.string "kei einzigi Pizzeria...$"
 
 Route110_Text_AbigailDefeated:
-	.string "POKéMON battles are hard, too!$"
+	.string "Mammma Mia...$"
 
 Route110_Text_AbigailPostBattle:
-	.string "I'm exhausted, so I need a break.\n"
-	.string "It's important to get proper rest.$"
+	.string "...$"
+
+Route110_Text_AbigailNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_AbigailRegister:
 	.string "You know, I like you!\n"
@@ -1093,40 +1149,53 @@ Route110_Text_JasminePostBattle:
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro:
-	.string "I have foreseen your intentions!\n"
-	.string "I cannot possibly lose!$"
+	.string "Zeit für ein\n"
+	.string "Du-du-du-du-du-DUELL!!$"
 
 Route110_Text_EdwardDefeated:
-	.string "I failed to prophesize my own demise!$"
+	.string "Aber was isch mitem\n"
+	.string "motivierende Yugioh Spruch?$"
+
+Route110_Text_EdwardNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_EdwardPostBattle:
-	.string "I see your future…\p"
-	.string "Hmm…\n"
-	.string "I see a shining light…$"
+	.string "Ich hett lieber sölle\n"
+	.string "Poge Charte chaufe,\l"
+	.string "statt Yugi-gag.$"
 
 Route110_Text_JaclynIntro:
-	.string "Ahahahaha!\n"
-	.string "I'll dazzle you with my wonders!$"
+	.string "Ich zeig der warum de\n"
+	.string "HARDWALD, HARD im Name het.$"
 
 Route110_Text_JaclynDefeated:
-	.string "I wondrously lost!$"
+	.string "Wow!$"
+
+Route110_Text_JaclynNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_JaclynPostBattle:
-	.string "You managed to win only because it was\n"
-	.string "a wonder! Yes, a wonder!\l"
-	.string "Don't think you can win all the time!$"
+	.string "Okay, hett ich jetzt gunne,\n"
+	.string "denn hett ich chönne sege,\l"
+	.string "dass de HARDWALD wege mir\l"
+	.string "HARD heisst...$"
 
 Route110_Text_EdwinIntro:
-	.string "Could I see your POKéMON?\n"
-	.string "Just one look, please?$"
+	.string "Ich hab dir was\n"
+	.string "midgebracht.$"
 
 Route110_Text_EdwinDefeated:
-	.string "I wanted to complete\n"
-	.string "my collection…$"
+	.string "Nein DIMOSY!$"
 
 Route110_Text_EdwinPostBattle:
-	.string "When I see a POKéMON that I don't know,\n"
-	.string "my passion as a collector is ignited!$"
+	.string "Ich dachte wir wären\n"
+	.string "Freunde.$"
+
+Route110_Text_EdwinNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_EdwinRegister:
 	.string "I like collecting MATCH CALL\n"
@@ -1146,16 +1215,19 @@ Route110_Text_EdwinRematchPostBattle:
 	.string "mine!$"
 
 Route110_Text_DaleIntro:
-	.string "Hey!\n"
-	.string "Don't sneak up behind me like that!$"
+	.string "Ich droppe unerwartet\n"
+	.string "i das Game wie ICH!$"
 
 Route110_Text_DaleDefeated:
-	.string "I lost!\n"
-	.string "Drat!$"
+	.string "Gopf!$"
 
 Route110_Text_DalePostBattle:
-	.string "Fishing is all about concentration.\n"
-	.string "You have to focus on the floater.$"
+	.string "Wie hesch du mis Barschwa\n"
+	.string "chönne besiege?$"
+
+Route110_Text_DaleNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_IsabelIntro:
 	.string "Ahahaha! I would go anywhere to show\n"
@@ -1198,28 +1270,33 @@ Route110_Text_TimmyPostBattle:
 	.string "just caught.$"
 
 Route110_Text_AlyssaIntro:
-	.string "I fell off CYCLING ROAD…\p"
-	.string "I'll get over my embarrassment by\n"
-	.string "battling with you!$"
+	.string "Hey du, lueg mal mini\n"
+	.string "herzige Reh ah.$"
 
 Route110_Text_AlyssaDefeated:
-	.string "Oops!\n"
-	.string "I ended up losing!$"
+	.string "Du bisch frech!$"
 
 Route110_Text_AlyssaPostBattle:
-	.string "Falling… Losing…\n"
-	.string "This is so humiliating for me!$"
+	.string "Nimm de Pogeball und\n"
+	.string "denn verschwind!$"
+
+Route110_Text_AlyssaNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_JosephIntro:
-	.string "Okay! Full-throttle time! If you can't\n"
-	.string "groove, you get left behind!$"
+	.string "Chum da here!$"
 
 Route110_Text_JosephDefeated:
-	.string "You got into the groove all right…$"
+	.string "ZAGSDZHSADZUHVB!!$"
 
 Route110_Text_JosephPostBattle:
-	.string "This isn't going to bring me down!\n"
-	.string "Losing has made me a better man!$"
+	.string "Mit dir kämpfe macht\n"
+	.string "kei Spass.$"
+
+Route110_Text_JosephNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 Route110_Text_KalebIntro:
 	.string "When cute POKéMON help each other…\n"
@@ -1233,46 +1310,59 @@ Route110_Text_KalebPostBattle:
 	.string "could, my pretties.$"
 
 Route111_Text_DrewIntro:
-	.string "Oh, hey! Those GO-GOGGLES suit you.\n"
-	.string "But I think they look better on me.\p"
-	.string "Let's decide who they look better on\n"
-	.string "with a battle!$"
+	.string "Ich han welle es Pule ide\n"
+	.string "ÖLI grilliere,\l"
+	.string "aber die Viecher hend mich\l"
+	.string "usegjagt.\p"
+	.string "Jetzt chan mich nur en\n"
+	.string "Kampf beruhige!$"
 
 Route111_Text_DrewDefeat:
-	.string "I couldn't see what was happening at\n"
-	.string "my sides because of the GO-GOGGLES.$"
+	.string "AHfhashfha!!!$"
+
+Route111_Text_DrewNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_DrewPostBattle:
-	.string "The GO-GOGGLES make it possible to\n"
-	.string "get through sandstorms.\l"
-	.string "That makes me happy!$"
+	.string "Gopfetami!\n"
+	.string "Jetzt isch mir s' Pule\l"
+	.string "auno uf de Bode gheit :x$"
 
 Route111_Text_HeidiIntro:
-	.string "I'm having a picnic in the desert.\p"
-	.string "You can always find a TRAINER,\n"
-	.string "so I can enjoy a battle here, too!$"
+	.string "Ich han zu fest Angst\n"
+	.string "vor de ÖLI.\p"
+	.string "Ich bewach lieber\n"
+	.string "de Ihgang!$"
 
 Route111_Text_HeidiDefeat:
-	.string "Ohhh! You're mean!$"
+	.string "Tami!$"
+
+Route111_Text_HeidiNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_HeidiPostBattle:
-	.string "When you're battling in a sandstorm,\n"
-	.string "watch out for your POKéMON's HP.\p"
-	.string "It can faint if you don't keep\n"
-	.string "an eye on it!$"
+	.string "Wenn du ide ÖLI es Kilo\n"
+	.string "Gold findsch,\p"
+	.string "machemer Fiffty-fiffty?$"
 
 Route111_Text_BeauIntro:
-	.string "Wearing these GO-GOGGLES makes me\n"
-	.string "feel like a superhero.\l"
-	.string "Right now, nobody can beat me!$"
+	.string "TÖÖÖRÖÖÖÖÖÖ!!!$"
 
 Route111_Text_BeauDefeat:
-	.string "I can't win on spirit alone…$"
+	.string "Ach mann...$"
+
+Route111_Text_BeauNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_BeauPostBattle:
-	.string "I'm going to be a real hero one day.\n"
-	.string "I'm going to work harder to make me\l"
-	.string "and my POKéMON stronger.$"
+	.string "Sie nenned mich Benjamin\n"
+	.string "Blümchen weg mim fette Rüs...$"
 
 Route111_Text_BeckyIntro:
 	.string "I heard there are fossils to be found\n"
@@ -1286,19 +1376,23 @@ Route111_Text_BeckyPostBattle:
 	.string "it must have been a sea before.$"
 
 Route111_Text_DustyIntro:
-	.string "For thirty years I have searched for\n"
-	.string "ancient ruins!\l"
-	.string "I am to be challenged?$"
+	.string "Ich bin so voller Staub\n"
+	.string "vo dere ÖLI,\p"
+	.string "dass ich als Wiener\n"
+	.string "Schnitzel duregah chönnt.$"
 
 Route111_Text_DustyDefeat:
-	.string "While I have searched for ruins,\n"
-	.string "I've not searched for strong POKéMON.$"
+	.string "SAPPERLOTT!$"
+
+Route111_Text_DustyNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_DustyPostBattle:
-	.string "For thirty years I have searched for\n"
-	.string "ancient ruins!\p"
-	.string "No, wait, was that forty years?\n"
-	.string "Which was it now?$"
+	.string "Tami, wie hesch du\n"
+	.string "mini Viecher chönne\l"
+	.string "besiege?$"
 
 Route111_Text_DustyRegister:
 	.string "I haven't been searching for any\n"
@@ -1348,30 +1442,42 @@ Route111_Text_IrenePostBattle:
 	.string "here is very nice, too.$"
 
 Route111_Text_DaisukeIntro:
-	.string "To train myself, I challenge all\n"
-	.string "whom I meet!$"
+	.string "Achtung!\n"
+	.string "Ich bin ziemlich starch!$"
 
 Route111_Text_DaisukeDefeat:
-	.string "Uncle! I give up!$"
+	.string "Wow!$"
+
+Route111_Text_DaisukeNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_DaisukePostBattle:
-	.string "All I can do is keep training until\n"
-	.string "I can defeat strong TRAINERS such\l"
-	.string "as yourself.$"
+	.string "Du hesch es au\n"
+	.string "richtig druff!$"
 
 Route111_Text_WiltonIntro:
-	.string "Show me how much you've toughened\n"
-	.string "your POKéMON.$"
+	.string "Nöd schlecht.\n"
+	.string "Du hesch d' ÖLI hinder\l"
+	.string "dich bracht.\p"
+	.string "Ich mach der vorem\n"
+	.string "Poke-Center jetz nomal\l"
+	.string "s' Lebe schwer. >:)$"
 
 Route111_Text_WiltonDefeat:
-	.string "I see, you've toughened them\n"
-	.string "considerably.$"
+	.string "Uff...$"
+
+Route111_Text_WiltonNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_WiltonPostBattle:
-	.string "POKéMON and TRAINERS learn much\n"
-	.string "through battling.\p"
-	.string "What's important is to never give up\n"
-	.string "even if you lose.$"
+	.string "Krass, so wie du druff\n"
+	.string "bisch,\p"
+	.string "schaffsch du die nächst\n"
+	.string "Arena ja locker.$"
 
 Route111_Text_WiltonRegister:
 	.string "There is much to be learned from\n"
@@ -1392,18 +1498,26 @@ Route111_Text_WiltonPostRematch:
 	.string "aim for the POKéMON LEAGUE.$"
 
 Route111_Text_BrookeIntro:
-	.string "Oh, your POKéMON look like serious\n"
-	.string "actors.\l"
-	.string "I have to ask you for an engagement.$"
+	.string "Ich bin fame uf Insta\n"
+	.string "und TikTok.\p"
+	.string "Ziit für es POV-Video,\n"
+	.string "wenn mer so en Lappe\l"
+	.string "wie dich zerstört.$"
 
 Route111_Text_BrookeDefeat:
-	.string "They didn't just look strong,\n"
-	.string "they are strong!$"
+	.string "Kei Akku meh...$"
+
+Route111_Text_BrookeNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_BrookePostBattle:
-	.string "I thought I was raising my POKéMON\n"
-	.string "diligently, but, oh no, there is still\l"
-	.string "much to be done.$"
+	.string "Ja ja, wär min Empfang\n"
+	.string "besser,\p"
+	.string "wür ich dich hopps neh\n"
+	.string "und dich im Internet\l"
+	.string "bloss stelle.$"
 
 Route111_Text_BrookeRegister:
 	.string "I wish I could become friends with\n"
@@ -1450,16 +1564,20 @@ Route111_Text_BryanPostBattle:
 	.string "its shifting sands!$"
 
 Route111_Text_BrandenIntro:
-	.string "I'll give you some of my sandwich\n"
-	.string "if you'll lose.$"
+	.string "Mini Pokemon schicked\n"
+	.string "dich i d' Ecke!$"
 
 Route111_Text_BrandenDefeat:
-	.string "Tch! I thought a sandwich would be\n"
-	.string "enough of a bribe…$"
+	.string "Ach...$"
+
+Route111_Text_BrandenNotEnoughMons:
+	.string "He, so gaht das nöd!\n"
+	.string "Für en Doppelkampf bruchsch\l"
+	.string "zwei kampffähigi POKéMON.$"
 
 Route111_Text_BrandenPostBattle:
-	.string "My SANDSHREW loves eating\n"
-	.string "my sandwiches.$"
+	.string "Mann, mis Kecleon isch\n"
+	.string "Next-Level Bullshit.$"
 
 Route111_Text_TyronIntro:
 	.string "This is my favorite kind of POKéMON!$"

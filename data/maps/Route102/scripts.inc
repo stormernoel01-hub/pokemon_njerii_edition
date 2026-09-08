@@ -18,14 +18,8 @@ Route102_EventScript_Boy::
 	end
 
 Route102_EventScript_Calvin::
-	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
-	setvar VAR_0x8004, TRAINER_CALVIN_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
-	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_double TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeat, Route102_Text_CalvinNotEnoughMons
+	msgbox Route102_Text_CalvinAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
@@ -59,18 +53,18 @@ Route102_EventScript_CalvinRematch::
 	end
 
 Route102_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
-	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeat, Route102_Text_RickNotEnoughMons
+	msgbox Route102_Text_RickAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Tiana::
-	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
-	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeat, Route102_Text_TianaNotEnoughMons
+	msgbox Route102_Text_TianaAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Allen::
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
-	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeat, Route102_Text_AllenNotEnoughMons
+	msgbox Route102_Text_AllenAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route102_Text_WatchMeCatchPokemon:
@@ -90,15 +84,15 @@ Route102_Text_LetsGoBack:
 	.string "Let's go back to the GYM!$"
 
 Route102_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
+	.string "Mis lieblings Pokemon\n"
+	.string "isch GIRAFARIG.\p"
+	.string "Mer schriibt sin Name\n"
+	.string "Rückwärts genau\p"
+	.string "so wie Vorwärts$"
 
 Route102_Text_CatchWholeBunchOfPokemon:
-	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+	.string "Ich han mis ganze Geld für\n"
+	.string "Pokebäll usgeh!$"
 
 Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"

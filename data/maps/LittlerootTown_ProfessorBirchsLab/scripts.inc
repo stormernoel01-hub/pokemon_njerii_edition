@@ -503,7 +503,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_NotEnoughPokemon::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCharmander::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_CHARMANDER, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseCharmander, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstCharmander
 	setvar VAR_0x800A, 1
@@ -517,7 +519,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstCharmander::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseCyndaquil::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_CYNDAQUIL, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseCyndaquil, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstCyndaquil
 	setvar VAR_0x800A, 2
@@ -531,7 +535,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstCyndaquil::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTepig::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_TEPIG, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTepig, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTepig
 	setvar VAR_0x800A, 3
@@ -545,7 +551,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTepig::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTurtwig::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_TURTWIG, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTurtwig, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTurtwig
 	setvar VAR_0x800A, 4
@@ -559,7 +567,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTurtwig::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseTreecko::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_TREECKO, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseTreecko, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTreecko
 	setvar VAR_0x800A, 5
@@ -573,7 +583,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstTreecko::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSnivy::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_SNIVY, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseSnivy, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstSnivy
 	setvar VAR_0x800A, 6
@@ -587,7 +599,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstSnivy::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseSquirtle::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_SQUIRTLE, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseSquirtle, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstSquirtle
 	setvar VAR_0x800A, 7
@@ -601,7 +615,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstSquirtle::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChooseMudkip::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_MUDKIP, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChooseMudkip, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstMudkip
 	setvar VAR_0x800A, 8
@@ -615,7 +631,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstMudkip::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ChoosePiplup::
 	goto_if_eq VAR_0x8008, 2, LittlerootTown_ProfessorBirchsLab_EventScript_Return
+	showmonpic SPECIES_PIPLUP, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ChoosePiplup, MSGBOX_YESNO
+	hidemonpic
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_Return
 	goto_if_eq VAR_0x8009, 0, LittlerootTown_ProfessorBirchsLab_EventScript_SetFirstPiplup
 	setvar VAR_0x800A, 9
@@ -877,29 +895,29 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 	end
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Hunh? PROF. BIRCH?\p"
-	.string "The PROF's away on fieldwork.\n"
-	.string "Ergo, he isn't here.\p"
-	.string "Oh, let me explain what fieldwork is.\p"
-	.string "It is to study things in the natural\n"
-	.string "environment, like fields and mountains,\l"
-	.string "instead of a laboratory.\p"
-	.string "The PROF isn't one for doing desk work.\n"
-	.string "He's the type of person who would\l"
-	.string "rather go outside and experience\l"
-	.string "things than read about them here.$"
+	.string "Ouh NJIERI!\p"
+	.string "Ich hoffe du freusch dich\n"
+	.string "über dini Pokemon!\p"
+	.string "Jetzt gah da use und füll\n"
+	.string "für mich de Pokedex!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
-	.string "The PROF isn't one for doing desk work.\n"
-	.string "He's the type of person who would\l"
-	.string "rather go outside and experience\l"
-	.string "things than read about them here.$"
+	.string "Glaub mer, mengisch musch\n"
+	.string "eifach gnueg lang sueche,\p"
+	.string "bis selteni Pokemon findsch.\p"
+	.string "Es git sogar Pokemon wo\n"
+	.string "Shiny sii chönnd.\p"
+	.string "D' Chance e so eis\n"
+	.string "ahztreffe isch bi 0.012%\l"
+	.string "pro Pokemon.\p"
+	.string "Also chli meh als 8000\n"
+	.string "Begegnige zum so eis\l"
+	.string "finde xD.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
-	.string "PROF. BIRCH is studying the habitats\n"
-	.string "and distribution of POKéMON.\p"
-	.string "The PROF enjoys {RIVAL}'s help, too.\n"
-	.string "There's a lot of love there.$"
+	.string "Wenn du dich ahstrengsch\n"
+	.string "und min Respekt verdiensch,\p"
+	.string "fightemer mal gegenenand.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "PROF. BIRCH: So, {PLAYER}{KUN}.\p"

@@ -117,6 +117,82 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	releaseall
 	end
 
+LittlerootTown_EventScript_DebugNPC::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_DebugNPC, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_NJIERI_DEBUG, TRUE
+	switch VAR_RESULT
+	case 0, LittlerootTown_EventScript_DebugTeleport
+	case 1, LittlerootTown_EventScript_DebugBadges
+	case 2, LittlerootTown_EventScript_DebugHeal
+	case 3, LittlerootTown_EventScript_DebugCancel
+	case MULTI_B_PRESSED, LittlerootTown_EventScript_DebugCancel
+	end
+
+LittlerootTown_EventScript_DebugTeleport::
+	multichoice 0, 0, MULTI_NJIERI_DEBUG_TELEPORT, TRUE
+	switch VAR_RESULT
+	case 0, LittlerootTown_EventScript_WarpGufu
+	case 1, LittlerootTown_EventScript_WarpBasi
+	case 2, LittlerootTown_EventScript_WarpSimonArena
+	case 3, LittlerootTown_EventScript_WarpAJArena
+	case 4, LittlerootTown_EventScript_WarpRoute111
+	case 5, LittlerootTown_EventScript_WarpSpeggi
+	case 6, LittlerootTown_EventScript_DebugCancel
+	case MULTI_B_PRESSED, LittlerootTown_EventScript_DebugCancel
+	end
+
+LittlerootTown_EventScript_WarpGufu::
+	warp MAP_LITTLEROOT_TOWN, 5, 9
+	waitstate
+	end
+
+LittlerootTown_EventScript_WarpBasi::
+	warp MAP_OLDALE_TOWN, 10, 8
+	waitstate
+	end
+
+LittlerootTown_EventScript_WarpSimonArena::
+	warp MAP_PETALBURG_CITY_GYM, 7, 14
+	waitstate
+	end
+
+LittlerootTown_EventScript_WarpAJArena::
+	warp MAP_MAUVILLE_CITY_GYM, 5, 14
+	waitstate
+	end
+
+LittlerootTown_EventScript_WarpRoute111::
+	warp MAP_ROUTE111, 20, 100
+	waitstate
+	end
+
+LittlerootTown_EventScript_WarpSpeggi::
+	warp MAP_MAUVILLE_CITY, 15, 1
+	waitstate
+	end
+
+LittlerootTown_EventScript_DebugBadges::
+	setflag FLAG_BADGE01_GET
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_DEFEATED_PETALBURG_GYM
+	setflag FLAG_DEFEATED_MAUVILLE_GYM
+	msgbox LittlerootTown_Text_DebugBadgesGiven, MSGBOX_DEFAULT
+	release
+	end
+
+
+LittlerootTown_EventScript_DebugHeal::
+	special HealPlayerParty
+	msgbox LittlerootTown_Text_DebugHealed, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_DebugCancel::
+	release
+	end
+
 LittlerootTown_EventScript_StepOffTruckFemale::
 	lockall
 	delay 15
@@ -963,11 +1039,9 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "Schono geil, wemmer ab\n"
+	.string "Sekunde 1 chan umerenne,\p"
+	.string "gell?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -1019,3 +1093,17 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_Text_DebugNPC:
+	.string "Debug-NPC am Start.\n"
+	.string "Was bruchsch?$"
+
+LittlerootTown_Text_DebugComingSoon:
+	.string "Das bauemer grad\n"
+	.string "im nächste Schritt.$"
+
+LittlerootTown_Text_DebugHealed:
+	.string "Team isch wieder fit.$"
+
+LittlerootTown_Text_DebugBadgesGiven:
+	.string "Orden 1 und 2\n"
+	.string "sind jetzt gesetzt.$"

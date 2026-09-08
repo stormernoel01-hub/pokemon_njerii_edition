@@ -100,24 +100,10 @@ PetalburgCity_Gym_Movement_WallyExitGym:
 	step_end
 
 PetalburgCity_Gym_EventScript_Norman::
-	vsseeker_rematchid TRAINER_NORMAN_1
 	lock
 	faceplayer
-	switch VAR_PETALBURG_GYM_STATE
-	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
-	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge
-	case 4, PetalburgCity_Gym_EventScript_NormanTwoBadges
-	case 5, PetalburgCity_Gym_EventScript_NormanThreeBadges
-	case 6, PetalburgCity_Gym_EventScript_NormanBattle
-	case 7, PetalburgCity_Gym_EventScript_NormanPostBattle
-	case 8, PetalburgCity_Gym_EventScript_NormanRematch
-	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
-	closemessage
-	switch VAR_FACING
-	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
-	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
-	case DIR_WEST, PetalburgCity_Gym_EventScript_BeginWallyTutorialWest
-	case DIR_EAST, PetalburgCity_Gym_EventScript_BeginWallyTutorialEast
+	goto_if_set FLAG_BADGE01_GET, PetalburgCity_Gym_EventScript_NormanPostBattle
+	goto PetalburgCity_Gym_EventScript_NormanBattle
 	end
 
 PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth::
@@ -327,11 +313,7 @@ PetalburgCity_Gym_EventScript_NormanFaceDoorEast::
 	return
 
 PetalburgCity_Gym_EventScript_NormanPostBattle::
-	call PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry
-	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
-	goto_if_unset FLAG_RECEIVED_TM_FACADE, PetalburgCity_Gym_EventScript_GiveFacade2
-	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
-	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_SimonGoDubi, MSGBOX_DEFAULT
 	release
 	end
 
@@ -369,36 +351,15 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 	end
 
 PetalburgCity_Gym_EventScript_NormanBattle::
-	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
-	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
+	trainerbattle_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_SimonIntro, PetalburgCity_Gym_Text_SimonDefeat, PetalburgCity_Gym_Text_SimonNotEnoughMons
+	message PetalburgCity_Gym_Text_ReceivedFirstBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_PETALBURG_GYM
+	setflag FLAG_BADGE01_GET
 	setvar VAR_PETALBURG_GYM_STATE, 7
-	setflag FLAG_BADGE05_GET
-	special ResetHealLocationFromDewford
-	call EventScript_HideMrBriney
-	setflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
-	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
-	setvar VAR_0x8008, 5
-	call Common_EventScript_SetGymTrainers
-	clearflag FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN
-	call PetalburgCity_Gym_EventScript_UnlockAllDoors
-	special DrawWholeMapView
-	call PetalburgCity_Gym_EventScript_GiveFacade
-	delay 30
-	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
-	closemessage
-	delay 40
-	playse SE_DOOR
-	delay 10
-	addobject LOCALID_PETALBURG_GYM_WALLYS_DAD
-	switch VAR_FACING
-	case DIR_NORTH, PetalburgCity_Gym_EventScript_WallysDadArrivesNorth
-	case DIR_WEST, PetalburgCity_Gym_EventScript_WallysDadArrivesWest
-	case DIR_EAST, PetalburgCity_Gym_EventScript_WallysDadArrivesEast
+	msgbox PetalburgCity_Gym_Text_SimonAfterBadge, MSGBOX_DEFAULT
+	release
 	end
 
 PetalburgCity_Gym_EventScript_GiveFacade::
@@ -870,9 +831,13 @@ PetalburgCity_Gym_EventScript_RightGymLeadersRoomDoor::
 	end
 
 PetalburgCity_Gym_EventScript_Randall::
-	trainerbattle_single TRAINER_RANDALL, PetalburgCity_Gym_Text_RandallIntro, PetalburgCity_Gym_Text_RandallDefeat, PetalburgCity_Gym_EventScript_SlideOpenSpeedRoomDoors
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_RandallPostBadge
-	msgbox PetalburgCity_Gym_Text_RandallPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_RANDALL, PetalburgCity_Gym_Text_RandallIntro, PetalburgCity_Gym_Text_RandallDefeat, PetalburgCity_Gym_Text_RandallNotEnoughMons
+	msgbox PetalburgCity_Gym_Text_RandallAfter, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_Faba::
+	trainerbattle_double TRAINER_PARKER, PetalburgCity_Gym_Text_FabaIntro, PetalburgCity_Gym_Text_FabaDefeat, PetalburgCity_Gym_Text_FabaNotEnoughMons
+	msgbox PetalburgCity_Gym_Text_FabaAfter, MSGBOX_AUTOCLOSE
 	end
 
 PetalburgCity_Gym_EventScript_SlideOpenSpeedRoomDoors::
@@ -1349,27 +1314,74 @@ PetalburgCity_Gym_Text_GymGuidePostVictory:
 	.string "What a stunning turn of events!$"
 
 PetalburgCity_Gym_Text_RandallIntro:
-	.string "The ability to attack before the\n"
-	.string "opponent…\p"
-	.string "Just that alone puts me at a great\n"
-	.string "advantage, don't you agree?$"
+	.string "Wenn du zum Simi wettsch,\n"
+	.string "musch zersch a mir verbii. >:)$"
 
 PetalburgCity_Gym_Text_RandallDefeat:
-	.string "That was a magnificent battle!$"
+	.string "Ach...$"
 
-PetalburgCity_Gym_Text_RandallPostBattle:
-	.string "Go on to the next room where a new\n"
-	.string "challenge awaits you.\p"
-	.string "At the left is the CONFUSION ROOM.\p"
-	.string "The right door leads to the DEFENSE\n"
-	.string "ROOM.$"
+PetalburgCity_Gym_Text_RandallNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
-PetalburgCity_Gym_Text_RandallPostBadge:
-	.string "Whomever you beat, and whomever you\n"
-	.string "may lose to, you never shirk from\l"
-	.string "training yourself and your POKéMON.\p"
-	.string "That's what I think being a\n"
-	.string "GYM LEADER is all about.$"
+PetalburgCity_Gym_Text_RandallAfter:
+	.string "Janu, de Simi schlahsch\n"
+	.string "nöd...$"
+
+PetalburgCity_Gym_Text_FabaIntro:
+	.string "Yo Jungs man, egal wie\n"
+	.string "ihr mich dissed...$"
+
+PetalburgCity_Gym_Text_FabaDefeat:
+	.string "Du Scheiss Trampeltier!$"
+
+PetalburgCity_Gym_Text_FabaNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+PetalburgCity_Gym_Text_FabaAfter:
+	.string "Jetzt muss ich dopplet\n"
+	.string "zude Tüecher griife.$"
+
+PetalburgCity_Gym_Text_SimonIntro:
+	.string "Schön das de Professor Lunte\n"
+	.string "dir es paar Pokemon\l"
+	.string "abdruckt het, hmm?\p"
+	.string "Jetzt träumsch du sicher\n"
+	.string "devo, mich und die andere\l"
+	.string "Arenaleiter z' besiege\p"
+	.string "und dich denn ade Top 4\n"
+	.string "chönne z'stelle, hmm? :\p"
+	.string "Zeig mer mal was du chasch...\n"
+	.string "Doch nimm dich in acht,\l"
+	.string "mini Jöges sind hütt on fire!$"
+
+PetalburgCity_Gym_Text_SimonDefeat:
+	.string "Hahhaha...$"
+
+PetalburgCity_Gym_Text_SimonNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
+PetalburgCity_Gym_Text_ReceivedFirstBadge:
+	.string "NJIERI snaggt sich de\n"
+	.string "erst Orde!$"
+
+PetalburgCity_Gym_Text_SimonAfterBadge:
+	.string "Ich glaub ich bruch chli\n"
+	.string "me Glück negscht mal.\p"
+	.string "Aber mer chan ja nöd immer\n"
+	.string "lucky sii, oder?\p"
+	.string "Du verdiensch der de\n"
+	.string "ersti Orde!$"
+
+PetalburgCity_Gym_Text_SimonGoDubi:
+	.string "Dini Reis gaht wiiter\n"
+	.string "richtig Dübi.\p"
+	.string "Glaub mer, dett gits\n"
+	.string "mieses Züüg und usserdem\l"
+	.string "die negscht Arena vom Julian.\p"
+	.string "Vill Erfolg uf dim Weg!$"
 
 PetalburgCity_Gym_Text_ParkerIntro:
 	.string "This is the CONFUSION ROOM.\p"
@@ -1385,8 +1397,8 @@ PetalburgCity_Gym_Text_ParkerPostBattle:
 	.string "Can you withstand brute force?$"
 
 PetalburgCity_Gym_Text_ParkerPostBadge:
-	.string "After you beat our LEADER, the\n"
-	.string "training has become a lot tougher.$"
+	.string "Jetzt muss ich dopplet\n"
+	.string "zude Tüecher griife.$"
 
 PetalburgCity_Gym_Text_GeorgeIntro:
 	.string "Just when you think you're going to\n"
@@ -1589,3 +1601,6 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
 
+PetalburgCity_Gym_Text_RandallPostBadge:
+	.string "Janu, de Simi schlahsch\n"
+	.string "nöd...$"

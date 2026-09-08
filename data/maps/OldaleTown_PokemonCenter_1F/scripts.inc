@@ -38,16 +38,16 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	end
 
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
-	.string "That PC in the corner there is\n"
-	.string "for any POKéMON TRAINER to use.\p"
-	.string "Naturally, that means you're welcome\n"
-	.string "to use it, too.$"
+	.string "Hesch au Lust uf en\n"
+	.string "Feldi Chaste?\p"
+	.string "Ich wär sofort debi.$"
 
 OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
-	.string "POKéMON CENTERS are great!\p"
-	.string "You can use their services as much\n"
-	.string "as you like, and it's all for free.\l"
-	.string "You never have to worry!$"
+	.string "De Timothy het mich zersch\n"
+	.string "nöd welle durelah!\p"
+	.string "Wo ich ihn besiegt han,\n"
+	.string "hett er agfange mich mit\l"
+	.string "Steckli verfolge.$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
 	.string "The POKéMON WIRELESS CLUB on\n"

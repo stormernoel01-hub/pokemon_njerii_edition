@@ -53,9 +53,9 @@ ViridianForest_EventScript_Sammy::
 	msgbox ViridianForest_Text_SammyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-ViridianForest_EventScript_Anthony::
-	trainerbattle_single TRAINER_BUG_CATCHER_ANTHONY, ViridianForest_Text_AnthonyIntro, ViridianForest_Text_AnthonyDefeat
-	msgbox ViridianForest_Text_AnthonyPostBattle, MSGBOX_AUTOCLOSE
+Route110_EventScript_Anthony::
+	trainerbattle_double TRAINER_ANTHONY, Route110_Text_AnthonyIntro, Route110_Text_AnthonyDefeated, Route110_Text_AnthonyNotEnoughMons
+	msgbox Route110_Text_AnthonyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 ViridianForest_EventScript_Charlie::
@@ -108,16 +108,22 @@ ViridianForest_Text_SammyPostBattle::
 	.string "I'm looking for the stuff I\n"
 	.string "dropped. Can you help me?$"
 
-ViridianForest_Text_AnthonyIntro::
-	.string "I might be little, but I won't like\n"
-	.string "it if you go easy on me!$"
+Route110_Text_AnthonyIntro:
+	.string "Hey, du! Bliib sofort\n"
+	.string "stah! Ich wett kämpfe!$"
 
-ViridianForest_Text_AnthonyDefeat::
-	.string "Oh, boo.\n"
-	.string "Nothing went right.$"
+Route110_Text_AnthonyDefeated:
+	.string "Uff!$"
 
-ViridianForest_Text_AnthonyPostBattle::
-	.string "I lost some of my allowance…$"
+Route110_Text_AnthonyPostBattle:
+	.string "Tja, gseht so us als\n"
+	.string "wär ich verlore.\p"
+	.string "Kei Pokemon meh und\n"
+	.string "mitten im HARDWALD...$"
+
+Route110_Text_AnthonyNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 ViridianForest_Text_CharlieIntro::
 	.string "Did you know that POKéMON evolve?$"

@@ -4,17 +4,19 @@ Route101_MapScripts::
 	.byte 0
 
 Route101_OnTransition:
-	call ProfBirch_EventScript_UpdateLocation
-	end
+        clearflag FLAG_HIDE_MAP_NAME_POPUP
+        call ProfBirch_EventScript_UpdateLocation
+        end
 
 Route101_OnFrame:
 	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
-	end
+        clearflag FLAG_HIDE_MAP_NAME_POPUP
+        setvar VAR_ROUTE101_STATE, 1
+        end
+
 
 Route101_EventScript_StartBirchRescue::
 	lockall
@@ -287,10 +289,10 @@ Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "TOWN right close by.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "Pssst...\p"
+	.string "NJIERII...\p"
+	.string "Wottsch au en\n"
+	.string "Riss?$"
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
@@ -302,8 +304,8 @@ Route101_EventScript_Timothy::
 	end
 
 Route101_Text_TimothyIntro:
-	.string "Wo wotsch du here?\n"
-	.string "Now, it's time for a battle!$"
+	.string "Wo wotsch du denn here?\n"
+	.string "Basi isch für dich verbote!$"
 
 Route101_Text_TimothyDefeat:
 	.string "HAJSGDUHASJASD!!$"
@@ -317,5 +319,45 @@ Route101_Text_TimothyAfter:
 	.string "vergiss es.$"
 
 Route101_EventScript_Potion::
+	lockall
 	giveitem ITEM_POTION
+	goto_if_eq VAR_RESULT, FALSE, Route101_EventScript_PotionEnd
+	closemessage
+	setflag FLAG_ITEM_ROUTE101_POTION
+	removeobject VAR_LAST_TALKED
+Route101_EventScript_PotionEnd::
+	releaseall
+	end
+
+Route101_EventScript_Antidote1::
+	lockall
+	giveitem ITEM_ANTIDOTE
+	goto_if_eq VAR_RESULT, FALSE, Route101_EventScript_Antidote1End
+	closemessage
+	setflag FLAG_ITEM_ROUTE101_ANTIDOTE_1
+	removeobject VAR_LAST_TALKED
+Route101_EventScript_Antidote1End::
+	releaseall
+	end
+
+Route101_EventScript_Potion2::
+	lockall
+	giveitem ITEM_POTION
+	goto_if_eq VAR_RESULT, FALSE, Route101_EventScript_Potion2End
+	closemessage
+	setflag FLAG_ITEM_ROUTE101_POTION_2
+	removeobject VAR_LAST_TALKED
+Route101_EventScript_Potion2End::
+	releaseall
+	end
+
+Route101_EventScript_Antidote2::
+	lockall
+	giveitem ITEM_ANTIDOTE
+	goto_if_eq VAR_RESULT, FALSE, Route101_EventScript_Antidote2End
+	closemessage
+	setflag FLAG_ITEM_ROUTE101_ANTIDOTE_2
+	removeobject VAR_LAST_TALKED
+Route101_EventScript_Antidote2End::
+	releaseall
 	end

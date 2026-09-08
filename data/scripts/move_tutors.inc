@@ -18,19 +18,17 @@ MoveTutor_EventScript_SwaggerTaught::
 MauvilleCity_EventScript_RolloutTutor::
 	lock
 	faceplayer
-	move_tutor MOVE_ROLLOUT, MoveTutor_Text_RolloutTeach, MoveTutor_Text_RolloutWhichMon, MoveTutor_EventScript_RolloutDeclined, MoveTutor_EventScript_RolloutTaught, FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT
+	move_tutor MOVE_SLAM, MauvilleCity_Text_SlamTeach, MauvilleCity_Text_SlamWhichMon, MauvilleCity_EventScript_SlamDeclined, MauvilleCity_EventScript_SlamTaught, FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT
 	release
 	end
 
-MoveTutor_EventScript_RolloutDeclined::
-	msgbox MoveTutor_Text_RolloutDeclined, MSGBOX_DEFAULT
-	release
-	end
+MauvilleCity_EventScript_SlamDeclined::
+	msgbox MauvilleCity_Text_SlamDeclined, MSGBOX_DEFAULT
+	return
 
-MoveTutor_EventScript_RolloutTaught::
-	msgbox MoveTutor_Text_RolloutTaught, MSGBOX_DEFAULT
-	release
-	end
+MauvilleCity_EventScript_SlamTaught::
+	msgbox MauvilleCity_Text_SlamTaught, MSGBOX_DEFAULT
+	return
 
 VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
 	lock
@@ -182,3 +180,34 @@ MoveTutor_AfterChooseBoxMon::
 	special CanTeachMoveBoxMon
 	waitstate
 	return
+
+MauvilleCity_Text_SlamTeach:
+	.string "Ich bin so fett, dass de\n"
+	.string "Sattel vom Velo verschwindet,\l"
+	.string "wenn ich druff sitz.\p"
+	.string "Usserdem bringed die Bremse\n"
+	.string "gar nüüt...\p"
+	.string "Ich zieh d' Bremse, aber\n"
+	.string "ussert dass d' Bremschlötz\l"
+	.string "afanged glühe und ich\l"
+	.string "1km/h langsamer wird,\l"
+	.string "passiert nüüt.\p"
+	.string "Ich bin denn mal voll Hane\n"
+	.string "is Casino g' Slamt.\p"
+	.string "Sitt denn bring ich allne\n"
+	.string "mögliche Randoms d' Attacke\l"
+	.string "Slam bi...\p"
+	.string "Wettsch au?$"
+
+MauvilleCity_Text_SlamWhichMon:
+	.string "Wellem Pokemon söll ich\n"
+	.string "Slam biibringe?$"
+
+MauvilleCity_Text_SlamDeclined:
+	.string "Denn halt nöd.\n"
+	.string "Slam isch eh z' starch für dich.$"
+
+MauvilleCity_Text_SlamTaught:
+	.string "Slam isch e super gueti\n"
+	.string "Attacke, insbesondre für\l"
+	.string "so Fettsäck wie mich.$"

@@ -161,7 +161,7 @@ Route110_EventScript_PlayerRidingAcroBike::
 	end
 
 Route110_EventScript_Edward::
-	trainerbattle_single TRAINER_EDWARD, Route110_Text_EdwardIntro, Route110_Text_EdwardDefeated
+	trainerbattle_double TRAINER_EDWARD, Route110_Text_EdwardIntro, Route110_Text_EdwardDefeated, Route110_Text_EdwardNotEnoughMons
 	msgbox Route110_Text_EdwardPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -171,11 +171,8 @@ Route110_EventScript_Jaclyn::
 	end
 
 Route110_EventScript_Edwin::
-	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route110_EventScript_EdwinRematch
-	msgbox Route110_Text_EdwinPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_double TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_Text_EdwinNotEnoughMons
+	msgbox Route110_Text_EdwinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_EdwinRegisterMatchCallAfterBattle::
@@ -192,7 +189,7 @@ Route110_EventScript_EdwinRematch::
 	end
 
 Route110_EventScript_Dale::
-	trainerbattle_single TRAINER_DALE, Route110_Text_DaleIntro, Route110_Text_DaleDefeated
+	trainerbattle_double TRAINER_DALE, Route110_Text_DaleIntro, Route110_Text_DaleDefeated, Route110_Text_DaleNotEnoughMons
 	msgbox Route110_Text_DalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -233,11 +230,8 @@ Route110_EventScript_Jasmine::
 	end
 
 Route110_EventScript_Abigail::
-	trainerbattle_single TRAINER_ABIGAIL_1, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated, Route110_EventScript_AbigailRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route110_EventScript_AbigailRematch
-	msgbox Route110_Text_AbigailPostBattle, MSGBOX_DEFAULT
-	release
+	trainerbattle_double TRAINER_ABIGAIL_1, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated, Route110_Text_AbigailNotEnoughMons
+	msgbox Route110_Text_AbigailPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_AbigailRegisterMatchCallAfterBattle::
@@ -288,12 +282,12 @@ Route110_EventScript_Kaleb::
 	end
 
 Route110_EventScript_Joseph::
-	trainerbattle_single TRAINER_JOSEPH, Route110_Text_JosephIntro, Route110_Text_JosephDefeated
+	trainerbattle_double TRAINER_JOSEPH, Route110_Text_JosephIntro, Route110_Text_JosephDefeated, Route110_Text_JosephNotEnoughMons
 	msgbox Route110_Text_JosephPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_Alyssa::
-	trainerbattle_single TRAINER_ALYSSA, Route110_Text_AlyssaIntro, Route110_Text_AlyssaDefeated
+	trainerbattle_double TRAINER_ALYSSA, Route110_Text_AlyssaIntro, Route110_Text_AlyssaDefeated, Route110_Text_AlyssaNotEnoughMons
 	msgbox Route110_Text_AlyssaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -807,8 +801,10 @@ Route110_Text_BrendanExplainItemfinder:
 	.string "POKéMON.$"
 
 Route110_Text_RideBikeAtFullSpeed:
-	.string "Wouldn't it be great to ride a BIKE\n"
-	.string "at full speed on CYCLING ROAD?$"
+	.string "Uff de Wald het wyldi\n"
+	.string "Pokemon und fiesi Trainer!\p"
+	.string "Ich weiss nödemal wo dure\n"
+	.string "zum nach DÜBI cho...$"
 
 Route110_Text_HairStreamsBehindMe:
 	.string "How do you like the way my raven-\n"
@@ -833,9 +829,10 @@ Route110_Text_YouGotBikeFromRydel:
 	.string "the place--it's good advertising!$"
 
 Route110_Text_TwoRoads:
-	.string "The two roads, one above, one below…\p"
-	.string "A road each for people and POKéMON.\n"
-	.string "Perhaps that is right and fair.$"
+	.string "Sitt Generatione versteck\n"
+	.string "ich de Pokeball da hine.\p"
+	.string "Wenn du ihn jetzt nimmsch\n"
+	.string "bisch en richtige NJIERI!!!$"
 
 Route110_Text_WalkOnTheLowRoad:
 	.string "I don't have a BIKE, so I'll take\n"
@@ -930,8 +927,8 @@ Route110_Text_SeasideParkingSign:
 	.string "SEASIDE PARKING$"
 
 Route110_Text_MauvilleCitySign:
-	.string "ROUTE 110\n"
-	.string "{UP_ARROW} MAUVILLE CITY$"
+	.string "HARDWALD\n"
+	.string "{RIGHT_ARROW} DÜBI$"
 
 Route110_Text_TrainerTipsPrlzSleep:
 	.string "TRAINER TIPS\p"

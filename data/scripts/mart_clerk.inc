@@ -1,13 +1,13 @@
 gText_HowMayIServeYou::
-	.string "Welcome!\p"
-	.string "How may I serve you?$"
+        .string "Ouh NJIERI!\p"
+        .string "Was bruchsch?$"
 
 gText_PleaseComeAgain::
-	.string "Please come again!$"
+        .string "Machs guet, NJIERI!$"
 
 gText_PlayerWhatCanIDoForYou::
-	.string "{PLAYER}{KUN}, welcome!\p"
-	.string "What can I do for you?$"
+        .string "Ouh NJIERI!\p"
+        .string "Was bruchsch?$"
 
 Pokemart_DefaultItemList::
 	.2byte ITEM_ULTRA_BALL

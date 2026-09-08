@@ -725,19 +725,21 @@ PetalburgCity_Text_WaterReflection:
 	.string "What do you see reflected in your face?$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "Ich schaffs nöd mit mim\n"
+	.string "Kleinstein und mim Sonnkern\l"
+	.string "die Arena z' schaffe.\p"
+	.string "Ich glaub ich muss mer für\n"
+	.string "3 Rappe es paar Shinys\l"
+	.string "cheate lah.$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
-	.string "“A man in pursuit of power!”$"
+	.string "Graswinkel Town Arena\n"
+	.string "Leiter: SIMON K.\l"
+	.string "“Der Mann, der Nüchternheit”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "Graswinkel Town\n"
+	.string "“Legalize it!”$"
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"

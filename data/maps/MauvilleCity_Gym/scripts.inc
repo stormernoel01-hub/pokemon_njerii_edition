@@ -74,12 +74,15 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 	end
 
 MauvilleCity_Gym_EventScript_Wattson::
-	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
-	goto_if_unset FLAG_RECEIVED_TM_SHOCK_WAVE, MauvilleCity_Gym_EventScript_GiveShockWave2
-	goto_if_eq VAR_NEW_MAUVILLE_STATE, 2, MauvilleCity_Gym_EventScript_CompletedNewMauville
-	msgbox MauvilleCity_Gym_Text_WattsonPostBattle, MSGBOX_DEFAULT
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE02_GET, MauvilleCity_Gym_EventScript_WattsonPostBattle
+	trainerbattle_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_Text_WattsonNotEnoughMons, MauvilleCity_Gym_EventScript_WattsonDefeated
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonPostBattle::
+	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
 	release
 	end
 
@@ -87,27 +90,11 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
-	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
-	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
 	setflag FLAG_DEFEATED_MAUVILLE_GYM
-	setflag FLAG_BADGE03_GET
-	addvar VAR_PETALBURG_GYM_STATE, 1
-	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
-	setvar VAR_0x8008, 3
-	call Common_EventScript_SetGymTrainers
+	setflag FLAG_BADGE02_GET
 	special MauvilleGymDeactivatePuzzle
 	special DrawWholeMapView
-	playse SE_UNLOCK
-	call MauvilleCity_Gym_EventScript_GiveShockWave
-	closemessage
-	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox MauvilleCity_Gym_Text_RegisteredWattson, MSGBOX_DEFAULT
-	waitfanfare
-	closemessage
-	delay 30
-	setflag FLAG_ENABLE_WATTSON_MATCH_CALL
+	msgbox MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor, MSGBOX_DEFAULT
 	release
 	end
 
@@ -197,27 +184,27 @@ MauvilleCity_Gym_EventScript_ClearBarriersAltState::
 	end
 
 MauvilleCity_Gym_EventScript_Kirk::
-	trainerbattle_single TRAINER_KIRK, MauvilleCity_Gym_Text_KirkIntro, MauvilleCity_Gym_Text_KirkDefeat
+	trainerbattle_double TRAINER_KIRK, MauvilleCity_Gym_Text_KirkIntro, MauvilleCity_Gym_Text_KirkDefeat, MauvilleCity_Gym_Text_KirkNotEnoughMons
 	msgbox MauvilleCity_Gym_Text_KirkPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_Shawn::
-	trainerbattle_single TRAINER_SHAWN, MauvilleCity_Gym_Text_ShawnIntro, MauvilleCity_Gym_Text_ShawnDefeat
+	trainerbattle_double TRAINER_SHAWN, MauvilleCity_Gym_Text_ShawnIntro, MauvilleCity_Gym_Text_ShawnDefeat, MauvilleCity_Gym_Text_ShawnNotEnoughMons
 	msgbox MauvilleCity_Gym_Text_ShawnPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_Ben::
-	trainerbattle_single TRAINER_BEN, MauvilleCity_Gym_Text_BenIntro, MauvilleCity_Gym_Text_BenDefeat
+	trainerbattle_double TRAINER_BEN, MauvilleCity_Gym_Text_BenIntro, MauvilleCity_Gym_Text_BenDefeat, MauvilleCity_Gym_Text_BenNotEnoughMons
 	msgbox MauvilleCity_Gym_Text_BenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_Vivian::
-	trainerbattle_single TRAINER_VIVIAN, MauvilleCity_Gym_Text_VivianIntro, MauvilleCity_Gym_Text_VivianDefeat
+	trainerbattle_double TRAINER_VIVIAN, MauvilleCity_Gym_Text_VivianIntro, MauvilleCity_Gym_Text_VivianDefeat, MauvilleCity_Gym_Text_VivianNotEnoughMons
 	msgbox MauvilleCity_Gym_Text_VivianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_Angelo::
-	trainerbattle_single TRAINER_ANGELO, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat
+	trainerbattle_double TRAINER_ANGELO, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat, MauvilleCity_Gym_Text_AngeloNotEnoughMons
 	msgbox MauvilleCity_Gym_Text_AngeloPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -272,150 +259,175 @@ MauvilleCity_Gym_Text_GymGuidePostVictory:
 	.string "You've powered the door open!$"
 
 MauvilleCity_Gym_Text_KirkIntro:
-	.string "My electric soul, it'll shatter your\n"
-	.string "dreams whole, whoa-yeahah!$"
+	.string "Ich schwör, warum will\n"
+	.string "Nati nüüt vo mir?$"
 
 MauvilleCity_Gym_Text_KirkDefeat:
-	.string "That was plugged in, amped up,\n"
-	.string "over-driven electric, man!$"
+	.string "Why u so funny?$"
 
 MauvilleCity_Gym_Text_KirkPostBattle:
-	.string "POKéMON and rock, it's all about heart,\n"
-	.string "whoa-yeah!$"
+	.string "Das isch truurig bro.$"
+
+MauvilleCity_Gym_Text_KirkNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 MauvilleCity_Gym_Text_ShawnIntro:
-	.string "I trained under WATTSON!\n"
-	.string "There ain't no way I'll lose easily!$"
+	.string "Min Brüeder schafft ide\n"
+	.string "Coop Tankstell.$"
 
 MauvilleCity_Gym_Text_ShawnDefeat:
-	.string "Unplugged and turned off…$"
+	.string "Jebemimamu$"
 
 MauvilleCity_Gym_Text_ShawnPostBattle:
-	.string "WATTSON, our GYM LEADER, has been\n"
-	.string "around for a long, long time.\p"
-	.string "He was battling even before your\n"
-	.string "daddy was born, that tough coot.$"
+	.string "Lauf wiiter Kolleg...$"
+
+MauvilleCity_Gym_Text_ShawnNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 MauvilleCity_Gym_Text_BenIntro:
-	.string "This GYM's got puzzles!\n"
-	.string "Isn't it fun?$"
+	.string "Ich bin Waluigi Fan!$"
 
 MauvilleCity_Gym_Text_BenDefeat:
-	.string "It's no fun to lose…$"
+	.string "WAAAAAAA!!!$"
 
 MauvilleCity_Gym_Text_BenPostBattle:
-	.string "WATTSON says he likes setting up\n"
-	.string "little traps with switches.$"
+	.string "Ja denn halt...\n"
+	.string "de AJ schlahsch defür\l"
+	.string "niemals.$"
+
+MauvilleCity_Gym_Text_BenNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 MauvilleCity_Gym_Text_VivianIntro:
-	.string "With my charm and my POKéMON's moves,\n"
-	.string "you'll be shocked!$"
+	.string "Ich wär vill besser\n"
+	.string "g eignet als Arenaleiterin,\l"
+	.string "als de AJ.\p"
+	.string "Ich bewies der das jetzt!$"
 
 MauvilleCity_Gym_Text_VivianDefeat:
-	.string "I'm shocked by your power!$"
+	.string "Ach...$"
 
 MauvilleCity_Gym_Text_VivianPostBattle:
-	.string "I've heard that MAUVILLE was founded\n"
-	.string "by WATTSON.\p"
-	.string "He was a TRAINER long before we\n"
-	.string "became TRAINERS.\l"
-	.string "He must know all sorts of things!$"
+	.string "Ich will nöd zuegeh,\n"
+	.string "dass du mich besiegt hesch.$"
+
+MauvilleCity_Gym_Text_VivianNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
+
 
 MauvilleCity_Gym_Text_AngeloIntro:
-	.string "I love shiny things!$"
+	.string "Ich muss nacher ide Snus\n"
+	.string "go ackere, also chum\l"
+	.string "machemer schnell de Fight.$"
 
 MauvilleCity_Gym_Text_AngeloDefeat:
-	.string "Oh…\n"
-	.string "My eyes are frazzled…$"
+	.string "Kächi!$"
 
 MauvilleCity_Gym_Text_AngeloPostBattle:
-	.string "MAUVILLE GYM's WATTSON has a shiny\n"
-	.string "forehead. It makes me happy!$"
+	.string "Negscht mal, wenn du en\n"
+	.string "Burger bi eus bstellsch,\l"
+	.string "lahn ich din Patty schnell\l"
+	.string "überem dreckige Fuessbode\l"
+	.string "los.$"
 
-MauvilleCity_Gym_Text_WattsonIntro:
-	.string "I've given up on my plans to convert\n"
-	.string "the city, I have.\p"
-	.string "And so, I put my time into making\n"
-	.string "door traps in my GYM.\p"
-	.string "Oh? Now, what are you doing here?\p"
-	.string "What's that? You say you've gotten\n"
-	.string "past all my rigged doors?\p"
-	.string "Wahahahah!\n"
-	.string "Now, that is amusing!\p"
-	.string "Then, I, WATTSON, the LEADER of\n"
-	.string "MAUVILLE GYM, shall electrify you!$"
-
-MauvilleCity_Gym_Text_WattsonDefeat:
-	.string "Wahahahah!\n"
-	.string "Fine, I lost!\p"
-	.string "You ended up giving me a thrill!\n"
-	.string "Take this BADGE!$"
+MauvilleCity_Gym_Text_AngeloNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 MauvilleCity_Gym_Text_ReceivedDynamoBadge:
-	.string "{PLAYER} received the DYNAMO BADGE\n"
-	.string "from WATTSON.$"
+	.string "{PLAYER} het de PLASTIK ORDE\n"
+	.string "vo AJ erhalte.$"
 
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-	.string "With the DYNAMO BADGE, POKéMON can\n"
-	.string "use ROCK SMASH out of battle.\p"
-	.string "And, it will make your POKéMON a little\n"
-	.string "bit faster, too.\p"
-	.string "Hmm…\n"
-	.string "You should take this, too!$"
+	.string "Mit dem PLASTIK ORDE chönd\n"
+	.string "Pokemon ZERTRÜMMERER\l"
+	.string "usserhalb vom Kampf bruche.\p"
+	.string "Usserdem werded dini\n"
+	.string "Pokemon chli schneller...\p"
+	.string "Glaub ich zumindest.\p"
+	.string "Nimm no die TM da.$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM34 there contains SHOCK WAVE.\p"
-	.string "It's a trustworthy move that never\n"
-	.string "misses! You can count on it!\p"
-	.string "… … … … … …$"
+	.string "Die TM34 enthält\n"
+	.string "SCHOCKWELLE.\p"
+	.string "Die Attacke trifft immer,\n"
+	.string "also eigentlich recht OP.\p"
+	.string "Jetzt wirsch dich aber nie\n"
+	.string "chönne entscheide, wem du\l"
+	.string "sie biibringsch.$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM LEADER WATTSON\n"
-	.string "in the POKéNAV.$"
+	.string "AJ isch im POKENAV\n"
+	.string "gspeicheret worde.$"
+
+MauvilleCity_Gym_Text_WattsonIntro:
+	.string "Was? Ob ich stoned bin?\n"
+	.string "Lächerlich.\p"
+	.string "Ich zeig der jetzt wie\n"
+	.string "mer richtig kämpft.$"
+
+MauvilleCity_Gym_Text_WattsonDefeat:
+	.string "Wow.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
-	.string "I swell with optimism, seeing a promising\n"
-	.string "young TRAINER like you!$"
+	.string "Okay krass.\p"
+	.string "Ich hett nie denkt,\n"
+	.string "dass öpper mich mit mine\l"
+	.string "OP-Viecher besiegt.\p"
+	.string "Janu, jetzt gib ich dir\n"
+	.string "no so en Plastik Orde\l"
+	.string "und e TM wo du dich nie\l"
+	.string "wirsch chönne entscheide,\l"
+	.string "wem dass sie biibringsch.$"
+
+MauvilleCity_Gym_Text_WattsonNotEnoughMons:
+	.string "Du bruchsch mindestens zwei\n"
+	.string "Pokemon für en Doppelkampf.$"
 
 MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
-	.string "Wahahahah!\n"
-	.string "Go forth and endeavor, youngster!$"
+	.string "Gang jetzt wiiter...\p"
+	.string "Und tue so, als wär das\n"
+	.string "alles voll normal gsi.$"
 
 MauvilleCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "DÜBI POKEMON ARENA$"
 
 MauvilleCity_Gym_Text_GymStatueCertified:
-	.string "MAUVILLE CITY POKéMON GYM\p"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
+	.string "DÜBI POKEMON ARENA\p"
+	.string "AJ'S ZERTIFIZIERTI TRAINER:\n"
 	.string "{PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "I'll make sparks fly from you!\n"
-	.string "Don't say I didn't warn you!$"
+	.string "AJ: Ah, du bisch wieder da.\p"
+	.string "Du wettsch sicher no mal\n"
+	.string "gege mini OP-Viecher\l"
+	.string "kämpfe, oder?\p"
+	.string "Denn chum.\n"
+	.string "Ich bin immer parat.$"
 
 MauvilleCity_Gym_Text_WattsonRematchDefeat:
-	.string "Oof…\n"
-	.string "Our batteries ran dry…$"
+	.string "Wow...\n"
+	.string "Scho wieder.$"
 
 MauvilleCity_Gym_Text_WattsonPostRematch:
-	.string "WATTSON: We'll have to recharge our\n"
-	.string "batteries again.\p"
-	.string "When we're fully charged up, we'll\n"
-	.string "gladly accept your challenge.\p"
-	.string "So, come back again sometime,\n"
-	.string "won't you?$"
+	.string "AJ: Okay, ich glaub ich\n"
+	.string "muss mini Strategie\l"
+	.string "nochmal überdänke.\p"
+	.string "Oder mini Viecher eifach\n"
+	.string "no meh OP mache.\p"
+	.string "Chum später wieder,\n"
+	.string "wenn du dich traust.$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "WATTSON: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my POKéMON!\p"
-	.string "Wahahahaha!\p"
-	.string "Oops! Wait!\n"
-	.string "You've only one POKéMON with you!\p"
-	.string "Come see me with two or more\n"
-	.string "POKéMON, all right?$"
+	.string "AJ: Ah, du bisch wieder da.\p"
+	.string "Aber wart mal...\n"
+	.string "Du hesch nur eis Pokemon?\p"
+	.string "Das isch en Doppelkampf,\n"
+	.string "Kolleg.\p"
+	.string "Chum mit mindestens zwei\n"
+	.string "Pokemon zrugg.$"
 

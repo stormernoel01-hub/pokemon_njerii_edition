@@ -23,8 +23,8 @@
     {
       "local_id": "LOCALID_LITTLEROOT_TWIN",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 5,
-      "y": 17,
+      "x": 4,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -33,19 +33,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_EventScript_Nothing",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 3,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_FatMan",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
@@ -75,32 +62,6 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 2,
-      "y": 12,
-      "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": -5,
-      "y": 4,
-      "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK"
-    },
-    {
       "local_id": "LOCALID_LITTLEROOT_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 13,
@@ -127,6 +88,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootTown_EventScript_DebugNPC",
+      "flag": "0"
     }
   ],
   "warp_events": [

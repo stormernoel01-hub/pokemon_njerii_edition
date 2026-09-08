@@ -23,6 +23,27 @@ static const struct MenuAction MultichoiceList_ContestInfo[] =
     {gText_Cancel2},
 };
 
+static const struct MenuAction MultichoiceList_NjieriDebug[] =
+{
+    {COMPOUND_STRING("Teleport")},
+    {COMPOUND_STRING("Badges")},
+    {COMPOUND_STRING("Heilen")},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_NjieriDebugTeleport[] =
+{
+    {COMPOUND_STRING("Güfu Town")},
+    {COMPOUND_STRING("Basi")},
+    {COMPOUND_STRING("Simon Arena")},
+    {COMPOUND_STRING("AJ Arena")},
+    {COMPOUND_STRING("Route 111")},
+    {COMPOUND_STRING("SPEGGI-Test")},
+    {gText_Exit},
+};
+
+
+
 static const struct MenuAction MultichoiceList_ContestType[] =
 {
     {gText_CoolnessContest},
@@ -1294,6 +1315,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_NJIERI_DEBUG]                               = MULTICHOICE(MultichoiceList_NjieriDebug),
+    [MULTI_NJIERI_DEBUG_TELEPORT]                      = MULTICHOICE(MultichoiceList_NjieriDebugTeleport),
 };
 
 const u8 *const gStdStrings[] =
