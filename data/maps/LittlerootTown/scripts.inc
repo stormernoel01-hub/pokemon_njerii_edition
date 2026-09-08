@@ -324,6 +324,28 @@ LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 
+LittlerootTown_EventScript_Grandma::
+	lock
+	faceplayer
+	goto_if_set FLAG_NJERI_GRANDMA_GAVE_BALLS, LittlerootTown_EventScript_GrandmaDirectionsOnly
+	msgbox LittlerootTown_Text_GrandmaIntro, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_GrandmaBagFull
+	setflag FLAG_NJERI_GRANDMA_GAVE_BALLS
+	msgbox LittlerootTown_Text_GrandmaDirections, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_GrandmaDirectionsOnly::
+	msgbox LittlerootTown_Text_GrandmaDirections, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_GrandmaBagFull::
+	msgbox LittlerootTown_Text_GrandmaBagFull, MSGBOX_DEFAULT
+	release
+	end
+
 LittlerootTown_EventScript_Nothing::
 	end
 LittlerootTown_EventScript_Twin::
@@ -953,3 +975,22 @@ LittlerootTown_Text_DebugRareCandyGiven:
 LittlerootTown_Text_DebugBadgesGiven:
 	.string "Orden 1 und 2\n"
 	.string "sind jetzt gesetzt.$"
+
+LittlerootTown_Text_GrandmaIntro:
+	.string "Ach {PLAYER}, du bisch so gross\n"
+	.string "worde.\p"
+	.string "Es wird Ziit für dich, die Welt z'\n"
+	.string "bereise und alli mögliche POKéMON\l"
+	.string "z' fange.$"
+
+LittlerootTown_Text_GrandmaDirections:
+	.string "Wenn du nach rechts laufsch, chunsch\n"
+	.string "über ROUTE 1 nach BASI.\p"
+	.string "Dett gits es POKéCENTER und villicht\n"
+	.string "sogar en Lade mit Bier…\p"
+	.string "Vill Glück!$"
+
+LittlerootTown_Text_GrandmaBagFull:
+	.string "Oh, dini Tasche isch scho voll.\p"
+	.string "Chum spöter no einisch verbii,\n"
+	.string "denn han ich öppis für dich.$"

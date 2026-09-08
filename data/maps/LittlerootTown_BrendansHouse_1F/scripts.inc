@@ -1,18 +1,28 @@
 LittlerootTown_BrendansHouse_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_BrendansHouse_1F_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
 	.byte 0
 
-LittlerootTown_BrendansHouse_1F_OnLoad:
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes
-	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual
+LittlerootTown_BrendansHouse_1F_OnWarp:
+	map_script_2 VAR_TEMP_1, 0, LittlerootTown_BrendansHouse_1F_EventScript_OnWarp
+	.2byte 0
+
+LittlerootTown_BrendansHouse_1F_EventScript_OnWarp::
+	setvar VAR_TEMP_1, 1
+	goto_if_set FLAG_NJERI_FACE_WEST_IN_BRENDANS_HOUSE, LittlerootTown_BrendansHouse_1F_EventScript_FaceWestAfterPokedex
 	end
 
-LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes::
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
-	return
+LittlerootTown_BrendansHouse_1F_EventScript_FaceWestAfterPokedex::
+	clearflag FLAG_NJERI_FACE_WEST_IN_BRENDANS_HOUSE
+	turnobject LOCALID_PLAYER, DIR_WEST
+	end
+
+LittlerootTown_BrendansHouse_1F_OnLoad:
+	@ Njeri: moving-in boxes removed - the custom intro drops the player straight into a settled house
+	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual
+	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
 	checkplayergender
