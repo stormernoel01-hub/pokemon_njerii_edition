@@ -572,6 +572,7 @@ struct BattleStruct
     struct FutureSight futureSight[MAX_BATTLERS_COUNT];
     struct Wish wish[MAX_BATTLERS_COUNT];
     u16 moveTarget[MAX_BATTLERS_COUNT];
+    u8 lastChosenTarget[MAX_BATTLERS_COUNT]; // Njeri: remember the target the player last picked, for the double-battle target cursor default
     u8 faintCounter[MAX_BATTLE_TRAINERS]; // Supreme Overload / Last Respects
     u32 expShareExpValue;
     u32 expValue;

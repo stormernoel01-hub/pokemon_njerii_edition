@@ -439,6 +439,7 @@ void HandleInputChooseTarget(enum BattlerId battler)
     {
         PlaySE(SE_SELECT);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        gBattleStruct->lastChosenTarget[battler] = gMultiUsePlayerCursor; // Njeri: remember for next turn's cursor default
         if (gBattleStruct->gimmick.playerSelect)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, gMoveSelectionCursor[battler] | RET_GIMMICK | (gMultiUsePlayerCursor << 8));
         else
@@ -779,11 +780,24 @@ void HandleInputChooseMove(enum BattlerId battler)
             gBattlerControllerFuncs[battler] = HandleInputChooseTarget;
 
             if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
+            {
                 gMultiUsePlayerCursor = battler;
-            else if (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
-                gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+            }
             else
-                gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            {
+                // Njeri: start the target cursor on the opponent the player picked last turn
+                u32 remembered = gBattleStruct->lastChosenTarget[battler];
+                if (remembered < gBattlersCount
+                 && !IsOnPlayerSide(remembered)
+                 && !(gAbsentBattlerFlags & (1u << remembered))
+                 && IsBattlerAlive(remembered)
+                 && CanTargetBattler(battler, remembered, moveInfo->moves[gMoveSelectionCursor[battler]]))
+                    gMultiUsePlayerCursor = remembered;
+                else if (gAbsentBattlerFlags & (1u << GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+                    gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+                else
+                    gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            }
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(battler, gMultiUsePlayerCursor), battler);
 
