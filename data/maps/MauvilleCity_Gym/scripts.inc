@@ -244,19 +244,20 @@ MauvilleCity_Gym_EventScript_GymStatue::
 	end
 
 MauvilleCity_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
-	.string "bound {PLAYER}?\p"
-	.string "WATTSON, the LEADER of MAUVILLE\n"
-	.string "GYM, uses ELECTRIC-type POKéMON.\p"
-	.string "If you challenge him with WATER-type\n"
-	.string "POKéMON, he'll zap them! Bzzt!\p"
-	.string "And, he's put in switch-controlled\n"
-	.string "doors all over his GYM! Eccentric!\p"
-	.string "Hey, go for it!$"
+	.string "Hey, wie sieht es aus, auf dem Weg zum\n"
+	.string "CHAMP, {PLAYER}?\p"
+	.string "WALTER, der ARENALEITER von\n"
+	.string "DÜBI, setzt\l"
+	.string "ELEKTRO-POKéMON ein.\p"
+	.string "Wenn du ihn mit WASSER-POKéMON\n"
+	.string "angreifst, macht er sie fertig! Britzel!\p"
+	.string "Und die Türen lassen sich nur mit\n"
+	.string "Schaltern öffnen! Wahnsinn!\p"
+	.string "Nun, dann mal los!$"
 
 MauvilleCity_Gym_Text_GymGuidePostVictory:
-	.string "Whoa, you're electrifying!\n"
-	.string "You've powered the door open!$"
+	.string "Aah, du bist elektrifizierend!\n"
+	.string "Du hast die Tür offen gezwungen!$"
 
 MauvilleCity_Gym_Text_KirkIntro:
 	.string "Ich schwör, warum will\n"

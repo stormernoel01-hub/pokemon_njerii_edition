@@ -50,13 +50,13 @@ OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 	.string "Steckli verfolge.$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "But they say they're still making\n"
-	.string "adjustments.$"
+	.string "Der POKéMON DRAHTLOSKLUB im zweiten\n"
+	.string "Stock wurde erst kürzlich eröffnet.\p"
+	.string "Und sie sind immer noch nicht ganz\n"
+	.string "fertig mit dem Einrichten.$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "I traded POKéMON right away.$"
+	.string "Der POKéMON DRAHTLOSKLUB im zweiten\n"
+	.string "Stock wurde erst kürzlich eröffnet.\p"
+	.string "Ich habe schon POKéMON getauscht!$"
 

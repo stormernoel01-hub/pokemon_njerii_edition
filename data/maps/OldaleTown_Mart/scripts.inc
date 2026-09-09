@@ -53,12 +53,13 @@ OldaleTown_Mart_EventScript_Boy::
 	end
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut:
-	.string "The clerk says they're all sold out.\n"
-	.string "I can't buy any POKé BALLS.$"
+	.string "Der Verkäufer sagt, es sei alles\n"
+	.string "ausverkauft. Jetzt stehe ich ohne\l"
+	.string "POKéBÄLLE da.$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
-	.string "I'm going to buy a bunch of POKé BALLS\n"
-	.string "and catch a bunch of POKéMON!$"
+	.string "Ich will mir viele POKéBÄLLe kaufen und\n"
+	.string "damit genauso viele POKéMON fangen!$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion:
 	.string "Eichhof oder Adlerbräu?\p"

@@ -259,34 +259,35 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "H-help me!$"
+	.string "HI… HIIIILFE!!!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+	.string "HILFE!!! Du dort drüben!\n"
+	.string "Bitte! HILFE!!!\p"
+	.string "In meinem BEUTEL…\n"
+	.string "Da findest du einen POKéBALL!$"
 
 Route101_Text_DontLeaveMe:
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+	.string "Wo-Wo wi-willst du hin?\n"
+	.string "Lass mich nicht im Stich!!!$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
+	.string "PROF. LUNTE: Puuuh…\p"
+	.string "Ich habe im hohen Gras POKéMON\n"
+	.string "studiert, als ich angesprungen wurde.\p"
+	.string "Du hast mich gerettet.\n"
+	.string "Vielen, vielen Dank!\p"
 	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "Hi, du bist doch {PLAYER}{KUN}!\p"
+	.string "Aber dies ist nicht der Ort für ein\n"
+	.string "Schwätzchen, komm doch mit \l"
+	.string "in mein POKéMON-LABOR, okay?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+	.string "Sind deine POKéMON müde, bring sie in\n"
+	.string "ein POKéMON-CENTER.\p"
+	.string "In BASI, gleich hier um die\n"
+	.string "Ecke, gibt es ein POKéMON-CENTER.$"
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Pssst...\p"
@@ -296,7 +297,7 @@ Route101_Text_WildPokemonInTallGrass:
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "{UP_ARROW} BASI$"
 
 Route101_EventScript_Timothy::
 	trainerbattle_double TRAINER_YOUNGSTER_TIMOTHY, Route101_Text_TimothyIntro, Route101_Text_TimothyDefeat, Route101_Text_TimothyNotEnoughMons

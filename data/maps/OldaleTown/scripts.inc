@@ -362,8 +362,8 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "Ich möchte eine Pause einlegen, daher\n"
+	.string "speichere ich mein Spiel.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Folg mir mal 2 Schritt...$"
@@ -382,34 +382,34 @@ OldaleTown_Text_PotionExplanation:
 	.string "ide Nöchi hesch.$"
 
 OldaleTown_Text_WaitDontComeInHere:
-	.string "Aaaaah! Wait!\n"
-	.string "Please don't come in here.\p"
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
+	.string "Aaaah! Warte!\n"
+	.string "Bitte nicht dort entlang laufen!\p"
+	.string "Ich habe dort die Fußspuren eines\n"
+	.string "seltenen POKéMON gesehen!\p"
+	.string "Warte, bis ich fertig bin, sie\n"
+	.string "abzuzeichnen, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
-	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
-	.string "Wait until I finish sketching\n"
-	.string "them, okay?$"
+	.string "Ich habe dort die Fußspuren eines\n"
+	.string "seltenen POKéMON gesehen!\p"
+	.string "Warte, bis ich fertig bin, sie\n"
+	.string "abzuzeichnen, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
-	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
+	.string "Ich habe die Fußspuren eines seltenen\n"
+	.string "POKéMON abgezeichnet.\p"
+	.string "Aber hinterher habe ich festgestellt,\n"
+	.string "dass es meine eigenen Spuren waren…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
-	.string "Let's hurry home!$"
+	.string "MAIKE: {PLAYER}{KUN}!\n"
+	.string "Hier entlang!\l"
+	.string "Lass uns nach Hause gehen!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
-	.string "{PLAYER}, you should hustle back, too.$"
+	.string "BRIX: Ich gehe nun in das LABOR\n"
+	.string "meines Vaters. {PLAYER}, du solltest\l"
+	.string "auch zurücklaufen.$"
 
 OldaleTown_Text_TownSign:
 	.string "BASI\p"
