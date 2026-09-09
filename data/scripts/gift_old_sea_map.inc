@@ -42,7 +42,7 @@ sText_MysteryGiftOldSeaMapForYou:
 
 sText_MysteryGiftOldSeaMapUseAtPort:
 	.string "Du kannst sie am Hafen von\n"
-	.string "SEEGRASULB CITY einsetzen.\p"
+	.string "LILYCOVE CITY einsetzen.\p"
 	.string "Warum probierst du es nicht\n"
 	.string "einfach aus?$"
 

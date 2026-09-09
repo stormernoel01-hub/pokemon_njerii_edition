@@ -36,12 +36,12 @@ EventTicket_Text_OddTicketGetOnBoard:
 FarawayIsland_Entrance_Text_SailorReturn:
 	.string "KAPITÄN BRACK ist manchmal\n"
 	.string "unberechenbar…\p"
-	.string "Möchtest du zurück nach SEEGRASULB?$"
+	.string "Möchtest du zurück nach LILYCOVE?$"
 
 BirthIsland_Harbor_Text_SailorReturn:
 	.string "Diese Insel hat wirklich eine höchst\n"
 	.string "merkwürdige Form, findest du nicht?\l"
-	.string "Möchtest du zurück nach SEEGRASULB?$"
+	.string "Möchtest du zurück nach LILYCOVE?$"
 
 EventTicket_Text_OddTicketsWhereTo:
 	.string "Ach, du besitzt diese merkwürdigen\n"

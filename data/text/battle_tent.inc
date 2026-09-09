@@ -1,6 +1,6 @@
 FallarborTown_BattleTentLobby_Text_WelcomeToBattleTent:
 	.string "Willkommen im KAMPFCAMP von\n"
-	.string "LAUBWECHSELFELD!\p"
+	.string "FALLARBOR TOWN!\p"
 	.string "Ich begleite dich zu dem K.O.-\n"
 	.string "Teamturnier.$"
 
@@ -13,7 +13,7 @@ FallarborTown_BattleTentLobby_Text_AwaitAnotherChallenge:
 	.string "Herausforderung.$"
 
 FallarborTown_BattleTentLobby_Text_ExplainFallarborTent:
-	.string "Im KAMPFCAMP von LAUBWECHSELFELD\n"
+	.string "Im KAMPFCAMP von FALLARBOR TOWN\n"
 	.string "findet das K.O.-Teamturnier statt.\p"
 	.string "Jeder Teilnehmer darf drei POKéMON\n"
 	.string "in den Kampf mitnehmen.\p"
@@ -122,16 +122,16 @@ FallarborTown_BattleTentLobby_Text_LookingForwardToArrival:
 
 VerdanturfTown_BattleTentLobby_Text_WelcomeToBattleTent:
 	.string "Willkommen im KAMPFCAMP von\n"
-	.string "WIESENFLUR!\p"
+	.string "VERDANTURF TOWN!\p"
 	.string "Hier wird das Vertrauen der TRAINER in\n"
 	.string "ihre POKéMON getestet.$"
 
 VerdanturfTown_BattleTentLobby_Text_TakeChallenge:
 	.string "Möchtest du dich der Herausforderung\n"
-	.string "des WIESENFLUR KAMPFCAMPs stellen?$"
+	.string "des VERDANTURF TOWN KAMPFCAMPs stellen?$"
 
 VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent:
-	.string "Im KAMPFCAMP von WIESENFLUR gibt es\n"
+	.string "Im KAMPFCAMP von VERDANTURF TOWN gibt es\n"
 	.string "eine entscheidende Regel, die beachtet\l"
 	.string "werden muss.\p"
 	.string "TRAINER dürfen ihre POKéMON lediglich\n"
@@ -215,7 +215,7 @@ VerdanturfTown_BattleTentLobby_Text_PresentYouWithPrize:
 
 SlateportCity_BattleTentLobby_Text_WelcomeToBattleTent:
 	.string "Willkommen im KAMPFCAMP von\n"
-	.string "GRAPHITPORT.\p"
+	.string "SLATEPORT.\p"
 	.string "Ich begleite dich zum Wechselkampf-\n"
 	.string "Turnier.$"
 
@@ -224,7 +224,7 @@ SlateportCity_BattleTentLobby_Text_TakeChallenge:
 	.string "teilnehmen?$"
 
 SlateportCity_BattleTentLobby_Text_ExplainSlateportTent:
-	.string "Hier im KAMPFCAMP von GRAPHITPORT\n"
+	.string "Hier im KAMPFCAMP von SLATEPORT\n"
 	.string "halten wir Wechselkampf-Turniere ab,\l"
 	.string "die mit Leih-PKMN ausgetragen werden.\p"
 	.string "Als Erstes leihst du dir drei POKéMON.\p"
@@ -354,7 +354,7 @@ SlateportCity_BattleTentLobby_Text_ExplainSwapNotes:
 
 SlateportCity_BattleTentLobby_Text_ExplainMonRules:
 	.string "Die POKéMON im KAMPFCAMP von\n"
-	.string "GRAPHITPORT sind alle Leih-POKéMON.\p"
+	.string "SLATEPORT sind alle Leih-POKéMON.\p"
 	.string "Diese stehen auf Level 30.$"
 
 @ Unused
@@ -430,5 +430,5 @@ BattleTentLobby_Text_ExplainLevelRules:
 	.string "triffst, POKéMON unter Level 30 haben.$"
 
 VerdanturfTown_BattleTentLobby_Text_RulesAreListed:
-	.string "Die Regeln des WIESENFLUR KAMPFCAMPs\n"
+	.string "Die Regeln des VERDANTURF TOWN KAMPFCAMPs\n"
 	.string "hängen öffentlich aus.$"

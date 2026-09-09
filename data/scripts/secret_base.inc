@@ -672,12 +672,12 @@ SecretBase_EventScript_CushionInteract::
 
 SecretBase_Text_AllDecorationsWillBeReturned:
 	.string "Alle Dekorationsgegenstände und das\n"
-	.string "Mobiliar aus deiner GEHEIMBASIS werden\l"
+	.string "Mobiliar aus deiner SECRET BASE werden\l"
 	.string "auf deinen PC gesendet.\p"
 	.string "Einverstanden?$"
 
 SecretBase_Text_WantToRegisterSecretBase:
-	.string "Möchtest du die GEHEIMBASIS von\n"
+	.string "Möchtest du die SECRET BASE von\n"
 	.string "{STR_VAR_1} eintragen?$"
 
 SecretBase_Text_AlreadyRegisteredDelete:
@@ -704,10 +704,10 @@ SecretBase_Text_WhatWouldYouLikeToDo:
 	.string "Was möchtest du tun?$"
 
 SecretBase_Text_RegistryInfo:
-	.string "Die eingetragene GEHEIMBASIS bleibt\n"
+	.string "Die eingetragene SECRET BASE bleibt\n"
 	.string "erhalten, bis der Eigentümer umzieht.\p"
 	.string "Wird sie aus dem Grundbuch ent-\n"
-	.string "fernt, kann eine andere GEHEIMBASIS\l"
+	.string "fernt, kann eine andere SECRET BASE\l"
 	.string "diesen Platz einnehmen.\p"
 	.string "Bis zu 10 Orte können eingetragen\n"
 	.string "werden.$"
@@ -733,9 +733,9 @@ SecretBase_Text_SkittyTV:
 	.string "er sich langsam davonschleichen…$"
 
 SecretBase_Text_WouldYouLikeToMoveBases:
-	.string "Du kannst dir nur eine GEHEIMBASIS\n"
+	.string "Du kannst dir nur eine SECRET BASE\n"
 	.string "einrichten.\p"
-	.string "Möchtest du deine GEHEIMBASIS in der\n"
+	.string "Möchtest du deine SECRET BASE in der\n"
 	.string "Nähe von {STR_VAR_1} hierher\l"
 	.string "verlegen?$"
 

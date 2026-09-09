@@ -2849,7 +2849,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("KÜSTENSCHALE"),
         .price = 20,
         .description = COMPOUND_STRING(
-            "Muschelschale, aus\nder KÜSTENHÖHLE."),
+            "Muschelschale, aus\nder SHOAL CAVE."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_SELLABLE,
         .type = ITEM_USE_BAG_MENU,
@@ -13805,7 +13805,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("GEHEIMTICKET"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Fahrkarte für das\nSchiff zum\nNABELFELSEN."),
+            "Fahrkarte für das\nSchiff zum\nNAVEL ROCKEN."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13819,7 +13819,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Aurora Ticket"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Fahrkarte für das\nSchiff zur\nENTSTEHUNGSINSEL."),
+            "Fahrkarte für das\nSchiff zur\nBIRTH ISLAND."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13907,7 +13907,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("KELLERÖFFNER"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Schlüssel für NEU\nMALVENFROH unter\nMALVENFROH CITY."),
+            "Schlüssel für NEU\nDÜBI unter\nDÜBI."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13921,7 +13921,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Scanner"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Ein Gerät, das\nim SCHIFFSWRACK\ngefunden wurde."),
+            "Ein Gerät, das\nim ABANDONED SHIP\ngefunden wurde."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -13935,7 +13935,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("L.-SCHLÜSSEL"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Schlüssel zum\nLagerraum auf\ndem SCHIFFSWRACK."),
+            "Schlüssel zum\nLagerraum auf\ndem ABANDONED SHIP."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14065,7 +14065,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("?-ÖFFNER"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Schlüssel zur \nARENA der\nZINNOBERINSEL."),
+            "Schlüssel zur \nARENA der\nCINNABAR ISLAND."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14079,7 +14079,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("RAD-COUPON"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Gutschein für ein\nFAHRRAD im LADEN\nin AZURIA."),
+            "Gutschein für ein\nFAHRRAD im LADEN\nin CERULEAN."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14094,7 +14094,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Gold Teeth"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Verlorenes Gebiss\ndes WÄRTERs der\nSAFARI-ZONE."),
+            "Verlorenes Gebiss\ndes WÄRTERs der\nSAFARI ZONE."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14108,7 +14108,7 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("TÜRÖFFNER"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Schlüsselkarte für\nHQ der SILPH\nCO. in SAFFRONIA."),
+            "Schlüsselkarte für\nHQ der SILPH\nCO. in SAFFRON."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14166,7 +14166,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Rainbow Passes"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Pass für die Fähren\nzwischen ORANIA/ \nSEVII EILANDEN."),
+            "Pass für die Fähren\nzwischen VERMILION/ \nSEVII EILANDEN."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

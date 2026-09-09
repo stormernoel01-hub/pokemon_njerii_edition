@@ -168,7 +168,7 @@ MoveTutor_Text_DynamicPunchTeach:
 	.string "Ich kann nicht mehr!\p"
 	.string "Das ist doch absolut hoffnungslos!\p"
 	.string "Ich bin ein KAMPF-TRAINER, daher kann\n"
-	.string "ich in der ARENA von MOOSBACH einfach\p"
+	.string "ich in der ARENA von MOSSDEEP einfach\p"
 	.string "nicht gewinnen, egal, wie sehr ich mich\n"
 	.string "auch anstrenge!\p"
 	.string "Argh! Schlag! Wucht! Schlag!\n"
@@ -188,12 +188,12 @@ MoveTutor_Text_DynamicPunchWhichMon:
 
 MoveTutor_Text_DynamicPunchTaught:
 	.string "Ich möchte, dass du in der ARENA von\n"
-	.string "MOOSBACH gewinnst, indem du\l"
+	.string "MOSSDEEP gewinnst, indem du\l"
 	.string "WUCHTSCHLAG einsetzt.$"
 
 MoveTutor_Text_DoubleEdgeTeach:
 	.string "Seufz…\p"
-	.string "Der ARENALEITER von XENEROVILLE ist\n"
+	.string "Der ARENALEITER von SOOTOPOLIS CITY ist\n"
 	.string "einfach anbetungswürdig.\p"
 	.string "Aber das heißt auch, dass ich viele\n"
 	.string "Rivalinnen habe, die um seine Gunst\l"

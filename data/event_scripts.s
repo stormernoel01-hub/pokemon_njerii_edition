@@ -1372,7 +1372,7 @@ gText_MomOrDadMightLikeThisProgram::
 	.string "Ich beeile mich besser!$"
 
 gText_WhichFloorWouldYouLike::
-	.string "Willkommen im SEEGRASULB CITY\n"
+	.string "Willkommen im LILYCOVE CITY\n"
 	.string "EINKAUFSZENTRUM.\p"
 	.string "In welches Stockwerk möchtest du?$"
 

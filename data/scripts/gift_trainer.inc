@@ -27,7 +27,7 @@ sText_MysteryGiftVisitingTrainerInstructions:
 	.string "Umfrage im PKMN-SUPERMARKT\l"
 	.string "teilnehmen.\l"
 	.string "Lade andere TRAINER zu diesen\l"
-	.string "Umfragen nach XENEROVILLE\l"
+	.string "Umfragen nach SOOTOPOLIS CITY\l"
 	.string "ein.\l"
 	.string "… Ich gebe dir ein geheimes\l"
 	.string "Passwort für die Umfrage:\p"
@@ -40,7 +40,7 @@ sText_MysteryGiftVisitingTrainerInstructions:
 sText_MysteryGiftVisitingTrainerArrived:
 	.string "Danke, dass du das GEHEIM-\n"
 	.string "GESCHEHEN benutzt hast.\p"
-	.string "Ein TRAINER, der nach XENEROVILLE\n"
+	.string "Ein TRAINER, der nach SOOTOPOLIS CITY\n"
 	.string "gekommen ist, sucht dich!\l"
 	.string "Wir hoffen, der Kampf gegen\l"
 	.string "diesen TRAINER macht dir Spaß!\p"

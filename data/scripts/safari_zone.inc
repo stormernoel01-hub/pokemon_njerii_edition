@@ -88,7 +88,7 @@ SafariZone_EventScript_PokeblockPresent::
 	end
 
 SafariZone_Text_WouldYouLikeToExit:
-	.string "Möchtest du die SAFARI-ZONE jetzt\n"
+	.string "Möchtest du die SAFARI ZONE jetzt\n"
 	.string "verlassen?$"
 
 SafariZone_Text_TimesUp:
@@ -111,7 +111,7 @@ SafariZone_Text_PokeblockWasPlaced:
 	.string "NAPF gelegt.$"
 
 Route121_SafariZoneEntrance_Text_WelcomeToSafariZone:
-	.string "Willkommen in der SAFARI-ZONE!\p"
+	.string "Willkommen in der SAFARI ZONE!\p"
 	.string "Hier bekommst du viele POKéMON zu\n"
 	.string "Gesicht, die sehr selten in der HOENN-\l"
 	.string "Region sind.\p"
@@ -122,26 +122,26 @@ Route121_SafariZoneEntrance_Text_WelcomeToSafariZone:
 	.string "TRAINER geöffnet.\p"
 	.string "Fangt euch POKéMON. Und behaltet sie!\p"
 	.string "Kommt und genießt die Welt der\n"
-	.string "SAFARI-ZONE!$"
+	.string "SAFARI ZONE!$"
 
 Route121_SafariZoneEntrance_Text_WelcomeFirstTime:
-	.string "Willkommen in der SAFARI-ZONE!\n"
+	.string "Willkommen in der SAFARI ZONE!\n"
 	.string "Bist du zum ersten Mal hier?$"
 
 Route121_SafariZoneEntrance_Text_ComeInAndEnjoy:
-	.string "Komm und genieße die SAFARI-ZONE!$"
+	.string "Komm und genieße die SAFARI ZONE!$"
 
 Route121_SafariZoneEntrance_Text_FirstTimeInfo:
-	.string "Sobald du die SAFARI-ZONE betrittst,\n"
+	.string "Sobald du die SAFARI ZONE betrittst,\n"
 	.string "stehen dir 30 SAFARIBÄLLe zur Ver-\l"
 	.string "fügung, um POKéMON zu fangen.\p"
 	.string "Das SAFARI-Spiel ist vorbei, sobald du\n"
 	.string "deine SAFARIBÄLLe verbraucht oder\l"
 	.string "500 Schritte gemacht hast.\p"
-	.string "Komm und genieße die SAFARI-ZONE!$"
+	.string "Komm und genieße die SAFARI ZONE!$"
 
 Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay:
-	.string "Willkommen in der SAFARI-ZONE!\p"
+	.string "Willkommen in der SAFARI ZONE!\p"
 	.string "Alles, was du für nur ¥500 fangen\n"
 	.string "kannst! Möchtest du es probieren?$"
 
@@ -181,11 +181,11 @@ Route121_SafariZoneEntrance_Text_YouNeedPokeblockCase:
 	.string "Bitte besorge dir doch eine {POKEBLOCK}BOX.\p"
 	.string "Vielleicht erhältst du in der WETT-\n"
 	.string "BEWERBSHALLE von\l"
-	.string "SEEGRASULB CITY eine.$"
+	.string "LILYCOVE CITY eine.$"
 
 SafariZone_South_Text_StillHaveTimeExit:
 	.string "Du hast noch Zeit übrig. Möchtest du\n"
-	.string "die SAFARI-ZONE jetzt verlassen?$"
+	.string "die SAFARI ZONE jetzt verlassen?$"
 
 SafariZone_South_Text_EnjoyTheRestOfYourAdventure:
 	.string "Viel Vergnügen bei dem Rest deines\n"
@@ -244,7 +244,7 @@ SafariZone_South_Text_Youngster:
 	.string "ohne dass ich das gemerkt habe.$"
 
 Route121_SafariZoneEntrance_Text_TrainerTip:
-	.string "TIPP für TRAINER in der SAFARI-ZONE!\p"
+	.string "TIPP für TRAINER in der SAFARI ZONE!\p"
 	.string "Wirf POKéMON {POKEBLOCK} zu, dann ergreifen\n"
 	.string "sie nicht so schnell die Flucht.$"
 
@@ -278,7 +278,7 @@ SafariZone_South_Text_AreaOffLimits1:
 	.string "statt. Zutritt verboten!$"
 
 SafariZone_Southeast_Text_ExpansionIsFinished:
-	.string "Der Ausbau der SAFARI-ZONE ist\n"
+	.string "Der Ausbau der SAFARI ZONE ist\n"
 	.string "abgeschlossen.\p"
 	.string "Wir hoffen, du genießt den Aufenthalt.$"
 

@@ -41,6 +41,6 @@ MysteryGift_Text_TheresATicketForYou::
 
 MysteryGift_Text_TryUsingItAtLilycovePort::
 	.string "Du kannst es am Hafen von\n"
-	.string "SEEGRASULB CITY einsetzen.\p"
+	.string "LILYCOVE CITY einsetzen.\p"
 	.string "Warum probierst du es nicht\n"
 	.string "einfach aus?$"

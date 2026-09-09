@@ -107,7 +107,7 @@ Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother:
 
 Route123_BerryMastersHouse_Text_VisitPrettyPetalFlowerShop:
 	.string "Besuch unbedingt den BLÜTENTRAUM\n"
-	.string "BLUMENLADEN bei METAROST CITY.\p"
+	.string "BLUMENLADEN bei RUSTBORO CITY.\p"
 	.string "Lasst die Welt in Blumen schwelgen.$"
 
 Route123_BerryMastersHouse_Text_DoneForToday:

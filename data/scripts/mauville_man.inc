@@ -462,15 +462,15 @@ MauvilleCity_PokemonCenter_1F_Text_SafariGamesTitle::
 	.string "Der SAFARI liebende TRAINER$"
 
 MauvilleCity_PokemonCenter_1F_Text_SafariGamesAction::
-	.string "Bist in die SAFARI-ZONE gegangen?$"
+	.string "Bist in die SAFARI ZONE gegangen?$"
 
 MauvilleCity_PokemonCenter_1F_Text_SafariGamesStory::
 	.string "Dies ist die Geschichte eines TRAINERs\n"
 	.string "namens {STR_VAR_3}.\p"
 	.string "Dieser TRAINER ist {STR_VAR_1}-mal in die\n"
-	.string "SAFARI-ZONE gegangen!\p"
+	.string "SAFARI ZONE gegangen!\p"
 	.string "{STR_VAR_3} ist ein TRAINER, dessen\n"
-	.string "wilde Seite in der SAFARI-ZONE zum\l"
+	.string "wilde Seite in der SAFARI ZONE zum\l"
 	.string "Vorschein kommt!$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedCutTitle::
@@ -505,13 +505,13 @@ MauvilleCity_PokemonCenter_1F_Text_MovedBasesTitle::
 	.string "Der Umzüge liebende TRAINER$"
 
 MauvilleCity_PokemonCenter_1F_Text_MovedBasesAction::
-	.string "Bist du mit der GEHEIMBASIS umgezogen?$"
+	.string "Bist du mit der SECRET BASE umgezogen?$"
 
 MauvilleCity_PokemonCenter_1F_Text_MovedBasesStory::
 	.string "Dies ist die Geschichte eines TRAINERs\n"
 	.string "namens {STR_VAR_3}.\p"
 	.string "Dieser TRAINER ist {STR_VAR_1}-mal mit\n"
-	.string "seiner GEHEIMBASIS umgezogen!\p"
+	.string "seiner SECRET BASE umgezogen!\p"
 	.string "{STR_VAR_3} ist ein TRAINER, der es\n"
 	.string "liebt, sich ein neues Haus einzurichten.$"
 
