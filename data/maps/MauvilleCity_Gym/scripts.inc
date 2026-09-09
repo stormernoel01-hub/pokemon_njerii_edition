@@ -3,13 +3,10 @@ MauvilleCity_Gym_MapScripts::
 	.byte 0
 
 MauvilleCity_Gym_OnLoad:
-	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_DeactivatePuzzle
-	switch VAR_MAUVILLE_GYM_STATE
-	case 0, MauvilleCity_Gym_EventScript_UpdateBarriers
-	case 1, MauvilleCity_Gym_EventScript_Switch1Pressed
-	case 2, MauvilleCity_Gym_EventScript_Switch2Pressed
-	case 3, MauvilleCity_Gym_EventScript_Switch3Pressed
-	case 4, MauvilleCity_Gym_EventScript_Switch4Pressed
+	@ Njeri: AJ's arena is a custom layout. The vanilla electric-barrier
+	@ puzzle drew beams/plates via setmetatile at hard-coded coords, which
+	@ corrupted the redesigned map (worst after the battle, via
+	@ MauvilleGymDeactivatePuzzle). Disabled entirely.
 	end
 
 MauvilleCity_Gym_EventScript_UpdateBarriers::
