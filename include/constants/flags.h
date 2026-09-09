@@ -54,8 +54,9 @@
 #define FLAG_NJERI_FACE_WEST_IN_BRENDANS_HOUSE    0x20 // Njeri: turn player west after being warped into Brendan's/May's house 1F post-Pokedex
 #define FLAG_NJERI_GRANDMA_GAVE_BALLS    0x21 // Njeri: Littleroot grandma has handed over the 5 Poke Balls
 #define FLAG_NJERI_HIDE_OLDALE_FOOTPRINTS_MAN    0x22 // Njeri: the pointless footprints maniac in Basi/Oldale is removed
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_NJERI_LEA_SCENE_DONE    0x23 // Njeri: the LEA intro cutscene in Guefu Town has played (also gates the town music)
+#define FLAG_NJERI_FOLLOWER_DISABLED    0x24 // Njeri: follower Pokemon suppressed until the player reaches Route 1
+#define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag

@@ -23,8 +23,8 @@
     {
       "local_id": "LOCALID_LITTLEROOT_TWIN",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 6,
-      "y": 15,
+      "x": 5,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -90,8 +90,8 @@
     {
       "local_id": "LOCALID_LITTLEROOT_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 13,
-      "y": 10,
+      "x": -7,
+      "y": -5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -104,8 +104,8 @@
     {
       "local_id": "LOCALID_LITTLEROOT_BIRCH",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 14,
-      "y": 10,
+      "x": -4,
+      "y": -4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -116,17 +116,18 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 15,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "local_id": "LOCALID_LITTLEROOT_LEA",
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "x": 11,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_DebugNPC",
-      "flag": "0"
+      "script": "LittlerootTown_EventScript_Lea",
+      "flag": "FLAG_NJERI_LEA_SCENE_DONE"
     }
   ],
   "warp_events": [
@@ -138,21 +139,31 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
-      "y": 7,
+      "x": 16,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 15,
-      "y": 13,
+      "x": 9,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LittlerootTown_EventScript_LeaScene"
+    }
+  ],
   "bg_events": [],
   "region": "REGION_HOENN"
 }

@@ -5,6 +5,7 @@ Route101_MapScripts::
 
 Route101_OnTransition:
         clearflag FLAG_HIDE_MAP_NAME_POPUP
+        clearflag FLAG_NJERI_FOLLOWER_DISABLED
         call ProfBirch_EventScript_UpdateLocation
         end
 

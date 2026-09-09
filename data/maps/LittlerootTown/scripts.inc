@@ -346,6 +346,90 @@ LittlerootTown_EventScript_GrandmaBagFull::
 	release
 	end
 
+LittlerootTown_EventScript_LeaScene::
+	goto_if_set FLAG_NJERI_LEA_SCENE_DONE, LittlerootTown_EventScript_LeaSceneDone
+	lockall
+	delay 20
+	playse SE_PIN
+	applymovement LOCALID_LITTLEROOT_LEA, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_LITTLEROOT_LEA, LittlerootTown_Movement_LeaApproachPlayer
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox LittlerootTown_Text_LeaWhoAreYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LITTLEROOT_LEA, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox LittlerootTown_Text_LeaWatchedMilotic, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LITTLEROOT_LEA, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox LittlerootTown_Text_LeaMyName, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_LeaFunnyName, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LITTLEROOT_LEA, LittlerootTown_Movement_LeaLeave
+	waitmovement 0
+	removeobject LOCALID_LITTLEROOT_LEA
+	setflag FLAG_NJERI_LEA_SCENE_DONE
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+LittlerootTown_EventScript_LeaSceneDone::
+	end
+
+LittlerootTown_EventScript_Lea::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_LeaMyName, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_Movement_LeaApproachPlayer:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+LittlerootTown_Movement_LeaLeave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+LittlerootTown_Text_LeaWhoAreYou:
+	.string "Oha? Wer bisch denn du?$"
+
+LittlerootTown_Text_LeaWatchedMilotic:
+	.string "Ich han grad es MILOTIC im Meer\n"
+	.string "dusse beobachtet. {EMOJI_HAPPY}$"
+
+LittlerootTown_Text_LeaMyName:
+	.string "Ich heisse übrigens LEA!\n"
+	.string "Und du bisch?…$"
+
+LittlerootTown_Text_LeaFunnyName:
+	.string "Ah, du bisch de {PLAYER}. Lustigi\n"
+	.string "Name! {EMOJI_HAPPY}\p"
+	.string "Hach, für mich wirds langsam Ziit zum\n"
+	.string "nach GRASWINKEL TOWN gah.\p"
+	.string "Ich han kei Pokebäll meh und da ide\n"
+	.string "Nöchi hets so nüüt.\p"
+	.string "Janu, bis denn {PLAYER}, villicht gseht\n"
+	.string "mer sich ja mal wieder. {EMOJI_HAPPY}$"
+
 LittlerootTown_EventScript_Nothing::
 	end
 LittlerootTown_EventScript_Twin::
