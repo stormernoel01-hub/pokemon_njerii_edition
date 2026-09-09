@@ -38,3 +38,21 @@ patch("graphics/battle_interface/ball_display.png", {
 })
 
 print("done")
+
+# --- battle textbox frame: saturated red instead of the vanilla blue/grey ---
+# real sources are the JASC .pal files; textbox.gbapal = textbox_0 + textbox_1
+def write_jasc(path, colors):
+    lines = ["JASC-PAL", "0100", str(len(colors))] + [f"{r} {g} {b}" for r, g, b in colors]
+    (ROOT / path).write_text("\r\n".join(lines) + "\r\n")
+
+write_jasc("graphics/battle_interface/textbox_0.pal", [
+    (0,0,0),(255,255,255),(255,56,56),(176,32,40),(224,64,72),(255,255,255),
+    (176,52,60),(255,150,140),(140,24,32),(96,16,24),(168,48,56),(150,36,48),
+    (224,80,72),(248,88,72),(208,64,72),(56,16,20),
+])
+write_jasc("graphics/battle_interface/textbox_1.pal", [
+    (0,0,0),(140,28,36),(176,32,40),(224,64,72),(40,12,16),(255,255,255),
+    (176,52,60),(255,150,140),(120,32,36),(232,128,128),(216,56,64),(150,36,48),
+    (0,0,0),(0,0,0),(0,0,0),(0,0,0),
+])
+print("textbox frame -> red")
