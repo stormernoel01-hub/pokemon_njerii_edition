@@ -170,4 +170,30 @@ for f in [
 ]:
     patch_png_palette(f, "hpbar")
 
+# Weisse Schrift auf den (dunkelgrauen) Namens-/KP-Boxen.
+# sHealthBoxTextColor in src/battle_interface.c nutzt foreground=1, shadow=3.
+def whiten_healthbox_text(path):
+    from PIL import Image
+    p = ROOT / path
+    im = Image.open(p)
+    if im.mode != "P":
+        print(f"skip {p}: not mode P"); return
+    pal = im.getpalette()
+    pal[1*3:1*3+3] = [248, 248, 248]   # foreground -> weiss
+    pal[3*3:3*3+3] = [24, 24, 24]      # shadow -> fast schwarz
+    im.putpalette(pal)
+    im.save(p)
+    print(f"whitened healthbox text: {p}")
+
+for f in [
+    "graphics/battle_interface/healthbox_singles_player.png",
+    "graphics/battle_interface/healthbox_singles_opponent.png",
+    "graphics/battle_interface/healthbox_doubles_player.png",
+    "graphics/battle_interface/healthbox_doubles_opponent.png",
+    "graphics/battle_interface/healthbox_doubles_frameend.png",
+    "graphics/battle_interface/healthbox_doubles_frameend_bar.png",
+    "graphics/battle_interface/healthbox_safari.png",
+]:
+    whiten_healthbox_text(f)
+
 print("done")
