@@ -58,6 +58,7 @@ OldaleTown_EventScript_MartEmployee::
 	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
 	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
 	setflag FLAG_TEMP_1
+	hidefollower 0
 	playbgm MUS_FOLLOW_ME, FALSE
 	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
 	closemessage
@@ -95,6 +96,7 @@ OldaleTown_EventScript_ExplainPokemonMart::
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_POTION_OLDALE
 	fadedefaultbgm
+	callnative UpdateFollowingPokemon
 	release
 	end
 
@@ -106,6 +108,7 @@ OldaleTown_EventScript_ExplainPotion::
 OldaleTown_EventScript_BagIsFull::
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
 	fadedefaultbgm
+	callnative UpdateFollowingPokemon
 	release
 	end
 
