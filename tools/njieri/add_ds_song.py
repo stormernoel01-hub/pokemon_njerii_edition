@@ -83,6 +83,16 @@ def main():
             open(sh_h, "w").write(h)
         print(f"song id {n}  ->  {const}")
 
+    # --- 4. make it reachable in the R+START debug sound menu ---
+    dbg = "src/debug.c"
+    d = open(dbg).read()
+    if f"X({const})" not in d:
+        d = d.replace("    X(MUS_RG_TEACHY_TV_MENU)        \\\n",
+                      f"    X(MUS_RG_TEACHY_TV_MENU)        \\\n    X({const}){' ' * max(1, 25 - len(const))}\\\n", 1)
+        # the real last entry has no trailing backslash; keep appending before SOUND_LIST_SE
+        open(dbg, "w").write(d)
+        print(f"debug.c SOUND_LIST_BGM += {const}")
+
     print("\nDone. Assign it on a map (music field) or via playbgm, then build.")
 
 
