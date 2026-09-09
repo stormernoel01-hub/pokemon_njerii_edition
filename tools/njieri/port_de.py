@@ -14,7 +14,7 @@ def fetch(rel):
     with urllib.request.urlopen(RAW + rel) as r:
         return r.read().decode("utf-8")
 
-LABEL_RE = re.compile(r'^([A-Za-z_][A-Za-z0-9_]*)::\s*$')
+LABEL_RE = re.compile(r'^([A-Za-z_][A-Za-z0-9_]*)::?\s*$')
 
 def parse_blocks(text):
     """label -> list of raw lines belonging to that block (excluding the label line)."""
@@ -61,6 +61,24 @@ def extract_german(block_lines):
             out.append(ln)
     return out or None
 
+def extract_english(block_lines):
+    """The WW ENGLISH .string lines for a block (the .ifdef ENGLISH branch,
+    or all .string lines if there is no .ifdef)."""
+    joined = "\n".join(block_lines)
+    out, state = [], None
+    for ln in block_lines:
+        s = ln.strip()
+        if s.startswith(".ifdef ENGLISH"): state = "en"; continue
+        if s.startswith(".ifdef GERMAN"): state = "de"; continue
+        if s == ".else": continue
+        if s == ".endif": state = None; continue
+        if STR_RE.match(ln) and (state == "en" or ("GERMAN" not in joined and state is None)):
+            out.append(ln)
+    return out or None
+
+def _norm_strs(lines):
+    return re.sub(r'[^A-Za-z0-9]', '', "".join(re.findall(r'"((?:[^"\\]|\\.)*)"', "\n".join(lines)))).upper()
+
 BASELINE = "6382807d40"  # pre-Njeri-work commit; files unchanged since here are safe to auto-port
 
 def is_pristine(rel):
@@ -82,16 +100,21 @@ def main():
         print(f"SKIP {rel}: not in walterwoshid ({e})")
         return
 
+    strict = "--strict" in sys.argv  # only replace if exp text == WW english (protects user edits)
     de_blocks = parse_blocks(de_text)
     exp_lines = exp_text.split("\n")
 
-    matched, no_german, missing_in_exp = [], [], []
+    matched, no_german, missing_in_exp, skipped_diverged = [], [], [], []
     # find german strings per label
     de_strings = {}
+    en_strings = {}
     for lbl, blk in de_blocks.items():
         g = extract_german(blk)
         if g:
             de_strings[lbl] = g
+            e = extract_english(blk)
+            if e:
+                en_strings[lbl] = _norm_strs(e)
         else:
             no_german.append(lbl)
 
@@ -112,6 +135,11 @@ def main():
         while i < n and exp_lines[i].strip() != "" and not LABEL_RE.match(exp_lines[i]):
             i += 1
         blk = exp_lines[blk_start:i]
+        cur_norm = _norm_strs([x for x in blk if STR_RE.match(x)])
+        if strict and lbl in de_strings and lbl in en_strings and cur_norm != en_strings[lbl]:
+            skipped_diverged.append(lbl)
+            out_lines.extend(blk)
+            continue
         if lbl in de_strings and any(STR_RE.match(x) for x in blk):
             # replace .string lines, keep any non-.string lines (rare)
             new_blk = []
@@ -134,6 +162,8 @@ def main():
 
     print(f"=== {rel} ===")
     print(f"  matched & translated : {len(matched)}")
+    if skipped_diverged:
+        print(f"  skipped (user-edited / diverged from vanilla) : {len(skipped_diverged)}")
     print(f"  exp labels w/o german match : {sorted(set(l for l in exp_labels if l not in matched))}")
     print(f"  german labels not in exp    : {missing_in_exp}")
     print(f"  walterwoshid blocks w/o german : {no_german}")
