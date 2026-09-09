@@ -3,7 +3,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_NONE] =
     {
         .name = _("-------"),
-        .description = COMPOUND_STRING("No special ability."),
+        .description = COMPOUND_STRING("Keine Spezial-Fähigkeit."),
         .aiRating = 0,
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
@@ -19,21 +19,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DRIZZLE] =
     {
         .name = _("NIESEL"),
-        .description = COMPOUND_STRING("Summons rain in battle."),
+        .description = COMPOUND_STRING("Ruft im Kampf Regen herbei."),
         .aiRating = 9,
     },
 
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("TEMPOSCHUB"),
-        .description = COMPOUND_STRING("Gradually boosts Speed."),
+        .description = COMPOUND_STRING("Erhöht INIT. nach und nach."),
         .aiRating = 9,
     },
 
     [ABILITY_BATTLE_ARMOR] =
     {
         .name = _("KAMPFPANZER"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
+        .description = COMPOUND_STRING("Wehrt Volltreffer ab."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -41,7 +41,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STURDY] =
     {
         .name = _("ROBUSTHEIT"),
-        .description = COMPOUND_STRING("Negates 1-hit KO attacks."),
+        .description = COMPOUND_STRING("Keine 1-Treffer-K.O.-Att."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -49,7 +49,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DAMP] =
     {
         .name = _("FEUCHTIGKEIT"),
-        .description = COMPOUND_STRING("Prevents self-destruction."),
+        .description = COMPOUND_STRING("Gegen Selbstzerstörung."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -57,7 +57,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIMBER] =
     {
         .name = _("FLEXIBILITÄT"),
-        .description = COMPOUND_STRING("Prevents paralysis."),
+        .description = COMPOUND_STRING("Verhindert Paralyse."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -65,7 +65,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SAND_VEIL] =
     {
         .name = _("SANDSCHLEIER"),
-        .description = COMPOUND_STRING("Ups evasion in a sandstorm."),
+        .description = COMPOUND_STRING("Erh. Fluchtw. i. Sandsturm."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -73,14 +73,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STATIC] =
     {
         .name = _("STATIK"),
-        .description = COMPOUND_STRING("Paralyzes on contact."),
+        .description = COMPOUND_STRING("Paralysiert bei Berührung."),
         .aiRating = 4,
     },
 
     [ABILITY_VOLT_ABSORB] =
     {
         .name = _("VOLTABSORBER"),
-        .description = COMPOUND_STRING("Turns electricity into HP."),
+        .description = COMPOUND_STRING("Wandelt Elektriz. in KP um."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -88,7 +88,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WATER_ABSORB] =
     {
         .name = _("H2O-ABSORBER"),
-        .description = COMPOUND_STRING("Changes water into HP."),
+        .description = COMPOUND_STRING("Wandelt Wasser in KP um."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -96,7 +96,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OBLIVIOUS] =
     {
         .name = _("DÖSIGKEIT"),
-        .description = COMPOUND_STRING("Prevents attraction."),
+        .description = COMPOUND_STRING("Verhindert Anziehung."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -104,21 +104,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CLOUD_NINE] =
     {
         .name = _("WOLKE SIEBEN"),
-        .description = COMPOUND_STRING("Negates weather effects."),
+        .description = COMPOUND_STRING("Keine Wetter-Effekte."),
         .aiRating = 5,
     },
 
     [ABILITY_COMPOUND_EYES] =
     {
         .name = _("FACETTENAUGE"),
-        .description = COMPOUND_STRING("Raises accuracy."),
+        .description = COMPOUND_STRING("Steigert Genauigkeit."),
         .aiRating = 7,
     },
 
     [ABILITY_INSOMNIA] =
     {
         .name = _("INSOMNIA"),
-        .description = COMPOUND_STRING("Prevents sleep."),
+        .description = COMPOUND_STRING("Verhindert Einschlafen."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -126,14 +126,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_COLOR_CHANGE] =
     {
         .name = _("FARBWECHSEL"),
-        .description = COMPOUND_STRING("Changes type to foe's move."),
+        .description = COMPOUND_STRING("Ändert Att.-Typ d. Gegners."),
         .aiRating = 2,
     },
 
     [ABILITY_IMMUNITY] =
     {
         .name = _("IMMUNITÄT"),
-        .description = COMPOUND_STRING("Prevents poisoning."),
+        .description = COMPOUND_STRING("Verhindert Vergiftungen."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -141,7 +141,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLASH_FIRE] =
     {
         .name = _("FEUERFÄNGER"),
-        .description = COMPOUND_STRING("Powers up if hit by fire."),
+        .description = COMPOUND_STRING("Steigt, wenn v. Feuer getr."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -149,7 +149,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHIELD_DUST] =
     {
         .name = _("PUDERABWEHR"),
-        .description = COMPOUND_STRING("Prevents added effects."),
+        .description = COMPOUND_STRING("Gegen Zusatz-Effekte."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -157,7 +157,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OWN_TEMPO] =
     {
         .name = _("TEMPOMACHER"),
-        .description = COMPOUND_STRING("Prevents confusion."),
+        .description = COMPOUND_STRING("Verhindert Verwirrung."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -165,7 +165,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SUCTION_CUPS] =
     {
         .name = _("SAUGNAPF"),
-        .description = COMPOUND_STRING("Firmly anchors the body."),
+        .description = COMPOUND_STRING("Verankert den Körper."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -173,21 +173,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INTIMIDATE] =
     {
         .name = _("BEDROHER"),
-        .description = COMPOUND_STRING("Lowers the foe's Attack."),
+        .description = COMPOUND_STRING("Senkt ANGR. des Gegners."),
         .aiRating = 7,
     },
 
     [ABILITY_SHADOW_TAG] =
     {
         .name = _("WEGSPERRE"),
-        .description = COMPOUND_STRING("Prevents the foe's escape."),
+        .description = COMPOUND_STRING("Hindert Gegner an Flucht."),
         .aiRating = 10,
     },
 
     [ABILITY_ROUGH_SKIN] =
     {
         .name = _("RAUHAUT"),
-        .description = COMPOUND_STRING("Hurts to touch."),
+        .description = COMPOUND_STRING("Verletzt bei Berührung."),
         .aiRating = 6,
     },
 
@@ -204,7 +204,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEVITATE] =
     {
         .name = _("SCHWEBE"),
-        .description = COMPOUND_STRING("Not hit by Ground attacks."),
+        .description = COMPOUND_STRING("Kein Treffer b. BODEN-Att."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -212,21 +212,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EFFECT_SPORE] =
     {
         .name = _("SPORENWIRT"),
-        .description = COMPOUND_STRING("Leaves spores on contact."),
+        .description = COMPOUND_STRING("Gibt bei Kontakt Sporen ab."),
         .aiRating = 4,
     },
 
     [ABILITY_SYNCHRONIZE] =
     {
         .name = _("SYNCHRO"),
-        .description = COMPOUND_STRING("Passes on status problems."),
+        .description = COMPOUND_STRING("Gibt Stat.-Probleme weiter."),
         .aiRating = 4,
     },
 
     [ABILITY_CLEAR_BODY] =
     {
         .name = _("NEUTRALTORSO"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .description = COMPOUND_STRING("Verhindert Fähigk.-Reduk."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -234,14 +234,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_NATURAL_CURE] =
     {
         .name = _("INNERE KRAFT"),
-        .description = COMPOUND_STRING("Heals upon switching out."),
+        .description = COMPOUND_STRING("Heilt bei Austausch."),
         .aiRating = 7,
     },
 
     [ABILITY_LIGHTNING_ROD] =
     {
         .name = _("BLITZFÄNGER"),
-        .description = COMPOUND_STRING("Draws electrical moves."),
+        .description = COMPOUND_STRING("Zieht Elektro-Attacken an."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -249,28 +249,28 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SERENE_GRACE] =
     {
         .name = _("EDELMUT"),
-        .description = COMPOUND_STRING("Promotes added effects."),
+        .description = COMPOUND_STRING("Verstärkt Zusatz-Effekte."),
         .aiRating = 8,
     },
 
     [ABILITY_SWIFT_SWIM] =
     {
         .name = _("WASSERTEMPO"),
-        .description = COMPOUND_STRING("Raises Speed in rain."),
+        .description = COMPOUND_STRING("Steigert INIT. bei Regen."),
         .aiRating = 6,
     },
 
     [ABILITY_CHLOROPHYLL] =
     {
         .name = _("CHLOROPHYLL"),
-        .description = COMPOUND_STRING("Raises Speed in sunshine."),
+        .description = COMPOUND_STRING("INIT. + bei Sonnenschein."),
         .aiRating = 6,
     },
 
     [ABILITY_ILLUMINATE] =
     {
         .name = _("ERLEUCHTUNG"),
-        .description = COMPOUND_STRING("Encounter rate increases."),
+        .description = COMPOUND_STRING("Mehr PKMN-Begegnungen."),
         .aiRating = 0,
         .breakable = TRUE,
     },
@@ -278,7 +278,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TRACE] =
     {
         .name = _("FÄHRTE"),
-        .description = COMPOUND_STRING("Copies special ability."),
+        .description = COMPOUND_STRING("Kopiert Spezial-Attacke."),
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE, //B_UPDATED_ABILITY_DATA >= GEN_4
@@ -287,21 +287,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HUGE_POWER] =
     {
         .name = _("KRAFTKOLOSS"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .description = COMPOUND_STRING("Steigert ANGR."),
         .aiRating = 10,
     },
 
     [ABILITY_POISON_POINT] =
     {
         .name = _("GIFTDORN"),
-        .description = COMPOUND_STRING("Poisons foe on contact."),
+        .description = COMPOUND_STRING("Vergiftet bei Berührung."),
         .aiRating = 4,
     },
 
     [ABILITY_INNER_FOCUS] =
     {
         .name = _("KONZENTRATOR"),
-        .description = COMPOUND_STRING("Prevents flinching."),
+        .description = COMPOUND_STRING("Verhindert Zurückschreck."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -309,7 +309,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("MAGMAPANZER"),
-        .description = COMPOUND_STRING("Prevents freezing."),
+        .description = COMPOUND_STRING("Verhindert Einfrieren."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -317,7 +317,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WATER_VEIL] =
     {
         .name = _("AQUAHÜLLE"),
-        .description = COMPOUND_STRING("Prevents burns."),
+        .description = COMPOUND_STRING("Verhindert Verbrennungen."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -325,14 +325,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGNET_PULL] =
     {
         .name = _("MAGNETFALLE"),
-        .description = COMPOUND_STRING("Traps Steel-type Pokémon."),
+        .description = COMPOUND_STRING("Fängt STAHL-POKéMON."),
         .aiRating = 9,
     },
 
     [ABILITY_SOUNDPROOF] =
     {
         .name = _("LÄRMSCHUTZ"),
-        .description = COMPOUND_STRING("Avoids sound-based moves."),
+        .description = COMPOUND_STRING("Immun gg. Lärm-Attacken."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -340,28 +340,28 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_RAIN_DISH] =
     {
         .name = _("REGENGENUSS"),
-        .description = COMPOUND_STRING("Slight HP recovery in rain."),
+        .description = COMPOUND_STRING("KP-Anstieg bei Regen."),
         .aiRating = 3,
     },
 
     [ABILITY_SAND_STREAM] =
     {
         .name = _("SANDSTURM"),
-        .description = COMPOUND_STRING("Summons a sandstorm."),
+        .description = COMPOUND_STRING("Erzeugt einen Sandsturm."),
         .aiRating = 9,
     },
 
     [ABILITY_PRESSURE] =
     {
         .name = _("ERZWINGER"),
-        .description = COMPOUND_STRING("Raises foe's PP usage."),
+        .description = COMPOUND_STRING("Steigert AP des Gegners."),
         .aiRating = 5,
     },
 
     [ABILITY_THICK_FAT] =
     {
         .name = _("SPECKSCHICHT"),
-        .description = COMPOUND_STRING("Heat-and-cold protection."),
+        .description = COMPOUND_STRING("Schutz vor Hitze und Kälte."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -369,28 +369,28 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_EARLY_BIRD] =
     {
         .name = _("FRÜHWECKER"),
-        .description = COMPOUND_STRING("Awakens quickly from sleep."),
+        .description = COMPOUND_STRING("Schnelles Aufwachen."),
         .aiRating = 4,
     },
 
     [ABILITY_FLAME_BODY] =
     {
         .name = _("FLAMMKÖRPER"),
-        .description = COMPOUND_STRING("Burns the foe on contact."),
+        .description = COMPOUND_STRING("Verbrennt bei Berührung."),
         .aiRating = 4,
     },
 
     [ABILITY_RUN_AWAY] =
     {
         .name = _("ANGSTHASE"),
-        .description = COMPOUND_STRING("Makes escaping easier."),
+        .description = COMPOUND_STRING("Erleichtert das Entkommen."),
         .aiRating = 0,
     },
 
     [ABILITY_KEEN_EYE] =
     {
         .name = _("ADLERAUGE"),
-        .description = COMPOUND_STRING("Prevents loss of accuracy."),
+        .description = COMPOUND_STRING("Verhindert Verl. d. Genauig."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -398,7 +398,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HYPER_CUTTER] =
     {
         .name = _("SCHERENMACHT"),
-        .description = COMPOUND_STRING("Prevents Attack reduction."),
+        .description = COMPOUND_STRING("Verhindert ANGR.-Reduz."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -406,14 +406,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PICKUP] =
     {
         .name = _("MITNAHME"),
-        .description = COMPOUND_STRING("May pick up items."),
+        .description = COMPOUND_STRING("Kann Objekte aufnehmen."),
         .aiRating = 1,
     },
 
     [ABILITY_TRUANT] =
     {
         .name = _("SCHNARCHNASE"),
-        .description = COMPOUND_STRING("Moves only every two turns."),
+        .description = COMPOUND_STRING("Greift in jedem 2. Zug an."),
         .aiRating = -2,
         .cantBeOverwritten = TRUE,
     },
@@ -421,35 +421,35 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HUSTLE] =
     {
         .name = _("ÜBEREIFER"),
-        .description = COMPOUND_STRING("Trades accuracy for power."),
+        .description = COMPOUND_STRING("Tauscht Genauigk. u. Kraft."),
         .aiRating = 7,
     },
 
     [ABILITY_CUTE_CHARM] =
     {
         .name = _("CHARMEBOLZEN"),
-        .description = COMPOUND_STRING("Infatuates on contact."),
+        .description = COMPOUND_STRING("Wirkt bei Kontakt betörend."),
         .aiRating = 2,
     },
 
     [ABILITY_PLUS] =
     {
         .name = _("PLUS"),
-        .description = COMPOUND_STRING("Powers up with Minus."),
+        .description = COMPOUND_STRING("Bildet ein Team mit MINUN."),
         .aiRating = 0,
     },
 
     [ABILITY_MINUS] =
     {
         .name = _("MINUS"),
-        .description = COMPOUND_STRING("Powers up with Plus."),
+        .description = COMPOUND_STRING("Bildet ein Team mit PLUSLE."),
         .aiRating = 0,
     },
 
     [ABILITY_FORECAST] =
     {
         .name = _("PROGNOSE"),
-        .description = COMPOUND_STRING("Changes with the weather."),
+        .description = COMPOUND_STRING("Ist vom Wetter abhängig."),
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeTraced = B_UPDATED_ABILITY_DATA >= GEN_4,
@@ -459,7 +459,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STICKY_HOLD] =
     {
         .name = _("WERTEHALTER"),
-        .description = COMPOUND_STRING("Prevents item theft."),
+        .description = COMPOUND_STRING("Verhindert ITEM-Diebstahl."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -467,21 +467,21 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHED_SKIN] =
     {
         .name = _("EXPIDERMIS"),
-        .description = COMPOUND_STRING("Heals the body by shedding."),
+        .description = COMPOUND_STRING("Heilt durch Häutung."),
         .aiRating = 7,
     },
 
     [ABILITY_GUTS] =
     {
         .name = _("ADRENALIN"),
-        .description = COMPOUND_STRING("Ups Attack if suffering."),
+        .description = COMPOUND_STRING("Steigert ANGR. bei Leiden."),
         .aiRating = 6,
     },
 
     [ABILITY_MARVEL_SCALE] =
     {
         .name = _("NOTSCHUTZ"),
-        .description = COMPOUND_STRING("Ups Defense if suffering."),
+        .description = COMPOUND_STRING("Steigert VERT. bei Leiden."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -489,63 +489,63 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIQUID_OOZE] =
     {
         .name = _("KLOAKENSOSSE"),
-        .description = COMPOUND_STRING("Draining causes injury."),
+        .description = COMPOUND_STRING("Saug-Attacken schädigen."),
         .aiRating = 3,
     },
 
     [ABILITY_OVERGROW] =
     {
         .name = _("NOTDÜNGER"),
-        .description = COMPOUND_STRING("Ups Grass moves in a pinch."),
+        .description = COMPOUND_STRING("Erhöht PFL.-Att. i. d. Not."),
         .aiRating = 5,
     },
 
     [ABILITY_BLAZE] =
     {
         .name = _("GROSSBRAND"),
-        .description = COMPOUND_STRING("Ups Fire moves in a pinch."),
+        .description = COMPOUND_STRING("Erhöht FEUER-Att. in Not."),
         .aiRating = 5,
     },
 
     [ABILITY_TORRENT] =
     {
         .name = _("STURZBACH"),
-        .description = COMPOUND_STRING("Ups Water moves in a pinch."),
+        .description = COMPOUND_STRING("Erhöht WASSER-Att. in Not."),
         .aiRating = 5,
     },
 
     [ABILITY_SWARM] =
     {
         .name = _("HEXAPLAGA"),
-        .description = COMPOUND_STRING("Ups Bug moves in a pinch."),
+        .description = COMPOUND_STRING("Erhöht KÄFER-Att. in Not."),
         .aiRating = 5,
     },
 
     [ABILITY_ROCK_HEAD] =
     {
         .name = _("STEINHAUPT"),
-        .description = COMPOUND_STRING("Prevents recoil damage."),
+        .description = COMPOUND_STRING("Verh. Rückstoß-Schaden."),
         .aiRating = 5,
     },
 
     [ABILITY_DROUGHT] =
     {
         .name = _("DÜRRE"),
-        .description = COMPOUND_STRING("Summons sunlight in battle."),
+        .description = COMPOUND_STRING("Erzeugt Sonne im Kampf."),
         .aiRating = 9,
     },
 
     [ABILITY_ARENA_TRAP] =
     {
         .name = _("AUSWEGSLOS"),
-        .description = COMPOUND_STRING("Prevents fleeing."),
+        .description = COMPOUND_STRING("Verhindert Flucht."),
         .aiRating = 9,
     },
 
     [ABILITY_VITAL_SPIRIT] =
     {
         .name = _("MUNTERKEIT"),
-        .description = COMPOUND_STRING("Prevents sleep."),
+        .description = COMPOUND_STRING("Verhindert Einschlafen."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -553,7 +553,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WHITE_SMOKE] =
     {
         .name = _("PULVERRAUCH"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .description = COMPOUND_STRING("Verhindert Fähigk.-Reduz."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -561,14 +561,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PURE_POWER] =
     {
         .name = _("MENTALKRAFT"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .description = COMPOUND_STRING("Steigert ANGR."),
         .aiRating = 10,
     },
 
     [ABILITY_SHELL_ARMOR] =
     {
         .name = _("PANZERHAUT"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
+        .description = COMPOUND_STRING("Wehrt Volltreffer ab."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -576,7 +576,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_AIR_LOCK] =
     {
         .name = _("KLIMASCHUTZ"),
-        .description = COMPOUND_STRING("Negates weather effects."),
+        .description = COMPOUND_STRING("Kehrt Wetter-Effekte um."),
         .aiRating = 5,
     },
 
