@@ -33,11 +33,8 @@
 #define TAG_POKEBALL_SELECT 0x1000
 #define TAG_STARTER_CIRCLE  0x1001
 
-static const u8 sText_NjieriChooseFirst[] = _("Wähle dein 1. Pokemon!\nDu kannst danach noch ein 2. aussuchen!");
-static const u8 sText_NjieriChooseSecond[] = _("Such dir jetzt dein\n2. Pokemon aus!");
 
 static void CB2_StarterChoose(void);
-static void ClearStarterLabel(void);
 static void Task_StarterChoose(u8 taskId);
 static void Task_HandleStarterChooseInput(u8 taskId);
 static void Task_WaitForStarterSprite(u8 taskId);
@@ -45,14 +42,11 @@ static void Task_AskConfirmStarter(u8 taskId);
 static void Task_HandleConfirmStarterInput(u8 taskId);
 static void Task_DeclineStarter(u8 taskId);
 static void Task_MoveStarterChooseCursor(u8 taskId);
-static void Task_CreateStarterLabel(u8 taskId);
-static void CreateStarterPokemonLabel(u8 selection);
 static u8 CreatePokemonFrontSprite(enum Species species, u8 x, u8 y);
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
 
-static u16 sStarterLabelWindowId;
 u16 gNjieriStarterOne;
 u16 gNjieriStarterTwo;
 
@@ -79,28 +73,6 @@ static const struct WindowTemplate sWindowTemplates[] =
     DUMMY_WIN_TEMPLATE,
 };
 
-static const struct WindowTemplate sWindowTemplate_ConfirmStarter =
-{
-    .bg = 0,
-    .tilemapLeft = 24,
-    .tilemapTop = 9,
-    .width = 5,
-    .height = 4,
-    .paletteNum = 14,
-    .baseBlock = 0x0260
-};
-
-static const struct WindowTemplate sWindowTemplate_StarterLabel =
-{
-    .bg = 0,
-    .tilemapLeft = 0,
-    .tilemapTop = 0,
-    .width = 13,
-    .height = 4,
-    .paletteNum = 14,
-    .baseBlock = 0x0274
-};
-
 static const u8 sPokeballCoords[STARTER_MON_COUNT][2] =
 {
     {32, 48},
@@ -112,19 +84,6 @@ static const u8 sPokeballCoords[STARTER_MON_COUNT][2] =
     {92, 88},
     {148, 88},
     {190, 88},
-};
-
-static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
-{
-    {0, 4},
-    {5, 4},
-    {10, 4},
-    {15, 4},
-    {17, 4},
-    {0, 9},
-    {5, 9},
-    {11, 9},
-    {16, 9},
 };
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
@@ -171,7 +130,6 @@ static const struct BgTemplate sBgTemplates[3] =
     },
 };
 
-static const u8 sTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY};
 
 static const struct OamData sOam_Hand =
 {
@@ -468,7 +426,7 @@ void CB2_ChooseStarter(void)
     ShowBg(3);
 
     taskId = CreateTask(Task_StarterChoose, 0);
-    gTasks[taskId].tStarterSelection = 1;
+    gTasks[taskId].tStarterSelection = 0;
 
     // Pointing hand cursor above the currently selected Poke Ball
     spriteId = CreateSprite(&sSpriteTemplate_Hand, 120, 56, 2);
@@ -482,8 +440,6 @@ void CB2_ChooseStarter(void)
     gSprites[spriteId].sBallId = i;
     }
 
-    sStarterLabelWindowId = WINDOW_NONE;
-    CreateStarterPokemonLabel(gTasks[taskId].tStarterSelection);
 }
 
 static void CB2_StarterChoose(void)
@@ -497,17 +453,7 @@ static void CB2_StarterChoose(void)
 
 static void Task_StarterChoose(u8 taskId)
 {
-    FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x2A8, 0xD);
-
-    if (gTasks[taskId].tStarterCount == 0)
-        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseFirst, 0, 1, 0, NULL);
-    else
-        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseSecond, 0, 1, 0, NULL);
-
-    PutWindowTilemap(0);
-    ScheduleBgCopyTilemapToVram(0);
-
+    // Njeri: no instruction/name/confirm text boxes - just the hand cursor + sprite preview
     gTasks[taskId].func = Task_HandleStarterChooseInput;
 }
 
@@ -524,8 +470,6 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         PlaySE(SE_FAILURE);
         return;
     }
-
-        ClearStarterLabel();
 
         // Create white circle background
         spriteId = CreateSprite(&sSpriteTemplate_StarterCircle, sPokeballCoords[selection][0], sPokeballCoords[selection][1], 1);
@@ -562,19 +506,22 @@ static void Task_WaitForStarterSprite(u8 taskId)
 
 static void Task_AskConfirmStarter(u8 taskId)
 {
+    // Njeri: no confirm text box - A confirms, B goes back
     PlayCry_Normal(GetStarterPokemon(gTasks[taskId].tStarterSelection), 0);
-    FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized(0, FONT_NORMAL, gText_ConfirmStarterChoice, 0, 1, 0, NULL);
-    ScheduleBgCopyTilemapToVram(0);
-    CreateYesNoMenu(&sWindowTemplate_ConfirmStarter, 0x2A8, 0xD, 0);
     gTasks[taskId].func = Task_HandleConfirmStarterInput;
 }
 
 static void Task_HandleConfirmStarterInput(u8 taskId)
 {
     u8 spriteId;
+    s8 input = -1;
 
-    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    if (JOY_NEW(A_BUTTON))
+        input = 0;   // confirm
+    else if (JOY_NEW(B_BUTTON))
+        input = 1;   // back
+
+    switch (input)
     {
     case 0:  // YES
         // Return the starter choice and exit.
@@ -603,8 +550,7 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
     }
     break;
 
-    case 1:  // NO
-    case MENU_B_PRESSED:
+    case 1:  // back
         PlaySE(SE_SELECT);
         spriteId = gTasks[taskId].tPkmnSpriteId;
         FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
@@ -623,62 +569,8 @@ static void Task_DeclineStarter(u8 taskId)
     gTasks[taskId].func = Task_StarterChoose;
 }
 
-static void CreateStarterPokemonLabel(u8 selection)
-{
-    u8 categoryText[32];
-    struct WindowTemplate winTemplate;
-    const u8 *speciesName;
-    s32 width;
-    u8 labelLeft, labelRight, labelTop, labelBottom;
-
-    enum Species species = GetStarterPokemon(selection);
-    CopyMonCategoryText(species, categoryText);
-    speciesName = GetSpeciesName(species);
-
-    winTemplate = sWindowTemplate_StarterLabel;
-    winTemplate.tilemapLeft = sStarterLabelCoords[selection][0];
-    winTemplate.tilemapTop = sStarterLabelCoords[selection][1];
-
-    sStarterLabelWindowId = AddWindow(&winTemplate);
-    FillWindowPixelBuffer(sStarterLabelWindowId, PIXEL_FILL(0));
-
-    width = GetStringCenterAlignXOffset(FONT_NARROW, categoryText, 0x68);
-    AddTextPrinterParameterized3(sStarterLabelWindowId, FONT_NARROW, width, 1, sTextColors, 0, categoryText);
-
-    width = GetStringCenterAlignXOffset(FONT_NORMAL, speciesName, 0x68);
-    AddTextPrinterParameterized3(sStarterLabelWindowId, FONT_NORMAL, width, 17, sTextColors, 0, speciesName);
-
-    PutWindowTilemap(sStarterLabelWindowId);
-    ScheduleBgCopyTilemapToVram(0);
-
-    labelLeft = sStarterLabelCoords[selection][0] * 8 - 4;
-    labelRight = (sStarterLabelCoords[selection][0] + 13) * 8 + 4;
-    labelTop = sStarterLabelCoords[selection][1] * 8;
-    labelBottom = (sStarterLabelCoords[selection][1] + 4) * 8;
-    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(labelLeft, labelRight));
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(labelTop, labelBottom));
-}
-
-static void ClearStarterLabel(void)
-{
-    FillWindowPixelBuffer(sStarterLabelWindowId, PIXEL_FILL(0));
-    ClearWindowTilemap(sStarterLabelWindowId);
-    RemoveWindow(sStarterLabelWindowId);
-    sStarterLabelWindowId = WINDOW_NONE;
-    SetGpuReg(REG_OFFSET_WIN0H, 0);
-    SetGpuReg(REG_OFFSET_WIN0V, 0);
-    ScheduleBgCopyTilemapToVram(0);
-}
-
 static void Task_MoveStarterChooseCursor(u8 taskId)
 {
-    ClearStarterLabel();
-    gTasks[taskId].func = Task_CreateStarterLabel;
-}
-
-static void Task_CreateStarterLabel(u8 taskId)
-{
-    CreateStarterPokemonLabel(gTasks[taskId].tStarterSelection);
     gTasks[taskId].func = Task_HandleStarterChooseInput;
 }
 
