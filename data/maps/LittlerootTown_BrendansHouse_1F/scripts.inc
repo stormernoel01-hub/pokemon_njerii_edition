@@ -33,6 +33,20 @@ LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
 	setmetatile 3, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
 	return
 
+LittlerootTown_BrendansHouse_1F_EventScript_NjeriLogbook::
+	msgbox LittlerootTown_BrendansHouse_1F_Text_NjeriLogbook, MSGBOX_SIGN
+	end
+
+LittlerootTown_BrendansHouse_1F_Text_NjeriLogbook:
+	.string "{PLAYER} Logbuech:\p"
+	.string "Endlich han ich mini Crib in\n"
+	.string "GÜFU TOWN! De Strand isch quasi\l"
+	.string "private und nur de PROF. LUNTE\l"
+	.string "wohnt nebedra.\p"
+	.string "De isch voll de Ehremah! Er git\n"
+	.string "mer 2 vo sine Viicher for free\l"
+	.string "alda.$"
+
 LittlerootTown_BrendansHouse_1F_OnTransition:
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs

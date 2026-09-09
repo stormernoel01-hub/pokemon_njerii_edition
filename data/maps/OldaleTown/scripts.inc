@@ -7,7 +7,6 @@ OldaleTown_OnTransition:
 	setflag FLAG_VISITED_OLDALE_TOWN
 	setflag FLAG_NJERI_HIDE_OLDALE_FOOTPRINTS_MAN
 		call_if_set FLAG_BADGE01_GET, OldaleTown_EventScript_MoveFatManAfterBadge
-	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
@@ -55,17 +54,22 @@ OldaleTown_EventScript_FatManAfterBadge::
 OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
-	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
-	setflag FLAG_TEMP_1
-	hidefollower 0
-	playbgm MUS_FOLLOW_ME, FALSE
-	msgbox OldaleTown_Text_IWorkAtPokemonMart, MSGBOX_DEFAULT
-	closemessage
-	switch VAR_FACING
-	case DIR_SOUTH, OldaleTown_EventScript_GoToMartSouth
-	case DIR_NORTH, OldaleTown_EventScript_GoToMartNorth
-	case DIR_EAST, OldaleTown_EventScript_GoToMartEast
+	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MartEmployeeDone
+	msgbox OldaleTown_Text_NjeriFreeTrank, MSGBOX_DEFAULT
+	giveitem ITEM_POTION
+	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_MartEmployeeBagFull
+	setflag FLAG_RECEIVED_POTION_OLDALE
+	release
+	end
+
+OldaleTown_EventScript_MartEmployeeDone::
+	msgbox OldaleTown_Text_NjeriTrankDone, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_MartEmployeeBagFull::
+	msgbox OldaleTown_Text_NjeriTrankBagFull, MSGBOX_DEFAULT
+	release
 	end
 
 OldaleTown_EventScript_GoToMartSouth::
@@ -367,6 +371,16 @@ OldaleTown_Text_SavingMyProgress:
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Folg mir mal 2 Schritt...$"
+
+OldaleTown_Text_NjeriFreeTrank:
+	.string "Ey wettsch en TRANK for free?$"
+
+OldaleTown_Text_NjeriTrankDone:
+	.string "Bruuchsch susch no öppis?$"
+
+OldaleTown_Text_NjeriTrankBagFull:
+	.string "Dini Tasche isch voll.\n"
+	.string "Chum spöter no einisch verbii.$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
 	.string "Das isch en POKEMON Markt!\p"

@@ -334,7 +334,7 @@ LittlerootTown_EventScript_Grandma::
 	giveitem ITEM_POKE_BALL, 5
 	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_GrandmaBagFull
 	setflag FLAG_NJERI_GRANDMA_GAVE_BALLS
-	msgbox LittlerootTown_Text_GrandmaDirections, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_GrandmaSpeech, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1065,18 +1065,34 @@ LittlerootTown_Text_DebugBadgesGiven:
 	.string "sind jetzt gesetzt.$"
 
 LittlerootTown_Text_GrandmaIntro:
-	.string "Ach {PLAYER}, du bisch so gross\n"
-	.string "worde.\p"
-	.string "Es wird Ziit für dich, die Welt z'\n"
-	.string "bereise und alli mögliche POKéMON\l"
-	.string "z' fange.$"
+	.string "OMA LUNTE: Hey {PLAYER}, ich han da\n"
+	.string "no öppis für dich!$"
+
+LittlerootTown_Text_GrandmaSpeech:
+	.string "Ich verzell der no schnell öppis\n"
+	.string "über: “Wie Das So Lauft Und So…”\p"
+	.string "I dere Region isch jede Kampf en\n"
+	.string "Doppelkampf! Pass also uf!\p"
+	.string "Es git echt bösi Strats mit\n"
+	.string "Fähigkeite, Items, Typings und so\l"
+	.string "wiiter…\p"
+	.string "Churz und knapp:\p"
+	.string "Das Game isch nöd für fucking\n"
+	.string "Noobs!\p"
+	.string "…\p"
+	.string "..ehemm.. Jedefalls, im Oste vo\n"
+	.string "GÜFU TOWN findsch de Weg über\l"
+	.string "ROUTE 1, nach BASI.\p"
+	.string "Die erst Arena befindet sich nach\n"
+	.string "ROUTE 2 im Norde vo BASI.\p"
+	.string "Vill Erfolg {PLAYER}!$"
 
 LittlerootTown_Text_GrandmaDirections:
-	.string "Wenn du nach rechts laufsch, chunsch\n"
-	.string "über ROUTE 1 nach BASI.\p"
-	.string "Dett gits es POKéCENTER und villicht\n"
-	.string "sogar en Lade mit Bier…\p"
-	.string "Vill Glück!$"
+	.string "Im Oste vo GÜFU TOWN findsch de Weg\n"
+	.string "über ROUTE 1, nach BASI.\p"
+	.string "Die erst Arena befindet sich nach\n"
+	.string "ROUTE 2 im Norde vo BASI.\p"
+	.string "Vill Erfolg {PLAYER}!$"
 
 LittlerootTown_Text_GrandmaBagFull:
 	.string "Oh, dini Tasche isch scho voll.\p"
