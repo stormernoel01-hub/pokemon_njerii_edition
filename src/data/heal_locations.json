@@ -121,6 +121,14 @@
       "respawn_npc": "LOCALID_OLDALE_NURSE"
     },
     {
+      "id": "HEAL_LOCATION_ROUTE110",
+      "map": "MAP_ROUTE110",
+      "x": 15,
+      "y": 15,
+      "respawn_map": "MAP_ROUTE110_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_OLDALE_NURSE"
+    },
+    {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",
       "map": "MAP_DEWFORD_TOWN",
       "x": 2,
