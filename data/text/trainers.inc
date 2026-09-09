@@ -85,7 +85,7 @@ Route102_Text_RickPostBattle:
 
 Route102_Text_TianaIntro:
 	.string "Mal luege, ob mini Pokemon\n"
-	.string "gege so en NJIERI wie dich\l"
+	.string "gege so en NJERI wie dich\l"
 	.string "chönd günne.$"
 
 Route102_Text_TianaDefeat:
@@ -98,7 +98,7 @@ Route102_Text_TianaNotEnoughMons:
 
 Route102_Text_TianaAfter:
 	.string "Irgendwenn nimm ich's mit\n"
-	.string "dir uuf, NJIERI.$"
+	.string "dir uuf, NJERI.$"
 
 Route103_Text_DaisyIntro:
 	.string "Ich zeig der es Pokemon\n"

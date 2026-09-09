@@ -838,7 +838,7 @@ Route110_Text_TwoRoads:
 	.string "Sitt Generatione versteck\n"
 	.string "ich de Pokeball da hine.\p"
 	.string "Wenn du ihn jetzt nimmsch\n"
-	.string "bisch en richtige NJIERI!!!$"
+	.string "bisch en richtige NJERI!!!$"
 
 Route110_Text_WalkOnTheLowRoad:
 	.string "Ich habe kein RAD, ich werde gemüt-\n"

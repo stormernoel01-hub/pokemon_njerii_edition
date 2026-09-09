@@ -897,7 +897,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 	end
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Ouh NJIERI!\p"
+	.string "Ouh NJERI!\p"
 	.string "Ich hoffe du freusch dich\n"
 	.string "über dini Pokemon!\p"
 	.string "Jetzt gah da use und füll\n"
@@ -1250,7 +1250,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "… … … … …Klick!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LunteChooseTwo:
-	.string "Ouh NJIERI!\p"
+	.string "Ouh NJERI!\p"
 	.string "Du dörfsch der 2 POKEMON\n"
 	.string "ussueche und denn für mich\l"
 	.string "de POKEDEX vollmache.$"
@@ -1266,7 +1266,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ObtainedPokedex:
 
 LittlerootTown_ProfessorBirchsLab_Text_LunteGo:
 	.string "LUNTE: Und jetzt verreis!\n"
-	.string "Zeig dere Welt, wer de NJIERI isch!$"
+	.string "Zeig dere Welt, wer de NJERI isch!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_AlreadyGotStarters:
 	.string "LUNTE: Du hesch dini POKEMON\n"

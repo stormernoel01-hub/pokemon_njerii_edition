@@ -291,7 +291,7 @@ Route101_Text_TakeTiredPokemonToPokeCenter:
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Pssst...\p"
-	.string "NJIERII...\p"
+	.string "NJERI...\p"
 	.string "Wottsch au en\n"
 	.string "Riss?$"
 

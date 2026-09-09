@@ -1,12 +1,12 @@
 gText_HowMayIServeYou::
-        .string "Ouh NJIERI!\p"
+        .string "Ouh NJERI!\p"
         .string "Was bruchsch?$"
 
 gText_PleaseComeAgain::
-        .string "Machs guet, NJIERI!$"
+        .string "Machs guet, NJERI!$"
 
 gText_PlayerWhatCanIDoForYou::
-        .string "Ouh NJIERI!\p"
+        .string "Ouh NJERI!\p"
         .string "Was bruchsch?$"
 
 Pokemart_DefaultItemList::

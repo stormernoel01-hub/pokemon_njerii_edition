@@ -18,7 +18,7 @@ GraniteCave_1F_EventScript_ReceivedFlash::
 	end
 
 GraniteCave_1F_Text_GetsDarkAheadHereYouGo:
-	.string "Ouh NJIERI!\p"
+	.string "Ouh NJERI!\p"
 	.string "Lueg, ich gib der jetzt\n"
 	.string "die VM BLITZ.\p"
 	.string "Kei Angst, du bruchsch\n"
@@ -34,5 +34,5 @@ GraniteCave_1F_Text_ExplainFlash:
 	.string "vill verschiedeni Viecher.\p"
 	.string "Uf jedere Ebeni findsch\n"
 	.string "wieder was Neus!\p"
-	.string "Pass uf dich uf, NJIERI.$"
+	.string "Pass uf dich uf, NJERI.$"
 

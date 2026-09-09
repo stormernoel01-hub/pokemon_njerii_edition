@@ -1375,7 +1375,7 @@ PetalburgCity_Gym_Text_SimonNotEnoughMons:
 	.string "Pokemon für en Doppelkampf.$"
 
 PetalburgCity_Gym_Text_ReceivedFirstBadge:
-	.string "NJIERI snaggt sich de\n"
+	.string "NJERI snaggt sich de\n"
 	.string "erst Orde!$"
 
 PetalburgCity_Gym_Text_SimonAfterBadge:
