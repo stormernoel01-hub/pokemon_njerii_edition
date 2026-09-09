@@ -49,8 +49,8 @@ static u8 CreatePokemonFrontSprite(enum Species species, u8 x, u8 y);
 static void Task_AskFinalConfirm(u8 taskId);
 static void Task_HandleFinalConfirmInput(u8 taskId);
 
-static const u8 sText_NjieriChooseFirst[] = _("Such der zerscht es Pokémon us.\nDu chasch denn no es zweits neh!");
-static const u8 sText_NjieriChooseSecond[] = _("Und jetz such der no dis\nzweite Pokémon us!");
+static const u8 sText_NjieriChooseFirst[] = _("Suech der zerscht es Pokémon us.\nDu chasch denn no es zweits neh!");
+static const u8 sText_NjieriChooseSecond[] = _("Und jetz suech der no dis\nzweite Pokémon us!");
 static const u8 sText_NjieriConfirmBoth[] = _("Bisch z' friede mit {STR_VAR_1}\nund {STR_VAR_2}?");
 
 static const struct WindowTemplate sWindowTemplate_ConfirmStarter =
