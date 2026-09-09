@@ -543,6 +543,9 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
+#define MUS_DP_ROUTE209_DAY        610
+#define MUS_HG_NATIONAL_PARK       611
+#define MUS_DP_VS_WILD             612
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF
