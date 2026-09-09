@@ -53,7 +53,7 @@
 
 #define FLAG_NJERI_FACE_WEST_IN_BRENDANS_HOUSE    0x20 // Njeri: turn player west after being warped into Brendan's/May's house 1F post-Pokedex
 #define FLAG_NJERI_GRANDMA_GAVE_BALLS    0x21 // Njeri: Littleroot grandma has handed over the 5 Poke Balls
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
+#define FLAG_NJERI_HIDE_OLDALE_FOOTPRINTS_MAN    0x22 // Njeri: the pointless footprints maniac in Basi/Oldale is removed
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
