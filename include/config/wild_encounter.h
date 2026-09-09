@@ -5,6 +5,11 @@
 #define WE_VANILLA_RANDOM           TRUE    // If TRUE, Pokémon can randomly spawn on tiles that can trigger wild encounters, as in vanilla.
 #define WE_FLAG_NO_ENCOUNTER        0       // If this flag is set, wild encounters will be disabled.
 
+// Njeri: give every wild slot on a route/water/rock/fishing table the same chance
+// instead of the vanilla 20/20/10/10/10/10/5/5/4/1 distribution. For equal odds
+// per *species*, fill each slot of a table with a distinct species.
+#define WE_FLAT_ENCOUNTER_CHANCE    TRUE
+
 // Double Wild Battles
 #define WE_DOUBLE_WILD_CHANCE            100          // % chance of encountering two Pokémon in a Wild Encounter.
 #define WE_DOUBLE_WILD_REQUIRE_2_MONS    TRUE      // If set to TRUE, Wild Double Battles will default to Single Battles when the player only has 1 usable Pokémon, ignoring WE_DOUBLE_WILD_CHANCE and WE_FLAG_FORCE_DOUBLE_WILD.

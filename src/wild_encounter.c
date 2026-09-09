@@ -178,6 +178,9 @@ static void FeebasSeedRng(u16 seed)
 // LAND_WILD_COUNT
 u32 ChooseWildMonIndex_Land(void)
 {
+#if WE_FLAT_ENCOUNTER_CHANCE
+    return Random() % LAND_WILD_COUNT;
+#else
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
@@ -214,11 +217,15 @@ u32 ChooseWildMonIndex_Land(void)
         wildMonIndex = 11 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // WATER_WILD_COUNT
 u32 ChooseWildMonIndex_Water(void)
 {
+#if WE_FLAT_ENCOUNTER_CHANCE
+    return Random() % WATER_WILD_COUNT;
+#else
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_WATER_MONS_TOTAL;
@@ -241,11 +248,15 @@ u32 ChooseWildMonIndex_Water(void)
         wildMonIndex = 4 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // ROCK_WILD_COUNT
 u32 ChooseWildMonIndex_Rocks(void)
 {
+#if WE_FLAT_ENCOUNTER_CHANCE
+    return Random() % ROCK_WILD_COUNT;
+#else
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_ROCK_SMASH_MONS_TOTAL;
@@ -268,11 +279,21 @@ u32 ChooseWildMonIndex_Rocks(void)
         wildMonIndex = 4 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // FISH_WILD_COUNT
 static u32 ChooseWildMonIndex_Fishing(u8 rod)
 {
+#if WE_FLAT_ENCOUNTER_CHANCE
+    switch (rod)
+    {
+    case OLD_ROD:  return Random() % 2;
+    case GOOD_ROD: return 2 + Random() % 3;
+    case SUPER_ROD: return 5 + Random() % 5;
+    default: return 0;
+    }
+#else
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % max(max(ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_TOTAL, ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_TOTAL),
@@ -320,6 +341,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
         break;
     }
     return wildMonIndex;
+#endif
 }
 
 u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
