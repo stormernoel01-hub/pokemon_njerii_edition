@@ -2358,7 +2358,7 @@ void UpdateFollowingPokemon(void)
     bool32 female;
     // Don't spawn follower if:
     // 1. GetFollowerInfo returns FALSE
-    // 2. Map is indoors and gfx is larger than 32x32
+    // 2. Map is indoors (Njeri: no followers inside buildings at all)
     // 3. flag is set
     // 4. a follower NPC is present
     if (OW_POKEMON_OBJECT_EVENTS == FALSE
@@ -2366,7 +2366,7 @@ void UpdateFollowingPokemon(void)
      || FlagGet(B_FLAG_FOLLOWERS_DISABLED)
      || !GetFollowerInfo(&species, &shiny, &female)
      || SpeciesToGraphicsInfo(species, shiny, female) == NULL
-     || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, shiny, female)->oam->size > ST_OAM_SIZE_2)
+     || gMapHeader.mapType == MAP_TYPE_INDOOR
      || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
      || PlayerHasFollowerNPC()
      )

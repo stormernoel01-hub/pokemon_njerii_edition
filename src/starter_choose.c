@@ -43,6 +43,9 @@ static void Task_HandleConfirmStarterInput(u8 taskId);
 static void Task_DeclineStarter(u8 taskId);
 static void Task_MoveStarterChooseCursor(u8 taskId);
 static u8 CreatePokemonFrontSprite(enum Species species, u8 x, u8 y);
+
+static const u8 sText_NjieriChooseFirst[] = _("Wähle dein 1. Pokemon!\nDu kannst danach noch ein 2. aussuchen!");
+static const u8 sText_NjieriChooseSecond[] = _("Such dir jetzt dein\n2. Pokemon aus!");
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
@@ -453,7 +456,18 @@ static void CB2_StarterChoose(void)
 
 static void Task_StarterChoose(u8 taskId)
 {
-    // Njeri: no instruction/name/confirm text boxes - just the hand cursor + sprite preview
+    // Njeri: keep only the "pick 1st / pick 2nd" instruction box - no name label, no confirm box
+    FillWindowPixelBuffer(0, PIXEL_FILL(1));
+    DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x2A8, 0xD);
+
+    if (gTasks[taskId].tStarterCount == 0)
+        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseFirst, 0, 1, 0, NULL);
+    else
+        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseSecond, 0, 1, 0, NULL);
+
+    PutWindowTilemap(0);
+    ScheduleBgCopyTilemapToVram(0);
+
     gTasks[taskId].func = Task_HandleStarterChooseInput;
 }
 

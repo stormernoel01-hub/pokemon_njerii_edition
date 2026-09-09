@@ -1241,12 +1241,6 @@ u16 GetCurrLocationDefaultMusic(void)
      && GetSavedWeather() == WEATHER_SANDSTORM)
         return MUS_DESERT;
 
-    // Njeri: Guefu Town stays silent until the LEA intro cutscene has played.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LITTLEROOT_TOWN)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN)
-     && !FlagGet(FLAG_NJERI_LEA_SCENE_DONE))
-        return MUS_NONE;
-
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
     if (music != MUS_ROUTE118)
     {

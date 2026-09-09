@@ -1,5 +1,6 @@
 LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
 	.byte 0
 
 	@ State descriptions for VAR_LITTLEROOT_TOWN_STATE
@@ -86,6 +87,7 @@ LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
 	return
 
 LittlerootTown_OnFrame:
+	map_script_2 VAR_TEMP_0, 0, LittlerootTown_EventScript_LeaScene
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
@@ -373,8 +375,6 @@ LittlerootTown_EventScript_LeaScene::
 	waitmovement 0
 	removeobject LOCALID_LITTLEROOT_LEA
 	setflag FLAG_NJERI_LEA_SCENE_DONE
-	savebgm MUS_DUMMY
-	fadedefaultbgm
 	releaseall
 	end
 
