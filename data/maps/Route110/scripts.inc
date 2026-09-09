@@ -115,6 +115,10 @@ Route110_EventScript_MauvilleCitySign::
 	msgbox Route110_Text_MauvilleCitySign, MSGBOX_SIGN
 	end
 
+Route110_EventScript_NjeriDirectionSign::
+	msgbox Route110_Text_NjeriDirectionSign, MSGBOX_SIGN
+	end
+
 Route110_EventScript_TrainerTipsPrlzSleep::
 	msgbox Route110_Text_TrainerTipsPrlzSleep, MSGBOX_SIGN
 	end
@@ -941,6 +945,11 @@ Route110_Text_SeasideParkingSign:
 Route110_Text_MauvilleCitySign:
 	.string "HARDWALD\n"
 	.string "{RIGHT_ARROW} DÜBI$"
+
+Route110_Text_NjeriDirectionSign:
+	.string "DÜBI {RIGHT_ARROW}\n"
+	.string "DIETI TOWN {DOWN_ARROW}\l"
+	.string "BASI {LEFT_ARROW}$"
 
 Route110_Text_TrainerTipsPrlzSleep:
 	.string "TIPPS für TRAINER\p"
