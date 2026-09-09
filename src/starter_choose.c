@@ -14,6 +14,7 @@
 #include "sound.h"
 #include "sprite.h"
 #include "starter_choose.h"
+#include "string_util.h"
 #include "strings.h"
 #include "task.h"
 #include "text.h"
@@ -32,6 +33,7 @@
 
 #define TAG_POKEBALL_SELECT 0x1000
 #define TAG_STARTER_CIRCLE  0x1001
+#define TAG_POKEBALL_GREY   0x1002
 
 
 static void CB2_StarterChoose(void);
@@ -44,8 +46,26 @@ static void Task_DeclineStarter(u8 taskId);
 static void Task_MoveStarterChooseCursor(u8 taskId);
 static u8 CreatePokemonFrontSprite(enum Species species, u8 x, u8 y);
 
-static const u8 sText_NjieriChooseFirst[] = _("Wähle dein 1. Pokemon!\nDu kannst danach noch ein 2. aussuchen!");
-static const u8 sText_NjieriChooseSecond[] = _("Such dir jetzt dein\n2. Pokemon aus!");
+static void Task_AskFinalConfirm(u8 taskId);
+static void Task_HandleFinalConfirmInput(u8 taskId);
+
+static const u8 sText_NjieriChooseFirst[] = _("Such der zerscht es Pokémon us.\nDu chasch denn no es zweits neh!");
+static const u8 sText_NjieriChooseSecond[] = _("Und jetz such der no dis\nzweite Pokémon us!");
+static const u8 sText_NjieriConfirmBoth[] = _("Bisch z' friede mit {STR_VAR_1}\nund {STR_VAR_2}?");
+
+static const struct WindowTemplate sWindowTemplate_ConfirmStarter =
+{
+    .bg = 0,
+    .tilemapLeft = 24,
+    .tilemapTop = 9,
+    .width = 5,
+    .height = 4,
+    .paletteNum = 14,
+    .baseBlock = 0x0260,
+};
+
+static u8 sGreyBallPaletteNum;
+static u8 sBallSpriteIds[STARTER_MON_COUNT];
 static void SpriteCB_SelectionHand(struct Sprite *sprite);
 static void SpriteCB_Pokeball(struct Sprite *sprite);
 static void SpriteCB_StarterPokemon(struct Sprite *sprite);
@@ -409,6 +429,23 @@ void CB2_ChooseStarter(void)
     LoadCompressedSpriteSheet(&sSpriteSheet_PokeballSelect[0]);
     LoadCompressedSpriteSheet(&sSpriteSheet_StarterCircle[0]);
     LoadSpritePalettes(sSpritePalettes_StarterChoose);
+
+    // Build a dimmed grey copy of the Poké Ball palette for already-chosen balls
+    {
+        u16 greyPal[16];
+        s32 j;
+        for (j = 0; j < 16; j++)
+        {
+            u16 c = sPokeballSelection_Pal[j];
+            u32 lum = (((c) & 0x1F) * 77 + (((c) >> 5) & 0x1F) * 151 + (((c) >> 10) & 0x1F) * 28) >> 8;
+            lum = lum * 2 / 5;
+            greyPal[j] = RGB2(lum, lum, lum);
+        }
+        greyPal[0] = sPokeballSelection_Pal[0];
+        sGreyBallPaletteNum = AllocSpritePalette(TAG_POKEBALL_GREY);
+        LoadPalette(greyPal, OBJ_PLTT_ID(sGreyBallPaletteNum), PLTT_SIZE_4BPP);
+    }
+
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
 
     EnableInterrupts(DISPSTAT_VBLANK);
@@ -441,6 +478,7 @@ void CB2_ChooseStarter(void)
     spriteId = CreateSprite(&sSpriteTemplate_Pokeball, sPokeballCoords[i][0], sPokeballCoords[i][1], 2);
     gSprites[spriteId].sTaskId = taskId;
     gSprites[spriteId].sBallId = i;
+    sBallSpriteIds[i] = spriteId;
     }
 
 }
@@ -456,14 +494,14 @@ static void CB2_StarterChoose(void)
 
 static void Task_StarterChoose(u8 taskId)
 {
-    // Njeri: keep only the "pick 1st / pick 2nd" instruction box - no name label, no confirm box
+    // Njeri: only the "pick 1st / pick 2nd" instruction box - no name label
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x2A8, 0xD);
 
     if (gTasks[taskId].tStarterCount == 0)
-        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseFirst, 0, 1, 0, NULL);
+        AddTextPrinterParameterized(0, FONT_SMALL, sText_NjieriChooseFirst, 0, 1, 0, NULL);
     else
-        AddTextPrinterParameterized(0, FONT_NORMAL, sText_NjieriChooseSecond, 0, 1, 0, NULL);
+        AddTextPrinterParameterized(0, FONT_SMALL, sText_NjieriChooseSecond, 0, 1, 0, NULL);
 
     PutWindowTilemap(0);
     ScheduleBgCopyTilemapToVram(0);
@@ -537,34 +575,32 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
 
     switch (input)
     {
-    case 0:  // YES
-        // Return the starter choice and exit.
+    case 0:  // confirm this ball
+        spriteId = gTasks[taskId].tPkmnSpriteId;
+        FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
+        FreeAndDestroyMonPicSprite(spriteId);
+        spriteId = gTasks[taskId].tCircleSpriteId;
+        FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
+        DestroySprite(&gSprites[spriteId]);
+
         if (gTasks[taskId].tStarterCount == 0)
-    {
-    gTasks[taskId].tFirstStarter = gTasks[taskId].tStarterSelection;
-    gNjieriStarterOne = GetStarterPokemon(gTasks[taskId].tStarterSelection);
-    gTasks[taskId].tStarterCount = 1;
+        {
+            // First pick locked in - grey out its Poké Ball, ask for the second
+            gTasks[taskId].tFirstStarter = gTasks[taskId].tStarterSelection;
+            gNjieriStarterOne = GetStarterPokemon(gTasks[taskId].tStarterSelection);
+            gTasks[taskId].tStarterCount = 1;
+            gSprites[sBallSpriteIds[gTasks[taskId].tFirstStarter]].oam.paletteNum = sGreyBallPaletteNum;
+            gTasks[taskId].func = Task_StarterChoose;
+        }
+        else
+        {
+            // Second pick made - confirm both before leaving
+            gNjieriStarterTwo = GetStarterPokemon(gTasks[taskId].tStarterSelection);
+            gTasks[taskId].func = Task_AskFinalConfirm;
+        }
+        break;
 
-    spriteId = gTasks[taskId].tPkmnSpriteId;
-    FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
-    FreeAndDestroyMonPicSprite(spriteId);
-
-    spriteId = gTasks[taskId].tCircleSpriteId;
-    FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
-    DestroySprite(&gSprites[spriteId]);
-
-    gTasks[taskId].func = Task_StarterChoose;
-    }
-    else
-    {
-    gNjieriStarterTwo = GetStarterPokemon(gTasks[taskId].tStarterSelection);
-    gSpecialVar_Result = gTasks[taskId].tStarterSelection;
-    ResetAllPicSprites();
-    SetMainCallback2(gMain.savedCallback);
-    }
-    break;
-
-    case 1:  // back
+    case 1:  // back out of this ball
         PlaySE(SE_SELECT);
         spriteId = gTasks[taskId].tPkmnSpriteId;
         FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
@@ -574,6 +610,44 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
         FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
         DestroySprite(&gSprites[spriteId]);
         gTasks[taskId].func = Task_DeclineStarter;
+        break;
+    }
+}
+
+static void Task_AskFinalConfirm(u8 taskId)
+{
+    StringCopy(gStringVar1, GetSpeciesName(gNjieriStarterOne));
+    StringCopy(gStringVar2, GetSpeciesName(gNjieriStarterTwo));
+    StringExpandPlaceholders(gStringVar4, sText_NjieriConfirmBoth);
+
+    FillWindowPixelBuffer(0, PIXEL_FILL(1));
+    DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x2A8, 0xD);
+    AddTextPrinterParameterized(0, FONT_SMALL, gStringVar4, 0, 1, 0, NULL);
+    PutWindowTilemap(0);
+    ScheduleBgCopyTilemapToVram(0);
+
+    CreateYesNoMenu(&sWindowTemplate_ConfirmStarter, 0x2A8, 0xD, 0);
+    gTasks[taskId].func = Task_HandleFinalConfirmInput;
+}
+
+static void Task_HandleFinalConfirmInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:  // JA - keep both, leave
+        gSpecialVar_Result = gTasks[taskId].tStarterSelection;
+        ResetAllPicSprites();
+        SetMainCallback2(gMain.savedCallback);
+        break;
+    case 1:          // NEI
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        // Un-grey the first ball and start the whole pick over
+        gSprites[sBallSpriteIds[gTasks[taskId].tFirstStarter]].oam.paletteNum = IndexOfSpritePaletteTag(TAG_POKEBALL_SELECT);
+        gTasks[taskId].tStarterCount = 0;
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        ClearStdWindowAndFrame(0, FALSE);
+        gTasks[taskId].func = Task_StarterChoose;
         break;
     }
 }
@@ -608,6 +682,14 @@ static void SpriteCB_SelectionHand(struct Sprite *sprite)
 
 static void SpriteCB_Pokeball(struct Sprite *sprite)
 {
+    // Already-chosen ball: stays still and greyed, never wiggles
+    if (gTasks[sprite->sTaskId].tStarterCount >= 1
+     && sprite->sBallId == gTasks[sprite->sTaskId].tFirstStarter)
+    {
+        StartSpriteAnimIfDifferent(sprite, 0);
+        return;
+    }
+
     // Animate Poké Ball if currently selected
     if (gTasks[sprite->sTaskId].tStarterSelection == sprite->sBallId)
         StartSpriteAnimIfDifferent(sprite, 1);
