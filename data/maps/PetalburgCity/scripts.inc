@@ -82,7 +82,7 @@ PetalburgCity_EventScript_WalkToWallyHouse::
 PetalburgCity_EventScript_Boy::
 	lock
 	faceplayer
-	msgbox PetalburgCity_Text_WaterReflection, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Text_NjeriGlassBottles, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PETALBURG_BOY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -239,16 +239,16 @@ PetalburgCity_EventScript_Lea::
 	closemessage
 	setflag FLAG_NJERI_PETALBURG_LEA_DONE
 	goto_if_eq VAR_FACING, DIR_EAST, PetalburgCity_EventScript_LeaLeaveDownLeft
-	applymovement LOCALID_PETALBURG_LEA, PetalburgCity_Movement_LeaLeft8
+	applymovement VAR_LAST_TALKED, PetalburgCity_Movement_LeaLeft8
 	waitmovement 0
-	removeobject LOCALID_PETALBURG_LEA
+	removeobject VAR_LAST_TALKED
 	release
 	end
 
 PetalburgCity_EventScript_LeaLeaveDownLeft::
-	applymovement LOCALID_PETALBURG_LEA, PetalburgCity_Movement_LeaDownLeft8
+	applymovement VAR_LAST_TALKED, PetalburgCity_Movement_LeaDownLeft8
 	waitmovement 0
-	removeobject LOCALID_PETALBURG_LEA
+	removeobject VAR_LAST_TALKED
 	release
 	end
 
@@ -768,8 +768,46 @@ PetalburgCity_Movement_PlayerWatchScottExit3:
 	step_end
 
 PetalburgCity_EventScript_GymBoy::
-	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
+	msgbox PetalburgCity_Text_NjeriGymBoy, MSGBOX_NPC
 	end
+
+PetalburgCity_EventScript_TaxWoman::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_NjeriTaxWoman, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_EventScript_Eneco::
+	lock
+	faceplayer
+	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox PetalburgCity_Text_NjeriEneco, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Text_NjeriGymBoy:
+	.string "Ich bin letschtens uf ROUTE 2 über\n"
+	.string "es KNOSPI gstollpered und inem\l"
+	.string "ZIGZACHS glandet.\p"
+	.string "Ich han usgseh wie en Pinhead!$"
+
+PetalburgCity_Text_NjeriTaxWoman:
+	.string "De SIMON K. macht mini Stüüre!\p"
+	.string "Dank ihm chan ich nome Pokebäll\n"
+	.string "chaufe.$"
+
+PetalburgCity_Text_NjeriEneco:
+	.string "Miauu!$"
+
+PetalburgCity_Text_NjeriGlassBottles:
+	.string "Mengisch werded selteni Glasfläsche\n"
+	.string "ade Strand gspüelt.\p"
+	.string "Ich han scho es halbs Vermöge mit\n"
+	.string "Sammlerstück gmacht!\p"
+	.string "Aber ey! Finger weg!\n"
+	.string "Das sind alles mini Fläsche!$"
 
 PetalburgCity_Text_WhereIsWally:
 	.string "Wohin ist unser HEIKO nur gegangen?\p"
