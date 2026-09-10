@@ -266,10 +266,12 @@ PetalburgCity_Movement_LeaLeft8:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
 	step_end
 
 PetalburgCity_Movement_LeaDownLeft8:
 	walk_down
+	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -292,7 +294,7 @@ PetalburgCity_Text_LeaGymAdvice:
 
 PetalburgCity_Text_LeaMart:
 	.string "Wenn nonig gsii bisch, i dem\n"
-	.string "Pokemart werder Pokebäll verchauft.\p"
+	.string "Pokemart werdet Pokebäll verchauft.\p"
 	.string "Deck dich ordentlich ih und schnapp\n"
 	.string "sie dir alli! {EMOJI_HAPPY}\p"
 	.string "Bis denn {PLAYER}.$"
