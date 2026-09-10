@@ -618,21 +618,12 @@ MauvilleCity_Text_WattsonYoungTakeCharge:
 	.string "sich die jungen Leute heute entwickeln!$"
 
 MauvilleCity_Text_NurseHurtMonBackToHealth:
-	.string "Ich han amigs s Gfüühl,\n"
-	.string "dass de AJ völlig high\l"
-	.string "chunnt go schaffe.\p"
-	.string "Trotzdem besiegt er jede\n"
-	.string "Gegner wo ihn useforderet.\p"
-	.string "Min Plan isch, ihm mini\n"
-	.string "überzüüchteti Sorte z\l"
-	.string "verchaufe, wo dich mies\l"
-	.string "Couch-locked macht.\p"
-	.string "Denn fordere ich ihn zum\n"
-	.string "Kampf und besiege ihn,\l"
-	.string "bevor er überhaupt wach\l"
-	.string "isch!\p"
-	.string "Muhahaha, min Plan isch\n"
-	.string "perfekt.$"
+	.string "Das isch d' Arena vom AJ!\p"
+	.string "Die Trainer da ine hend vill\n"
+	.string "verschiedeni Pokemon wo ich no nie\l"
+	.string "gseh han!\p"
+	.string "Vallah Habibi, ich bin nach jedem\n"
+	.string "Fight go heile.$"
 
 MauvilleCity_Text_AllSortsOfPeopleComeThrough:
 	.string "Ich han mis Velo verchauft,\n"
@@ -643,10 +634,14 @@ MauvilleCity_Text_AllSortsOfPeopleComeThrough:
 	.string "Geld für Pampers...$"
 
 MauvilleCity_Text_RydelVeryGenerous:
-	.string "Ich chauf ersch es Velo,\n"
-	.string "wenn's Akku betriebe isch.\p"
-	.string "Ich wett ja kei\n"
-	.string "Wademuskelkater!$"
+	.string "Isch der eigentlich schomal\n"
+	.string "ufgfalle, wie starch es FROSDEDJE\l"
+	.string "sii chan?\p"
+	.string "Es isch böitzschnell, het e breiti\n"
+	.string "Coverage, het STAB uf EIS und\l"
+	.string "GEIST, chan d' Supporter-Rolle\l"
+	.string "überneh…\p"
+	.string "Eifach OP, das Viech!$"
 
 MauvilleCity_Text_PokemonCanJumpYouOnBike:
 	.string "De Arenaleiter isch de AJ.\n"

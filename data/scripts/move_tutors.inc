@@ -24,11 +24,13 @@ MauvilleCity_EventScript_RolloutTutor::
 
 MauvilleCity_EventScript_SlamDeclined::
 	msgbox MauvilleCity_Text_SlamDeclined, MSGBOX_DEFAULT
-	return
+	release
+	end
 
 MauvilleCity_EventScript_SlamTaught::
 	msgbox MauvilleCity_Text_SlamTaught, MSGBOX_DEFAULT
-	return
+	release
+	end
 
 VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor::
 	lock
