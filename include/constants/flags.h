@@ -57,7 +57,7 @@
 #define FLAG_NJERI_LEA_SCENE_DONE    0x23 // Njeri: the LEA intro cutscene in Guefu Town has played
 #define FLAG_NJERI_FOLLOWER_DISABLED    0x24 // Njeri: follower Pokemon suppressed until the player reaches Route 1
 #define FLAG_NJERI_HIDE_HOUSE_MOM    0x25 // Njeri: the unused Mom object in Brendan's/May's house 1F stays hidden
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
+#define FLAG_NJERI_PETALBURG_LEA_DONE    0x26 // Njeri: LEA outside the Graswinkel gym has given her advice + Potion and left
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag

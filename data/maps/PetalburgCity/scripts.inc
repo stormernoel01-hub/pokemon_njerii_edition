@@ -229,6 +229,78 @@ PetalburgCity_EventScript_Gentleman::
 	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_Lea::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_LeaGymAdvice, MSGBOX_DEFAULT
+	giveitem ITEM_POTION
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_EventScript_LeaBagFull
+	msgbox PetalburgCity_Text_LeaMart, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_NJERI_PETALBURG_LEA_DONE
+	goto_if_eq VAR_FACING, DIR_EAST, PetalburgCity_EventScript_LeaLeaveDownLeft
+	applymovement LOCALID_PETALBURG_LEA, PetalburgCity_Movement_LeaLeft8
+	waitmovement 0
+	removeobject LOCALID_PETALBURG_LEA
+	release
+	end
+
+PetalburgCity_EventScript_LeaLeaveDownLeft::
+	applymovement LOCALID_PETALBURG_LEA, PetalburgCity_Movement_LeaDownLeft8
+	waitmovement 0
+	removeobject LOCALID_PETALBURG_LEA
+	release
+	end
+
+PetalburgCity_EventScript_LeaBagFull::
+	msgbox PetalburgCity_Text_LeaBagFull, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_Movement_LeaLeft8:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+PetalburgCity_Movement_LeaDownLeft8:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+PetalburgCity_Text_LeaGymAdvice:
+	.string "LEA: Hey {PLAYER}! Und, hesch dich\n"
+	.string "scho a dini Pokemon gwöhnt? {EMOJI_HAPPY}\p"
+	.string "De SIMON K. isch uf jede Fall nöd\n"
+	.string "z' unterschätze.\p"
+	.string "Vorallem sis letschte Pokemon isch\n"
+	.string "ziemlich mies.\p"
+	.string "Da, ich gib der no e chlini\n"
+	.string "Unterstützig.$"
+
+PetalburgCity_Text_LeaMart:
+	.string "Wenn nonig gsii bisch, i dem\n"
+	.string "Pokemart werder Pokebäll verchauft.\p"
+	.string "Deck dich ordentlich ih und schnapp\n"
+	.string "sie dir alli! {EMOJI_HAPPY}\p"
+	.string "Bis denn {PLAYER}.$"
+
+PetalburgCity_Text_LeaBagFull:
+	.string "Dini Tasche isch voll. Chum spöter\n"
+	.string "no einisch verbii.$"
+
 PetalburgCity_EventScript_WallyHouseSign::
 	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end

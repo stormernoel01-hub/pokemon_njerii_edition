@@ -128,11 +128,25 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PETALBURG_LEA",
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "x": 36,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgCity_EventScript_Lea",
+      "flag": "FLAG_NJERI_PETALBURG_LEA_DONE"
     }
   ],
   "warp_events": [
     {
-      "x": 16,
+      "x": 15,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_HOUSE1",
@@ -179,8 +193,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 28,
-      "y": 12,
+      "x": 34,
+      "y": 6,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY"
