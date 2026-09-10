@@ -637,7 +637,7 @@ MauvilleCity_Text_RydelVeryGenerous:
 	.string "Isch der eigentlich schomal\n"
 	.string "ufgfalle, wie starch es FROSDEDJE\l"
 	.string "sii chan?\p"
-	.string "Es isch böitzschnell, het e breiti\n"
+	.string "Es isch blitzschnell, het e breiti\n"
 	.string "Coverage, het STAB uf EIS und\l"
 	.string "GEIST, chan d' Supporter-Rolle\l"
 	.string "überneh…\p"
